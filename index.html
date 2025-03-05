@@ -364,11 +364,41 @@
 </script>
 
   
-  <div>
-    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PROJEK PPK CH</h3>
-    <img src="projek.png" alt="projek" class="zoomable" 
-         onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-  </div>
+  <!-- Centered Frame Container -->
+   <h3 style="font-size: 1.2rem; font-weight: bold; color: #333; margin-bottom: 15px;">PROJEK PPK CH</h3>
+    
+    <div class="button-container">
+        <button class="button" style="background-color: #7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
+        <button class="button" style="background-color: #A18BFC;" onclick="showModal('tomato')">Projek Tanaman Tomato</button>
+        <button class="button" style="background-color: #F2D96F;" onclick="showModal('kilang')">Kilang Pemprosesan</button>
+        <button class="button" style="background-color: #A3DA8D;" onclick="showModal('cafe')">Café</button>
+        <button class="button" style="background-color: #F4A3C3;" onclick="showModal('sewaan')">Sewaan</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(type) {
+            let text = "";
+            if (type === 'strawberi') text = "Maklumat mengenai Projek Tanaman Strawberi.";
+            else if (type === 'tomato') text = "Maklumat mengenai Projek Tanaman Tomato.";
+            else if (type === 'kilang') text = "Maklumat mengenai Kilang Pemprosesan.";
+            else if (type === 'cafe') text = "Maklumat mengenai Café.";
+            else if (type === 'sewaan') text = "Maklumat mengenai Sewaan.";
+            
+            document.getElementById("modal-text").innerText = text;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
   
   <!-- perkhidmatan Section -->
   <div style="margin-top: 30px;">
