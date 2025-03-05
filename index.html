@@ -372,7 +372,7 @@
         <button class="button" style="background-color: #7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
         <button class="button" style="background-color: #A18BFC;" onclick="showModal('tomato')">Projek Tanaman Tomato</button>
         <button class="button" style="background-color: #F2D96F;" onclick="showModal('kilang')">Kilang Pemprosesan</button>
-        <button class="button" style="background-color: #A3DA8D;" onclick="showModal('cafe')">Café</button>
+        <button class="button" style="background-color: #A3DA8D;" onclick="showModal('cafe')">Pusat Jualan</button>
     </div>
 
     <div id="modal" class="modal">
@@ -391,19 +391,31 @@
 
         if (type === 'strawberi') {
             title = "Projek Tanaman Strawberi";
-            text = "Projek ini menumpukan kepada penanaman strawberi secara komersial di Cameron Highlands. Kami menggunakan teknik pertanian moden untuk memastikan hasil berkualiti tinggi.";
+            text = "Lokasi: Sg.Mensun,Brinchang";
+	    text = "Projek Dimulakan: September 2013";
+	    text = "Keluasan Projek: 4 Ekar (60,000 Pokok)";
+	    text = "Cara Tanaman: Fertigasi";
         } 
         else if (type === 'tomato') {
             title = "Projek Tanaman Tomato";
-            text = "Kami menghasilkan tomato segar melalui teknik fertigasi untuk menjamin kualiti yang lebih baik dan bebas dari penyakit tanaman.";
+            text = "Lokasi: RPS Terisu,Bt. 49, Kuala Terla";
+	    text = "Projek Dimulakan: 2002";
+	    text = "Keluasan Projek: 2 Ekar (20,000 Pokok)";
+	    text = "Cara Tanaman: Fertigasi";
         } 
         else if (type === 'kilang') {
             title = "Kilang Pemprosesan";
-            text = "Kilang kami memproses hasil pertanian seperti strawberi dan tomato menjadi produk nilai tambah seperti jem, jus, dan puri.";
+            text = "Lokasi: Brinchang";
+	    text = "Projek Dimulakan: ";
+	    text = "Keluasan Projek:";
+	    text = "Produk: 1) Aiskrim Cup <br> 2) Kordial Strawberi (kecil & besar) <br> 3) Topping Strawberi <br> 4) Jem Strawberi (kecil & besar) <br> 5) Popsicles";
         } 
         else if (type === 'cafe') {
             title = "Café";
-            text = "Café kami menyediakan pelbagai hidangan berasaskan produk tempatan, termasuk pencuci mulut strawberi dan minuman segar yang diperbuat daripada hasil ladang sendiri.";
+            text = "Lokasi: Brinchang";
+	    text = "Projek Dimulakan: ";
+	    text = "Keluasan Projek:";
+	    text = "Produk: ";
         }
 
         document.getElementById("modal-title").innerText = title;
