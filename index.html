@@ -385,51 +385,67 @@
 </div>
 
 <script>
-    function showModal(type) {
-        let title = "";
-        let text = "";
+ // Function untuk tunjuk modal
+function showModal(type) {
+    let title = "";
+    let text = "";
 
-        if (type === 'strawberi') {
-            title = "Projek Tanaman Strawberi";
-            text += "📍 Lokasi: Sg. Mensun, Brinchang<br>";
-            text += "📅 Projek Dimulakan: September 2013<br>";
-            text += "📏 Keluasan Projek: 4 Ekar (60,000 Pokok)<br>";
-            text += "🌱 Cara Tanaman: Fertigasi";
-        } 
-        else if (type === 'tomato') {
-            title = "Projek Tanaman Tomato";
-            text += "📍 Lokasi: RPS Terisu, Bt. 49, Kuala Terla<br>";
-            text += "📅 Projek Dimulakan: 2002<br>";
-            text += "📏 Keluasan Projek: 2 Ekar (20,000 Pokok)<br>";
-            text += "🌱 Cara Tanaman: Fertigasi";
-        } 
-        else if (type === 'kilang') {
-            title = "Kilang Pemprosesan";
-            text += "📍 Lokasi: Brinchang<br>";
-            text += "📦 Produk:<br> - Aiskrim Cup<br> - Kordial Strawberi (kecil & besar)<br> - Topping Strawberi<br> - Jem Strawberi (kecil & besar)<br> - Popsicles";
-        } 
-        else if (type === 'cafe') {
-            title = "Café";
-            text += "📍 Lokasi: Brinchang<br>";
-            text += "☕ Produk:<br> - Minuman berasaskan strawberi<br> - Makanan tempatan & barat<br> - Oleh-oleh khas Cameron Highlands";
-        }
-
-        document.getElementById("modal-title").innerText = title;
-        document.getElementById("modal-text").innerHTML = text;
-        document.getElementById("modal").style.display = "flex";
+    if (type === 'strawberi') {
+        title = "Projek Tanaman Strawberi";
+        text += "📍 Lokasi: Sg. Mensun, Brinchang<br>";
+        text += "📅 Projek Dimulakan: September 2013<br>";
+        text += "📏 Keluasan Projek: 4 Ekar (60,000 Pokok)<br>";
+        text += "🌱 Cara Tanaman: Fertigasi";
+    } 
+    else if (type === 'tomato') {
+        title = "Projek Tanaman Tomato";
+        text += "📍 Lokasi: RPS Terisu, Bt. 49, Kuala Terla<br>";
+        text += "📅 Projek Dimulakan: 2002<br>";
+        text += "📏 Keluasan Projek: 2 Ekar (20,000 Pokok)<br>";
+        text += "🌱 Cara Tanaman: Fertigasi";
+    } 
+    else if (type === 'kilang') {
+        title = "Kilang Pemprosesan";
+        text += "📍 Lokasi: Brinchang<br>";
+	 text += "📏 Keluasan Projek: <br>";
+        text += "📦 Produk:<br> - Aiskrim Cup<br> - Kordial Strawberi (kecil & besar)<br> - Topping Strawberi<br> - Jem Strawberi (kecil & besar)<br> - Popsicles";
+    } 
+    else if (type === 'cafe') {
+        title = "Café";
+        text += "📍 Lokasi: Brinchang<br>";
+	 text += "📏 Keluasan Projek: <br>";
+        text += "☕ Produk:";
     }
 
-    function closeModal() {
-        document.getElementById("modal").style.display = "none";
-    }
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-text").innerHTML = text;
 
-    // Tutup modal jika klik di luar kotak modal
-    window.onclick = function(event) {
-        let modal = document.getElementById("modal");
-        if (event.target === modal) {
-            closeModal();
-        }
+    let modal = document.getElementById("modal");
+    modal.style.display = "flex";
+    setTimeout(() => {
+        modal.style.opacity = "1";
+        document.querySelector(".modal-content").style.transform = "scale(1)";
+    }, 50);
+}
+
+// Function untuk tutup modal
+function closeModal() {
+    let modal = document.getElementById("modal");
+    modal.style.opacity = "0";
+    document.querySelector(".modal-content").style.transform = "scale(0.8)";
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
+
+// Tutup modal bila klik di luar modal-content
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target === modal) {
+        closeModal();
     }
+};
+
 </script>
 
 <style>
@@ -444,36 +460,46 @@
     .button:hover {
         opacity: 0.8;
     }
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 10;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-content {
-        background-color: #2C5D50;
-        padding: 25px;
-        border-radius: 10px;
-        width: 400px;
-        text-align: left;
-        color: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        position: relative;
-    }
-    .close {
-        cursor: pointer;
-        color: red;
-        font-size: 20px;
-        position: absolute;
-        top: 10px;
-        right: 15px;
+    /* Modal Styling */
+.modal {
+    display: none; /* Pastikan modal disembunyikan */
+    position: fixed;
+    z-index: 999; /* Letak atas semua elemen */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Styling untuk modal content */
+.modal-content {
+    background-color: #2C5D50;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Butang close */
+.close {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
     }
 </style>
 
