@@ -365,14 +365,14 @@
 
   
   <!-- Centered Frame Container -->
-   <h3 style="font-size: 1.2rem; font-weight: bold; color: #333; margin-bottom: 15px;">PROJEK PPK CH</h3>
+ <div style="margin-top: 30px;">
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
     
     <div class="button-container">
         <button class="button" style="background-color: #7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
         <button class="button" style="background-color: #A18BFC;" onclick="showModal('tomato')">Projek Tanaman Tomato</button>
         <button class="button" style="background-color: #F2D96F;" onclick="showModal('kilang')">Kilang Pemprosesan</button>
         <button class="button" style="background-color: #A3DA8D;" onclick="showModal('cafe')">Café</button>
-        <button class="button" style="background-color: #F4A3C3;" onclick="showModal('sewaan')">Sewaan</button>
     </div>
 
     <div id="modal" class="modal">
@@ -381,6 +381,7 @@
             <p id="modal-text"></p>
         </div>
     </div>
+ </div>
 
     <script>
         function showModal(type) {
@@ -389,8 +390,7 @@
             else if (type === 'tomato') text = "Maklumat mengenai Projek Tanaman Tomato.";
             else if (type === 'kilang') text = "Maklumat mengenai Kilang Pemprosesan.";
             else if (type === 'cafe') text = "Maklumat mengenai Café.";
-            else if (type === 'sewaan') text = "Maklumat mengenai Sewaan.";
-            
+           
             document.getElementById("modal-text").innerText = text;
             document.getElementById("modal").style.display = "flex";
         }
@@ -399,7 +399,45 @@
             document.getElementById("modal").style.display = "none";
         }
     </script>
-  
+
+  <style>
+	   .button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .close {
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+</style>
   <!-- perkhidmatan Section -->
   <div style="margin-top: 30px;">
     <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
