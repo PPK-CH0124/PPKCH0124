@@ -364,9 +364,9 @@
 </script>
 
   
-  <!-- Centered Frame Container -->
- <div style="margin-top: 30px;">
-    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
+ <!-- Centered Frame Container -->
+<div style="margin-top: 30px;">
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #333; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
     
     <div class="button-container">
         <button class="button" style="background-color: #7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
@@ -378,66 +378,86 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
             <p id="modal-text"></p>
         </div>
     </div>
- </div>
+</div>
 
-    <script>
-        function showModal(type) {
-            let text = "";
-            if (type === 'strawberi') text = "Maklumat mengenai Projek Tanaman Strawberi.";
-            else if (type === 'tomato') text = "Maklumat mengenai Projek Tanaman Tomato.";
-            else if (type === 'kilang') text = "Maklumat mengenai Kilang Pemprosesan.";
-            else if (type === 'cafe') text = "Maklumat mengenai Café.";
-           
-            document.getElementById("modal-text").innerText = text;
-            document.getElementById("modal").style.display = "flex";
+<script>
+    function showModal(type) {
+        let title = "";
+        let text = "";
+
+        if (type === 'strawberi') {
+            title = "Projek Tanaman Strawberi";
+            text = "Projek ini menumpukan kepada penanaman strawberi secara komersial di Cameron Highlands. Kami menggunakan teknik pertanian moden untuk memastikan hasil berkualiti tinggi.";
+        } 
+        else if (type === 'tomato') {
+            title = "Projek Tanaman Tomato";
+            text = "Kami menghasilkan tomato segar melalui teknik fertigasi untuk menjamin kualiti yang lebih baik dan bebas dari penyakit tanaman.";
+        } 
+        else if (type === 'kilang') {
+            title = "Kilang Pemprosesan";
+            text = "Kilang kami memproses hasil pertanian seperti strawberi dan tomato menjadi produk nilai tambah seperti jem, jus, dan puri.";
+        } 
+        else if (type === 'cafe') {
+            title = "Café";
+            text = "Café kami menyediakan pelbagai hidangan berasaskan produk tempatan, termasuk pencuci mulut strawberi dan minuman segar yang diperbuat daripada hasil ladang sendiri.";
         }
 
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-    </script>
+        document.getElementById("modal-title").innerText = title;
+        document.getElementById("modal-text").innerText = text;
+        document.getElementById("modal").style.display = "flex";
+    }
 
-  <style>
-	   .button {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .button:hover {
-            opacity: 0.8;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-        }
-        .close {
-            cursor: pointer;
-            color: red;
-            font-size: 20px;
-        }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
+
+<style>
+    .button {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .button:hover {
+        opacity: 0.8;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .close {
+        cursor: pointer;
+        color: red;
+        font-size: 20px;
+        float: right;
+    }
 </style>
+
+	  
   <!-- perkhidmatan Section -->
   <div style="margin-top: 30px;">
     <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
