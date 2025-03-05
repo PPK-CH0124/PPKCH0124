@@ -367,7 +367,7 @@
  <!-- Centered Frame Container -->
 <div style="margin-top: 30px;">
     <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PROJEK PPKCH</h3>
-    
+
     <div class="button-container">
         <button class="button" style="background-color: #7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
         <button class="button" style="background-color: #A18BFC;" onclick="showModal('tomato')">Projek Tanaman Tomato</button>
@@ -391,40 +391,44 @@
 
         if (type === 'strawberi') {
             title = "Projek Tanaman Strawberi";
-            text = "Lokasi: Sg.Mensun,Brinchang";
-	    text = "Projek Dimulakan: September 2013";
-	    text = "Keluasan Projek: 4 Ekar (60,000 Pokok)";
-	    text = "Cara Tanaman: Fertigasi";
+            text += "📍 Lokasi: Sg. Mensun, Brinchang<br>";
+            text += "📅 Projek Dimulakan: September 2013<br>";
+            text += "📏 Keluasan Projek: 4 Ekar (60,000 Pokok)<br>";
+            text += "🌱 Cara Tanaman: Fertigasi";
         } 
         else if (type === 'tomato') {
             title = "Projek Tanaman Tomato";
-            text = "Lokasi: RPS Terisu,Bt. 49, Kuala Terla";
-	    text = "Projek Dimulakan: 2002";
-	    text = "Keluasan Projek: 2 Ekar (20,000 Pokok)";
-	    text = "Cara Tanaman: Fertigasi";
+            text += "📍 Lokasi: RPS Terisu, Bt. 49, Kuala Terla<br>";
+            text += "📅 Projek Dimulakan: 2002<br>";
+            text += "📏 Keluasan Projek: 2 Ekar (20,000 Pokok)<br>";
+            text += "🌱 Cara Tanaman: Fertigasi";
         } 
         else if (type === 'kilang') {
             title = "Kilang Pemprosesan";
-            text = "Lokasi: Brinchang";
-	    text = "Projek Dimulakan: ";
-	    text = "Keluasan Projek:";
-	    text = "Produk: 1) Aiskrim Cup <br> 2) Kordial Strawberi (kecil & besar) <br> 3) Topping Strawberi <br> 4) Jem Strawberi (kecil & besar) <br> 5) Popsicles";
+            text += "📍 Lokasi: Brinchang<br>";
+            text += "📦 Produk:<br> - Aiskrim Cup<br> - Kordial Strawberi (kecil & besar)<br> - Topping Strawberi<br> - Jem Strawberi (kecil & besar)<br> - Popsicles";
         } 
         else if (type === 'cafe') {
             title = "Café";
-            text = "Lokasi: Brinchang";
-	    text = "Projek Dimulakan: ";
-	    text = "Keluasan Projek:";
-	    text = "Produk: ";
+            text += "📍 Lokasi: Brinchang<br>";
+            text += "☕ Produk:<br> - Minuman berasaskan strawberi<br> - Makanan tempatan & barat<br> - Oleh-oleh khas Cameron Highlands";
         }
 
         document.getElementById("modal-title").innerText = title;
-        document.getElementById("modal-text").innerText = text;
+        document.getElementById("modal-text").innerHTML = text;
         document.getElementById("modal").style.display = "flex";
     }
 
     function closeModal() {
         document.getElementById("modal").style.display = "none";
+    }
+
+    // Tutup modal jika klik di luar kotak modal
+    window.onclick = function(event) {
+        let modal = document.getElementById("modal");
+        if (event.target === modal) {
+            closeModal();
+        }
     }
 </script>
 
@@ -443,7 +447,7 @@
     .modal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 10;
         left: 0;
         top: 0;
         width: 100%;
@@ -455,19 +459,24 @@
     }
     .modal-content {
         background-color: #2C5D50;
-        padding: 20px;
+        padding: 25px;
         border-radius: 10px;
         width: 400px;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        text-align: left;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        position: relative;
     }
     .close {
         cursor: pointer;
         color: red;
         font-size: 20px;
-        float: right;
+        position: absolute;
+        top: 10px;
+        right: 15px;
     }
 </style>
+
 
 	  
   <!-- perkhidmatan Section -->
