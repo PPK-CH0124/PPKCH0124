@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAEPS, SERDANG</title>
+  <title>MAEPS,SERDANG</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -144,26 +144,27 @@
     <h4>MAEPS,SERDANG</h4>
 
     <div class="row-padding">
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 1.jpg" alt="MAEPS Serdang 1"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 2.jpg" alt="MAEPS Serdang 2"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 3.jpg" alt="MAEPS Serdang 3"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 4.jpg" alt="MAEPS Serdang 4"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 5.jpg" alt="MAEPS Serdang 5"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 6.jpg" alt="MAEPS Serdang 6"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 7.jpg" alt="MAEPS Serdang 7"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 8.jpg" alt="MAEPS Serdang 8"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 9.jpg" alt="MAEPS Serdang 9"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 10.jpg" alt="MAEPS Serdang 10"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 11.jpg" alt="MAEPS Serdang 11"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 12.jpg" alt="MAEPS Serdang 12"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 13.jpg" alt="MAEPS Serdang 13"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 14.jpg" alt="MAEPS Serdang 14"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 15.jpg" alt="MAEPS Serdang 15"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 16.jpg" alt="MAEPS Serdang 16"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 17.jpg" alt="MAEPS Serdang 17"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 18.jpg" alt="MAEPS Serdang 18"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 19.jpg" alt="MAEPS Serdang 19"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="gambar 20.jpg" alt="MAEPS Serdang 20"></div></div>
+      <!-- Gambar diambil dari folder "pictures" -->
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 1.jpg" alt="MAEPS Serdang 1"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 2.jpg" alt="MAEPS Serdang 2"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 3.jpg" alt="MAEPS Serdang 3"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 4.jpg" alt="MAEPS Serdang 4"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 5.jpg" alt="MAEPS Serdang 5"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 6.jpg" alt="MAEPS Serdang 6"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 7.jpg" alt="MAEPS Serdang 7"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 8.jpg" alt="MAEPS Serdang 8"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 9.jpg" alt="MAEPS Serdang 9"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 10.jpg" alt="MAEPS Serdang 10"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 11.jpg" alt="MAEPS Serdang 11"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 12.jpg" alt="MAEPS Serdang 12"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 13.jpg" alt="MAEPS Serdang 13"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 14.jpg" alt="MAEPS Serdang 14"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 15.jpg" alt="MAEPS Serdang 15"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 16.jpg" alt="MAEPS Serdang 16"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 17.jpg" alt="MAEPS Serdang 17"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 18.jpg" alt="MAEPS Serdang 18"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 19.jpg" alt="MAEPS Serdang 19"></div></div>
+      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar 20.jpg" alt="MAEPS Serdang 20"></div></div>
     </div>
   </div>
 
@@ -193,3 +194,4 @@
   </script>
 </body>
 </html>
+
