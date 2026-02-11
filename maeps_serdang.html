@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Gambar</title>
+  <style>
+    #maiwpsImage {
+      display: none;
+      width: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 <body>
 
-<h1>TEST</h1>
+  <button onclick="showImage()">MAIWPS Serdang 2026</button>
 
-<img src="pictures/gambar_1.jpg">
+  <br>
+
+  <img id="maiwpsImage" src="maiwps.jpg" alt="MAIWPS Serdang">
+
+  <script>
+    function showImage() {
+      document.getElementById("maiwpsImage").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
+
