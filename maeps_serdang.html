@@ -2,196 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAEPS SERDANG 2026</title>
+  <title>MAEPS SERDANG</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f9fc;
-      color: #333;
-    }
-
-    h4 {
-      color: #004aad;
-    }
-
-    .event-section {
-      margin: 64px auto;
-      padding: 16px;
-      max-width: 1200px;
       text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
     }
-
-    .event-section h4 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .row-padding {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .column-25 {
-      flex: 1 1 calc(25% - 16px);
-      max-width: calc(25% - 16px);
-    }
-
-    @media (max-width: 768px) {
-      .column-25 {
-        flex: 1 1 calc(50% - 16px);
-        max-width: calc(50% - 16px);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .column-25 {
-        flex: 1 1 calc(100% - 16px);
-        max-width: calc(100% - 16px);
-      }
-    }
-
-    .image-box {
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid #e0e0e0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-    }
-
-    .image-box:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .image-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 12px;
-      animation: zoomIn 0.3s ease;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      border-radius: 50%;
-      padding: 8px 12px;
-    }
-
-    .back-button {
-      display: inline-block;
-      margin: 32px auto;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      background-color: #004aad;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    .back-button:hover {
-      background-color: #002f6c;
-    }
-
-    @keyframes fadeIn {
-      from { background-color: rgba(0, 0, 0, 0); }
-      to { background-color: rgba(0, 0, 0, 0.9); }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.8); }
-      to { transform: scale(1); }
+    img {
+      width: 300px;
+      border: 2px solid #333;
     }
   </style>
 </head>
-
 <body>
-  <div class="event-section">
-    <h4>MAEPS SERDANG 2026</h4>
 
-    <div class="row-padding">
-      <!-- Gambar diambil dari folder "pictures" -->
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_1.jpg" alt="MAEPS SERDANG 1"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_2.jpg" alt="MAEPS SERDANG 2"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_3.jpg" alt="MAEPS SERDANG 3"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_4.jpg" alt="MAEPS SERDANG 4"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_5.jpg" alt="MAEPS SERDANG 5"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_6.jpg" alt="MAEPS SERDANG 6"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_7.jpg" alt="MAEPS SERDANG 7"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_8.jpg" alt="MAEPS SERDANG 8"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_9.jpg" alt="MAEPS SERDANG 9"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_10.jpg" alt="MAEPS SERDANG 10"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_11.jpg" alt="MAEPS SERDANG 11"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_12.jpg" alt="MAEPS SERDANG 12"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_13.jpg" alt="MAEPS SERDANG 13"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_14.jpg" alt="MAEPS SERDANG 14"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_15.jpg" alt="MAEPS SERDANG 15"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_16.jpg" alt="MAEPS SERDANG 16"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_17.jpg" alt="MAEPS SERDANG 17"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_18.jpg" alt="MAEPS SERDANG 18"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_19.jpg" alt="MAEPS SERDANG 19"></div></div>
-      <div class="column-25"><div class="image-box" onclick="displayImage(this.querySelector('img'))"><img src="pictures/gambar_20.jpg" alt="MAEPS SERDANG 20"></div></div>
-    </div>
-  </div>
+  <h2>MAEPS SERDANG</h2>
 
-  <div style="text-align:center;">
-    <a href="web1.html" class="back-button">Back to Main Page</a>
-  </div>
+  <img src="pictures/gambar_1.jpg" alt="MAEPS SERDANG 1">
 
-  <div class="modal" id="imageModal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Full Image">
-  </div>
-
-  <script>
-    function displayImage(img) {
-      document.getElementById('modalImage').src = img.src;
-      document.getElementById('imageModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('imageModal').style.display = 'none';
-    }
-
-    window.onclick = function(e) {
-      const modal = document.getElementById('imageModal');
-      if (e.target === modal) closeModal();
-    }
-  </script>
 </body>
 </html>
+
 
