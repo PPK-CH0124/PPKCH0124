@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Berita Lawatan PPK Cameron Highlands</title>
+<title>PPK Cameron Highlands Blogs</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
     body {
@@ -32,154 +32,119 @@
         color: white;
         margin-bottom: 30px;
     }
-    .header-banner h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        font-weight: 700;
-        line-height: 1.2;
-    }
-    .date {
-        font-size: 1rem;
-        font-weight: 500;
-        color: #EAF7F1;
-        margin-top: 5px;
-    }
+    .header-banner h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 700; line-height: 1.2; }
+    .date { font-size: 1rem; font-weight: 500; color: #EAF7F1; margin-top: 5px; }
+
     /* Paragraph styling */
-    .container p {
-        margin-bottom: 18px;
-        font-size: 1rem;
-        color: #444;
-    }
+    .blog-content p { margin-bottom: 18px; font-size: 1rem; color: #444; }
     .highlight { color: #2C5D50; font-weight: bold; }
+
     /* Images grid */
-    .images {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-        margin-top: 25px;
-    }
-    .images img {
-        width: 48%;
-        max-width: 400px;
-        border-radius: 12px;
-        cursor: pointer;
+    .images { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 25px; }
+    .images img { width: 48%; max-width: 400px; border-radius: 12px; cursor: pointer;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .images img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
+        transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .images img:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
     /* Zoom Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-content {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative;
-    }
-    .modal-content img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    /* Read More button */
-    .read-more-btn {
-        background-color:#2C5D50;
-        color:white;
-        padding:10px 20px;
-        border:none;
-        border-radius:6px;
-        cursor:pointer;
-        font-weight:bold;
-        margin-top:10px;
-    }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+    .modal-content { max-width: 90%; max-height: 90%; border-radius: 12px; overflow: hidden; position: relative; }
+    .modal-content img { width: 100%; height: auto; display: block; }
+    .close-btn { position: absolute; top: 10px; right: 15px; font-size: 28px; color: white; cursor: pointer; font-weight: bold; }
+
+    /* Buttons */
+    .btn { padding: 8px 18px; margin: 10px 5px 0 0; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; }
+    .read-more { background-color: #2C5D50; color: white; }
+    .next-blog { background-color: #4A807A; color: white; }
+    .lang-btn { background-color: #EAF7F1; color: #2C5D50; }
+
     /* Footer */
-    footer {
-        text-align: center;
-        padding: 25px 15px;
-        margin-top: 40px;
-        background-color: #2C5D50;
-        color: white;
-        border-radius: 0 0 12px 12px;
-    }
+    footer { text-align: center; padding: 25px 15px; margin-top: 40px; background-color: #2C5D50; color: white; border-radius: 0 0 12px 12px; }
     .hashtags { margin-top: 10px; font-size: 0.9rem; color: #D9E6E2; }
-    @media (max-width: 768px) {
-        .images img { width: 100%; }
-    }
+
+    /* Responsive */
+    @media (max-width: 768px) { .images img { width: 100%; } }
 </style>
 </head>
 <body>
 
-<!-- Blog 1 -->
 <div class="container">
-    <div class="header-banner">
-        <h1>LAWATAN KERJA PENGARAH LPP NEGERI PAHANG KE PPK CAMERON HIGHLANDS</h1>
-        <div class="date">13 JANUARI 2026 (SELASA) | CAMERON HIGHLANDS</div>
+
+    <!-- Blog 1 -->
+    <div class="blog" id="blog1">
+        <div class="header-banner">
+            <h1>LAWATAN KERJA PENGARAH LPP NEGERI PAHANG KE PPK CAMERON HIGHLANDS</h1>
+            <div class="date">13 JANUARI 2026 (SELASA) | CAMERON HIGHLANDS</div>
+        </div>
+
+        <!-- Language toggle -->
+        <div>
+            <button class="btn lang-btn" onclick="showLang(1,'malay')">Malay</button>
+            <button class="btn lang-btn" onclick="showLang(1,'english')">English</button>
+        </div>
+
+        <div class="blog-content malay" id="blog1-malay">
+            <p>PPK Cameron Highlands telah menerima lawatan kerja daripada <span class="highlight">Pengarah Lembaga Pertubuhan Peladang Negeri Pahang</span> iaitu YBrs. Encik Muhammad Azzrinie bin Shafie ke beberapa projek milik PPK iaitu Tanaman Tomato dan Peladang Outlet Kafe.</p>
+            <p>Lawatan kerja ini bertujuan menilai tahap pelaksanaan semasa projek-projek sedia ada yang telah dilaksanakan oleh PPK di samping berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek-projek ini terus berdaya maju dan mampan.</p>
+            <p>Lawatan ini turut dihadiri oleh Encik Zulkiffli bin Muhammad, Timbalan Pengarah LPP Negeri Pahang, Encik Idzwan Faidzi bin Mustafa, Ketua Unit Pembangunan Ekonomi PP serta Encik Mohamad Khairul Izwan bin Mohd Rasid, Pengurus Besar PPK Cameron Highlands.</p>
+            <p>PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang mengadakan lawatan serta berkongsi pandangan yang membina. Diharapkan lawatan ini menjadi pemangkin kepada PPK Cameron Highlands untuk terus lebih maju, berdaya saing dan berdaya tahan pada masa akan datang.</p>
+        </div>
+
+        <div class="blog-content english" id="blog1-english" style="display:none;">
+            <p>PPK Cameron Highlands received a work visit from the <span class="highlight">Director of the Farmers Organization Board of Pahang State</span>, YBrs. Encik Muhammad Azzrinie bin Shafie, to several PPK projects including Tomato Plantation and Peladang Outlet Cafe.</p>
+            <p>The visit aimed to assess the current implementation of existing projects by PPK, as well as share views, suggestions, and improvements to ensure these projects remain sustainable and competitive.</p>
+            <p>The visit was also attended by Encik Zulkiffli bin Muhammad, Deputy Director of LPP Pahang, Encik Idzwan Faidzi bin Mustafa, Head of the Economic Development Unit PP, and Encik Mohamad Khairul Izwan bin Mohd Rasid, General Manager of PPK Cameron Highlands.</p>
+            <p>PPK Cameron Highlands would like to thank LPP Pahang for the visit and constructive input. It is hoped that this visit will act as a catalyst for PPK Cameron Highlands to continue to advance and remain competitive and resilient in the future.</p>
+        </div>
+
+        <button class="btn read-more" onclick="toggleReadMore(1)">Read More</button>
+
+        <div class="images" id="blog1-images" style="display:none;">
+            <img src="lpp.1.jpg" alt="Lawatan 1" onclick="openModal(this)">
+            <img src="lpp.2.jpg" alt="Lawatan 2" onclick="openModal(this)">
+            <img src="lpp.4.jpg" alt="Lawatan 3" onclick="openModal(this)">
+            <img src="lpp.5.jpg" alt="Lawatan 4" onclick="openModal(this)">
+        </div>
+
+        <button class="btn next" onclick="showBlog(2)">Next </button>
     </div>
 
-    <p>PPK Cameron Highlands telah menerima lawatan kerja daripada <span class="highlight">Pengarah Lembaga Pertubuhan Peladang Negeri Pahang</span> iaitu YBrs. Encik Muhammad Azzrinie bin Shafie ke beberapa projek milik PPK iaitu Tanaman Tomato dan Peladang Outlet Kafe.</p>
+    <!-- Blog 2 -->
+    <div class="blog" id="blog2" style="display:none;">
+        <div class="header-banner">
+            <h1>LAWATAN SAMBIL BELAJAR KE PUSAT PEMPROSESAN PPK CAMERON HIGHLANDS</h1>
+            <div class="date">15 JANUARI 2026 (KAMIS) | CAMERON HIGHLANDS</div>
+        </div>
 
-    <div id="moreContent1" style="display:none;">
-        <p>Lawatan kerja ini bertujuan menilai tahap pelaksanaan semasa projek-projek sedia ada yang telah dilaksanakan oleh PPK di samping berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek-projek ini terus berdaya maju dan mampan.</p>
-        <p>Lawatan ini turut dihadiri oleh Encik Zulkiffli bin Muhammad, Timbalan Pengarah LPP Negeri Pahang, Encik Idzwan Faidzi bin Mustafa, Ketua Unit Pembangunan Ekonomi PP serta Encik Mohamad Khairul Izwan bin Mohd Rasid, Pengurus Besar PPK Cameron Highlands.</p>
-        <p>PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang mengadakan lawatan serta berkongsi pandangan yang membina. Diharapkan lawatan ini menjadi pemangkin kepada PPK Cameron Highlands untuk terus lebih maju, berdaya saing dan berdaya tahan pada masa akan datang.</p>
-    </div>
+        <!-- Language toggle -->
+        <div>
+            <button class="btn lang-btn" onclick="showLang(2,'malay')">Malay</button>
+            <button class="btn lang-btn" onclick="showLang(2,'english')">English</button>
+        </div>
 
-    <button class="read-more-btn" onclick="toggleReadMore('moreContent1', this)">Baca Lagi</button>
+        <div class="blog-content malay" id="blog2-malay">
+            <p>Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.</p>
+            <p>Sepanjang lawatan, para peserta telah diberi pendedahan menerusi demonstrasi pembuatan popsicle dan hard ice cream, selain berpeluang untuk merasai sendiri produk yang dihasilkan.</p>
+            <p>Taklimat projek serta sesi perkongsian maklumat telah disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor. Turut hadir bersama dalam lawatan ini, Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid.</p>
+            <p>PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih kami sebagai lokasi lawatan sambil belajar. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.</p>
+        </div>
 
-    <div class="images">
-        <img src="lpp.1.jpg" alt="Lawatan 1" onclick="openModal(this)">
-        <img src="lpp.2.jpg" alt="Lawatan 2" onclick="openModal(this)">
-        <img src="lpp.4.jpg" alt="Lawatan 3" onclick="openModal(this)">
-        <img src="lpp.5.jpg" alt="Lawatan 4" onclick="openModal(this)">
-    </div>
-</div>
+        <div class="blog-content english" id="blog2-english" style="display:none;">
+            <p>A total of 42 members of the Kampung Daching Hilir Farmers Unit, PPK Sri Klana Lenggeng, Negeri Sembilan participated in the Study Visit Program to the PPK Cameron Highlands Processing Center.</p>
+            <p>During the visit, participants were exposed to demonstrations on making popsicles and hard ice cream and had the chance to taste the products themselves.</p>
+            <p>The project briefing and information sharing session were presented by Project Manager, Encik Rosmairy bin Mohd Noor. Also present during the visit was the General Manager of PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid.</p>
+            <p>PPK Cameron Highlands would like to thank the participants for choosing our center as the location for their study visit. We hope this program provides benefits and inspires the development of future farmer entrepreneur projects.</p>
+        </div>
 
-<!-- Blog 2 -->
-<div class="container">
-    <div class="header-banner">
-        <h1>LAWATAN SAMBIL BELAJAR KE PUSAT PEMPROSESAN PERTUBUHAN PELADANG KAWASAN CAMERON HIGHLANDS</h1>
-        <div class="date">18 FEBRUARI 2026 (SELASA) | CAMERON HIGHLANDS</div>
-    </div>
+        <button class="btn read-more" onclick="toggleReadMore(2)">Read More</button>
 
-    <p>Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.</p>
+        <div class="images" id="blog2-images" style="display:none;">
+            <img src="study1.jpg" alt="Lawatan Sambil Belajar 1" onclick="openModal(this)">
+            <img src="study2.jpg" alt="Lawatan Sambil Belajar 2" onclick="openModal(this)">
+        </div>
 
-    <div id="moreContent2" style="display:none;">
-        <p>Sepanjang lawatan, para peserta telah diberi pendedahan menerusi demonstrasi pembuatan popsicle dan hard ice cream, selain berpeluang untuk merasai sendiri produk yang dihasilkan. Para peserta turut diberikan penerangan serta galakan berkaitan pemasaran produk aiskrim, termasuk potensi untuk melaksanakan projek pembuatan aiskrim sendiri sebagai peluang menjana pendapatan.</p>
-        <p>Taklimat projek serta sesi perkongsian maklumat telah disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor. Turut hadir bersama dalam lawatan ini, Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid.</p>
-        <p>PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih kami sebagai lokasi lawatan sambil belajar. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.</p>
-    </div>
-
-    <button class="read-more-btn" onclick="toggleReadMore('moreContent2', this)">Baca Lagi</button>
-
-    <div class="images">
-        <img src="pm.1.jpg" alt="Ice Cream Demo 1" onclick="openModal(this)">
-        <img src="pm.2.jpg" alt="Ice Cream Demo 2" onclick="openModal(this)">
-        <img src="pm.3.jpg" alt="Ice Cream Demo 3" onclick="openModal(this)">
-        <img src="pm.4.jpg" alt="Ice Cream Demo 4" onclick="openModal(this)">
+        <button class="btn next-blog" onclick="showBlog(1)">Previous Blog</button>
     </div>
 </div>
 
@@ -194,7 +159,7 @@
 <footer>
     <div>© 2026 Pertubuhan Peladang Kawasan Cameron Highlands</div>
     <div class="hashtags">
-        #ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani #CukupDanTerjamin #AgroMADANI #keterjaminanmakananuntukmasadepan
+        #ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani
     </div>
 </footer>
 
@@ -203,24 +168,32 @@ function openModal(img) {
     document.getElementById("zoomModal").style.display = "flex";
     document.getElementById("modalImage").src = img.src;
 }
-function closeModal() {
-    document.getElementById("zoomModal").style.display = "none";
-}
-window.onclick = function(event) {
-    const modal = document.getElementById("zoomModal");
-    if(event.target === modal) { closeModal(); }
+function closeModal() { document.getElementById("zoomModal").style.display = "none"; }
+window.onclick = function(event) { const modal = document.getElementById("zoomModal"); if(event.target === modal) closeModal(); }
+
+// Toggle Read More for blog content
+function toggleReadMore(blogId) {
+    const imagesDiv = document.getElementById(`blog${blogId}-images`);
+    const btn = document.querySelector(`#blog${blogId} .read-more`);
+    if(imagesDiv.style.display === "none") {
+        imagesDiv.style.display = "flex";
+        btn.textContent = "Close";
+    } else {
+        imagesDiv.style.display = "none";
+        btn.textContent = "Read More";
+    }
 }
 
-// Generic toggle for Read More
-function toggleReadMore(contentId, btn) {
-    const content = document.getElementById(contentId);
-    if(content.style.display === "none") {
-        content.style.display = "block";
-        btn.innerText = "Tutup";
-    } else {
-        content.style.display = "none";
-        btn.innerText = "Baca Lagi";
-    }
+// Show selected blog (1 or 2)
+function showBlog(blogNum) {
+    document.getElementById('blog1').style.display = blogNum===1?'block':'none';
+    document.getElementById('blog2').style.display = blogNum===2?'block':'none';
+}
+
+// Language toggle per blog
+function showLang(blogId, lang) {
+    document.getElementById(`blog${blogId}-malay`).style.display = lang==='malay'?'block':'none';
+    document.getElementById(`blog${blogId}-english`).style.display = lang==='english'?'block':'none';
 }
 </script>
 
