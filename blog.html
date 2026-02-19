@@ -17,31 +17,25 @@ body{
 .container{
     max-width:1000px;
     margin:auto;
-    padding:30px 20px;
+    padding:40px 20px;
 }
 
 .blog{
-    margin-bottom:60px;
-}
-
-.header-banner{
-    margin-bottom:20px;
+    margin-bottom:80px;
 }
 
 .header-banner h1{
-    font-size:2rem;
+    font-size:1.9rem;
     margin-bottom:10px;
+    line-height:1.3;
 }
 
 .date{
     font-size:0.9rem;
-    color:#777;
+    color:#666;
     border-left:4px solid #2e7d32;
     padding-left:10px;
-}
-
-.news-gallery{
-    margin:30px 0;
+    margin-bottom:25px;
 }
 
 .news-hero{
@@ -49,21 +43,14 @@ body{
     max-height:500px;
     object-fit:cover;
     border-radius:6px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-}
-
-.caption{
-    font-size:0.85rem;
-    color:#555;
-    margin-top:8px;
-    margin-bottom:25px;
-    font-style:italic;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
 .news-row{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
+    margin-top:20px;
 }
 
 .news-row img{
@@ -76,8 +63,8 @@ body{
 }
 
 .blog-content{
-    margin-top:25px;
-    line-height:1.7;
+    margin-top:30px;
+    line-height:1.8;
     font-size:1.05rem;
 }
 
@@ -86,8 +73,14 @@ body{
     color:#2e7d32;
 }
 
+.hashtags{
+    margin-top:25px;
+    font-size:0.9rem;
+    color:#555;
+}
+
 .btn{
-    margin-top:20px;
+    margin-top:25px;
     margin-right:10px;
     padding:8px 16px;
     border:none;
@@ -111,32 +104,37 @@ body{
 <!-- ================= BLOG 1 ================= -->
 <div class="blog" id="blog1">
 
-<div class="header-banner">
-<h1>LAWATAN KERJA RASMI KE PPK CAMERON HIGHLANDS</h1>
-<div class="date">15 JANUARI 2026 | CAMERON HIGHLANDS</div>
-</div>
+<h1>LAWATAN KERJA PENGARAH LPP NEGERI PAHANG KE PPK CAMERON HIGHLANDS</h1>
+<div class="date">13 JANUARI 2026 (SELASA) | CAMERON HIGHLANDS</div>
 
-<div class="news-gallery">
 <img src="blog1-hero.jpg" class="news-hero">
-<div class="caption">Lawatan rasmi wakil pertanian negeri ke PPK Cameron Highlands.</div>
 
 <div class="news-row">
 <img src="lpp.1.jpg">
 <img src="lpp.2.jpg">
 <img src="lpp.4.jpg">
-<img src="lpp.5.jpg">
-</div>
 </div>
 
 <button class="btn" onclick="showLang(1,'malay')">Malay</button>
 <button class="btn" onclick="showLang(1,'english')">English</button>
 
 <div class="blog-content" id="blog1-malay">
-PPK Cameron Highlands telah menerima lawatan kerja rasmi bagi meninjau perkembangan projek dan operasi semasa.
+<p>PPK Cameron Highlands telah menerima lawatan kerja daripada Pengarah Lembaga Pertubuhan Peladang Negeri Pahang iaitu YBrs. Encik Muhammad Azzrinie bin Shafie ke beberapa projek milik PPK iaitu Tanaman Tomato dan Peladang Outlet Kafe.</p>
+
+<p>Lawatan kerja ini bertujuan menilai tahap pelaksanaan semasa projek-projek sedia ada yang telah dilaksanakan oleh PPK di samping berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek-projek ini terus berdaya maju dan mampan.</p>
+
+<p>Lawatan ini turut dihadiri oleh Encik Zulkiffli bin Muhammad, Timbalan Pengarah LPP Negeri Pahang, Encik Idzwan Faidzi bin Mustafa, Ketua Unit Pembangunan Ekonomi PP serta Encik Mohamad Khairul Izwan bin Mohd Rasid, Pengurus Besar PPK Cameron Highlands.</p>
+
+<p>PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang mengadakan lawatan serta berkongsi pandangan yang membina. Diharapkan lawatan ini menjadi pemangkin kepada PPK Cameron Highlands untuk terus lebih maju, berdaya saing dan berdaya tahan pada masa akan datang.</p>
+
+<div class="hashtags">
+#ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani #CukupDanTerjamin #AgroMADANI #keterjaminanmakananuntukmasadepan
+</div>
 </div>
 
 <div class="blog-content" id="blog1-english" style="display:none;">
-PPK Cameron Highlands received an official visit to review ongoing projects and operational developments.
+<p>PPK Cameron Highlands received a working visit from the Director of the Farmers Organization Board of Pahang State to review tomato plantation and Peladang Outlet Cafe projects.</p>
+<p>The visit aimed to evaluate current implementation and provide constructive feedback to ensure sustainability and competitiveness.</p>
 </div>
 
 <button class="btn nav-btn" onclick="showBlog(2)">Next</button>
@@ -146,32 +144,34 @@ PPK Cameron Highlands received an official visit to review ongoing projects and 
 <!-- ================= BLOG 2 ================= -->
 <div class="blog" id="blog2" style="display:none;">
 
-<div class="header-banner">
-<h1>PROGRAM JUALAN AGRO MADANI</h1>
-<div class="date">22 JANUARI 2026 | BRINCHANG</div>
-</div>
+<h1>LAWATAN SAMBIL BELAJAR KE PUSAT PEMPROSESAN PPK CAMERON HIGHLANDS</h1>
+<div class="date">14 JANUARI 2026 (RABU) | BRINCHANG, TANAH RATA</div>
 
-<div class="news-gallery">
 <img src="blog2-hero.jpg" class="news-hero">
-<div class="caption">Orang ramai hadir memeriahkan Program Jualan Agro Madani.</div>
 
 <div class="news-row">
 <img src="pm.1.jpg">
 <img src="pm.2.jpg">
 <img src="pm.3.jpg">
-<img src="pm.4.jpg">    
-</div>
 </div>
 
 <button class="btn" onclick="showLang(2,'malay')">Malay</button>
 <button class="btn" onclick="showLang(2,'english')">English</button>
 
 <div class="blog-content" id="blog2-malay">
-Program Jualan Agro Madani mendapat sambutan yang amat menggalakkan dengan pelbagai produk segar ditawarkan.
+<p>Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.</p>
+
+<p>Peserta diberi pendedahan menerusi demonstrasi pembuatan popsicle dan hard ice cream serta galakan berkaitan pemasaran produk aiskrim sebagai peluang menjana pendapatan.</p>
+
+<p>Taklimat projek disampaikan oleh Pengurus Projek Encik Rosmairy bin Mohd Noor serta dihadiri oleh Pengurus Besar Encik Mohamad Khairul Izwan bin Mohd Rasid.</p>
+
+<div class="hashtags">
+#ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani
+</div>
 </div>
 
 <div class="blog-content" id="blog2-english" style="display:none;">
-The Agro Madani Sales Program received overwhelming support with various fresh agricultural products offered.
+<p>A total of 42 members participated in a study visit to the PPK Cameron Highlands Processing Centre, gaining exposure to ice cream production and marketing potential.</p>
 </div>
 
 <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
@@ -182,36 +182,34 @@ The Agro Madani Sales Program received overwhelming support with various fresh a
 <!-- ================= BLOG 3 ================= -->
 <div class="blog" id="blog3" style="display:none;">
 
-<div class="header-banner">
-<h1>LAWATAN KUMPULAN PELADANG MUDA PPK TEMBELING</h1>
-<div class="date">28 JANUARI 2026 | BRINCHANG, CAMERON HIGHLANDS</div>
-</div>
+<h1>LAWATAN KUMPULAN PELADANG MUDA PPK TEMBELING KE PPK CAMERON HIGHLANDS</h1>
+<div class="date">28 JANUARI 2026 (RABU) | BRINCHANG, CAMERON HIGHLANDS</div>
 
-<div class="news-gallery">
 <img src="blog3-hero.jpg" class="news-hero">
-<div class="caption">Kumpulan Peladang Muda PPK Tembeling bergambar bersama pihak pengurusan.</div>
 
 <div class="news-row">
 <img src="o.jpg">
 <img src="o2.jpg">
 <img src="o3.jpg">
-    
-</div>
 </div>
 
 <button class="btn" onclick="showLang(3,'malay')">Malay</button>
 <button class="btn" onclick="showLang(3,'english')">English</button>
 
 <div class="blog-content" id="blog3-malay">
-PPK Cameron Highlands berbesar hati menerima lawatan daripada 
-<span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>. 
-Peserta turut mengunjungi Peladang Outlet Kafe dan membeli produk sebagai cenderahati.
+<p>PPK Cameron Highlands berbesar hati menerima lawatan daripada Kumpulan Peladang Muda PPK Tembeling.</p>
+
+<p>Para peserta telah dibawa singgah ke Peladang Outlet Kafe dan berkesempatan merasai pelbagai hidangan serta membeli produk sebagai buah tangan.</p>
+
+<p>Pihak PPK Cameron Highlands mengucapkan jutaan terima kasih atas kesudian memeriahkan kafe kami dan sentiasa menanti kunjungan anda pada masa akan datang.</p>
+
+<div class="hashtags">
+#ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani
+</div>
 </div>
 
 <div class="blog-content" id="blog3-english" style="display:none;">
-PPK Cameron Highlands was honoured to welcome the 
-<span class="highlight">Young Farmers Group of PPK Tembeling</span>. 
-Participants visited Peladang Outlet Cafe and purchased products as souvenirs.
+<p>PPK Cameron Highlands welcomed the Young Farmers Group of PPK Tembeling for a courtesy visit and cafe experience.</p>
 </div>
 
 <button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
