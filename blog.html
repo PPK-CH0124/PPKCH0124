@@ -14,9 +14,7 @@
         color: #333;
         line-height: 1.7;
     }
-
     a { text-decoration: none; color: inherit; }
-
     .container {
         max-width: 1000px;
         margin: 30px auto;
@@ -25,7 +23,6 @@
         border-radius: 12px;
         box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
-
     /* Header Banner */
     .header-banner {
         text-align: center;
@@ -35,30 +32,25 @@
         color: white;
         margin-bottom: 30px;
     }
-
     .header-banner h1 {
         font-size: 2rem;
         margin-bottom: 10px;
         font-weight: 700;
         line-height: 1.2;
     }
-
     .date {
         font-size: 1rem;
         font-weight: 500;
         color: #EAF7F1;
         margin-top: 5px;
     }
-
     /* Paragraph styling */
     .container p {
         margin-bottom: 18px;
         font-size: 1rem;
         color: #444;
     }
-
     .highlight { color: #2C5D50; font-weight: bold; }
-
     /* Images grid */
     .images {
         display: flex;
@@ -67,7 +59,6 @@
         justify-content: center;
         margin-top: 25px;
     }
-
     .images img {
         width: 48%;
         max-width: 400px;
@@ -76,12 +67,10 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .images img:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
-
     /* Zoom Modal */
     .modal {
         display: none;
@@ -95,7 +84,6 @@
         justify-content: center;
         align-items: center;
     }
-
     .modal-content {
         max-width: 90%;
         max-height: 90%;
@@ -103,13 +91,11 @@
         overflow: hidden;
         position: relative;
     }
-
     .modal-content img {
         width: 100%;
         height: auto;
         display: block;
     }
-
     .close-btn {
         position: absolute;
         top: 10px;
@@ -119,7 +105,17 @@
         cursor: pointer;
         font-weight: bold;
     }
-
+    /* Read More button */
+    .read-more-btn {
+        background-color:#2C5D50;
+        color:white;
+        padding:10px 20px;
+        border:none;
+        border-radius:6px;
+        cursor:pointer;
+        font-weight:bold;
+        margin-top:10px;
+    }
     /* Footer */
     footer {
         text-align: center;
@@ -129,9 +125,7 @@
         color: white;
         border-radius: 0 0 12px 12px;
     }
-
     .hashtags { margin-top: 10px; font-size: 0.9rem; color: #D9E6E2; }
-
     @media (max-width: 768px) {
         .images img { width: 100%; }
     }
@@ -139,6 +133,7 @@
 </head>
 <body>
 
+<!-- Blog 1 -->
 <div class="container">
     <div class="header-banner">
         <h1>LAWATAN KERJA PENGARAH LPP NEGERI PAHANG KE PPK CAMERON HIGHLANDS</h1>
@@ -146,15 +141,45 @@
     </div>
 
     <p>PPK Cameron Highlands telah menerima lawatan kerja daripada <span class="highlight">Pengarah Lembaga Pertubuhan Peladang Negeri Pahang</span> iaitu YBrs. Encik Muhammad Azzrinie bin Shafie ke beberapa projek milik PPK iaitu Tanaman Tomato dan Peladang Outlet Kafe.</p>
-    <p>Lawatan kerja ini bertujuan menilai tahap pelaksanaan semasa projek-projek sedia ada yang telah dilaksanakan oleh PPK di samping berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek-projek ini terus berdaya maju dan mampan.</p>
-    <p>Lawatan ini turut dihadiri oleh Encik Zulkiffli bin Muhammad, Timbalan Pengarah LPP Negeri Pahang, Encik Idzwan Faidzi bin Mustafa, Ketua Unit Pembangunan Ekonomi PP serta Encik Mohamad Khairul Izwan bin Mohd Rasid, Pengurus Besar PPK Cameron Highlands.</p>
-    <p>PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang mengadakan lawatan serta berkongsi pandangan yang membina. Diharapkan lawatan ini menjadi pemangkin kepada PPK Cameron Highlands untuk terus lebih maju, berdaya saing dan berdaya tahan pada masa akan datang.</p>
+
+    <div id="moreContent1" style="display:none;">
+        <p>Lawatan kerja ini bertujuan menilai tahap pelaksanaan semasa projek-projek sedia ada yang telah dilaksanakan oleh PPK di samping berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek-projek ini terus berdaya maju dan mampan.</p>
+        <p>Lawatan ini turut dihadiri oleh Encik Zulkiffli bin Muhammad, Timbalan Pengarah LPP Negeri Pahang, Encik Idzwan Faidzi bin Mustafa, Ketua Unit Pembangunan Ekonomi PP serta Encik Mohamad Khairul Izwan bin Mohd Rasid, Pengurus Besar PPK Cameron Highlands.</p>
+        <p>PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang mengadakan lawatan serta berkongsi pandangan yang membina. Diharapkan lawatan ini menjadi pemangkin kepada PPK Cameron Highlands untuk terus lebih maju, berdaya saing dan berdaya tahan pada masa akan datang.</p>
+    </div>
+
+    <button class="read-more-btn" onclick="toggleReadMore('moreContent1', this)">Baca Lagi</button>
 
     <div class="images">
         <img src="lpp.1.jpg" alt="Lawatan 1" onclick="openModal(this)">
         <img src="lpp.2.jpg" alt="Lawatan 2" onclick="openModal(this)">
         <img src="lpp.4.jpg" alt="Lawatan 3" onclick="openModal(this)">
         <img src="lpp.5.jpg" alt="Lawatan 4" onclick="openModal(this)">
+    </div>
+</div>
+
+<!-- Blog 2 -->
+<div class="container">
+    <div class="header-banner">
+        <h1>LAWATAN SAMBIL BELAJAR KE PUSAT PEMPROSESAN PERTUBUHAN PELADANG KAWASAN CAMERON HIGHLANDS</h1>
+        <div class="date">18 FEBRUARI 2026 (SELASA) | CAMERON HIGHLANDS</div>
+    </div>
+
+    <p>Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.</p>
+
+    <div id="moreContent2" style="display:none;">
+        <p>Sepanjang lawatan, para peserta telah diberi pendedahan menerusi demonstrasi pembuatan popsicle dan hard ice cream, selain berpeluang untuk merasai sendiri produk yang dihasilkan. Para peserta turut diberikan penerangan serta galakan berkaitan pemasaran produk aiskrim, termasuk potensi untuk melaksanakan projek pembuatan aiskrim sendiri sebagai peluang menjana pendapatan.</p>
+        <p>Taklimat projek serta sesi perkongsian maklumat telah disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor. Turut hadir bersama dalam lawatan ini, Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid.</p>
+        <p>PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih kami sebagai lokasi lawatan sambil belajar. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.</p>
+    </div>
+
+    <button class="read-more-btn" onclick="toggleReadMore('moreContent2', this)">Baca Lagi</button>
+
+    <div class="images">
+        <img src="pm.1.jpg" alt="Ice Cream Demo 1" onclick="openModal(this)">
+        <img src="pm.2.jpg" alt="Ice Cream Demo 2" onclick="openModal(this)">
+        <img src="pm.3.jpg" alt="Ice Cream Demo 3" onclick="openModal(this)">
+        <img src="pm.4.jpg" alt="Ice Cream Demo 4" onclick="openModal(this)">
     </div>
 </div>
 
@@ -169,7 +194,7 @@
 <footer>
     <div>© 2026 Pertubuhan Peladang Kawasan Cameron Highlands</div>
     <div class="hashtags">
-        #ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani
+        #ppkcameronhighlands #LPPMalaysia #lpppahang #LPP4farmers #PerkasaPeladang #KeluargaPeladang #KPKMMalaysia #TeamKPKM #MalaysiaMadani #CukupDanTerjamin #AgroMADANI #keterjaminanmakananuntukmasadepan
     </div>
 </footer>
 
@@ -184,6 +209,18 @@ function closeModal() {
 window.onclick = function(event) {
     const modal = document.getElementById("zoomModal");
     if(event.target === modal) { closeModal(); }
+}
+
+// Generic toggle for Read More
+function toggleReadMore(contentId, btn) {
+    const content = document.getElementById(contentId);
+    if(content.style.display === "none") {
+        content.style.display = "block";
+        btn.innerText = "Tutup";
+    } else {
+        content.style.display = "none";
+        btn.innerText = "Baca Lagi";
+    }
 }
 </script>
 
