@@ -12,28 +12,35 @@ body {
     background: #f9f9f9;
     color: #333;
 }
-
 .container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
     background: #fff;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
 }
 
 /* ===== Header ===== */
 .header-banner {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .header-banner h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0 0 5px 0;
-    color: #222;
+}
+.header-banner h2 {
+    font-size: 1.2rem;
+    color: #1b3e1b;
+    margin-top:5px;
 }
 .date {
     font-size: 0.9rem;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* ===== Hero Image ===== */
@@ -41,28 +48,32 @@ body {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
+.news-hero:hover { transform: scale(1.02); }
 
 /* ===== Caption ===== */
 .caption {
     font-size: 0.85rem;
     color: #666;
     font-style: italic;
-    margin-bottom: 25px;
-}
-
-/* ===== Blog Content ===== */
-.blog-content {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 .highlight {
     font-weight: bold;
     color: #2e7d32;
 }
+
+/* ===== Blog Content ===== */
+.blog-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+.blog-content br { margin-bottom: 5px; }
 
 /* ===== Buttons ===== */
 .btn {
@@ -70,14 +81,19 @@ body {
     padding: 8px 16px;
     border: none;
     cursor: pointer;
-    background: #2e7d32;
-    color: white;
     border-radius: 4px;
     font-size: 0.9rem;
 }
-.nav-btn {
-    background: #555;
+.btn.lang-btn {
+    background: #2e7d32;
+    color: white;
 }
+.btn.lang-btn:hover { background: #66bb6a; }
+.btn.nav-btn {
+    background: #555;
+    color: white;
+}
+.btn.nav-btn:hover { background: #777; }
 
 /* ===== Fade-in animation ===== */
 .blog {
@@ -87,6 +103,12 @@ body {
 }
 @keyframes fadeIn {
     to { opacity: 1; }
+}
+
+/* ===== Hashtag hover ===== */
+.hashtag:hover {
+    color: #2e7d32;
+    cursor: pointer;
 }
 
 /* ===== Responsive ===== */
@@ -100,26 +122,24 @@ body {
 
 <div class="container">
 
-<!-- ================= BLOG 1 ================= -->
-<div class="blog" id="blog2">
+<!-- ================= BLOG 1 =================== -->
+<div class="blog" id="blog1" style="display:block;">
     <div class="header-banner">
         <h1>𝟭𝟯 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗦𝗘𝗟𝗔𝗦𝗔) | 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h1>
         <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗞𝗘𝗥𝗝𝗔 𝗣𝗘𝗡𝗚𝗔𝗥𝗔𝗛 𝗟𝗣𝗣 𝗡𝗘𝗚𝗘𝗥𝗜 𝗣𝗔𝗛𝗔𝗡𝗚 𝗞𝗘 𝗣𝗣𝗞 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>
         <hr>
     </div>
-
     <img src="lpp.6.jpg" class="news-hero" alt="Lawatan Kerja Pengarah LPP Pahang ke PPK Cameron Highlands">
-    <div class="caption">
-        🌱 Lawatan rasmi Pengarah LPP Negeri Pahang ke projek <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe 🍅
-    </div>
+    <div class="caption">🌱 Lawatan rasmi Pengarah LPP Negeri Pahang ke projek <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe 🍅</div>
 
-    <div class="blog-content" id="blog2-malay">
+    <div class="blog-content" id="blog1-malay">
         PPK Cameron Highlands telah menerima <span class="highlight">lawatan kerja rasmi</span> daripada Pengarah LPP Negeri Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, ke beberapa projek milik PPK termasuk <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe.<br>
-        Lawatan ini bertujuan menilai pelaksanaan projek sedia ada dan berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek terus berdaya maju dan mampan.Turut hadir Timbalan Pengarah LPP, Ketua Unit Pembangunan Ekonomi PP, dan Pengurus Besar PPK Cameron Highlands.
+        Lawatan ini bertujuan menilai pelaksanaan projek sedia ada dan berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek terus berdaya maju dan mampan.<br>
+        Turut hadir Timbalan Pengarah LPP, Ketua Unit Pembangunan Ekonomi PP, dan Pengurus Besar PPK Cameron Highlands.<br>
         PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang dan berharap lawatan ini menjadi pemangkin kepada PPK untuk terus lebih maju, berdaya saing, dan berdaya tahan pada masa akan datang.
     </div>
 
-    <div class="blog-content" id="blog2-english" style="display:none;">
+    <div class="blog-content" id="blog1-english" style="display:none;">
         PPK Cameron Highlands received an <span class="highlight">official working visit</span> from the Director of LPP Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, to several PPK projects including <span class="highlight">Tomato Farming</span> and the Peladang Outlet Café.<br>
         The visit aimed to review current project implementation and share suggestions to ensure projects remain sustainable and progressive.<br>
         The visit was attended by the Deputy Director of LPP, Chief of Economic Development Unit, and General Manager of PPK Cameron Highlands.<br>
@@ -135,129 +155,68 @@ body {
         <span class="hashtag">#KeluargaPeladang</span> 
         <span class="hashtag">#KPKMMalaysia</span> 
         <span class="hashtag">#TeamKPKM</span> 
-        <span class="hashtag">#MalaysiaMadani</span> 
-        <span class="hashtag">#CukupDanTerjamin</span> 
-        <span class="hashtag">#AgroMADANI</span> 
-        <span class="hashtag">#keterjaminanmakananuntukmasadepan</span>
+        <span class="hashtag">#MalaysiaMadani</span>
     </div>
 
-    <!-- Buttons -->
-    <button class="btn lang-btn" onclick="showLang(2,'malay')">Malay</button>
-    <button class="btn lang-btn" onclick="showLang(2,'english')">English</button>
+    <button class="btn lang-btn" onclick="showLang(1,'malay')">Malay</button>
+    <button class="btn lang-btn" onclick="showLang(1,'english')">English</button>
+    <button class="btn nav-btn" onclick="showBlog(2)">Next</button>
+</div>
+
+<!-- ================= BLOG 2 =================== -->
+<div class="blog" id="blog2">
+    <div class="header-banner">
+        <h1>𝟭𝟰 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗥𝗔𝗕𝗨) | 𝗕𝗥𝗜𝗡𝗖𝗛𝗔𝗡𝗚, 𝗧𝗔𝗡𝗔𝗛 𝗥𝗔𝗧𝗔 </h1>
+        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗦𝗔𝗠𝗕𝗜𝗟 𝗕𝗘𝗟𝗔𝗝𝗔𝗥 𝗞𝗘 𝗣𝗨𝗦𝗔𝗧 𝗣𝗘𝗠𝗣𝗥𝗢𝗦𝗘𝗦𝗔𝗡 𝗣𝗘𝗥𝗧𝗨𝗕𝗨𝗛𝗔𝗡 𝗣𝗘𝗟𝗔𝗗𝗔𝗡𝗚 𝗞𝗔𝗪𝗔𝗦𝗔𝗡 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>   
+        </hr>
+        <div class="date">14 Januari 2026 | Brinchang, Tanah Rata</div>
+    </div>
+    <img src="pm.1.jpg" class="news-hero" alt="Lawatan Sambil Belajar PPK Cameron Highlands">
+    <div class="caption">Seramai 42 anggota Unit Peladang Kampung Daching Hilir menyertai lawatan sambil belajar ke PPK Cameron Highlands.</div>
+
+    <div class="blog-content" id="blog2-malay">
+        Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.<br>
+        Sepanjang lawatan, peserta diberi pendedahan melalui demonstrasi pembuatan popsicle dan hard ice cream serta berpeluang merasai produk yang dihasilkan.<br>
+        Peserta turut menerima penerangan dan galakan berkaitan pemasaran produk aiskrim, termasuk potensi untuk melaksanakan projek pembuatan aiskrim sendiri sebagai peluang menjana pendapatan.<br>
+        Taklimat projek serta sesi perkongsian maklumat disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor, manakala Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid turut hadir.<br>
+        PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih lokasi ini sebagai destinasi lawatan. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.
+    </div>
+
+    <div class="blog-content" id="blog2-english" style="display:none;">
+        A total of 42 members of the Kampung Daching Hilir Farmers’ Unit, PPK Sri Klana Lenggeng, Negeri Sembilan, participated in the Educational Visit Program to the PPK Cameron Highlands Processing Center.<br>
+        During the visit, participants were exposed to demonstrations on making popsicles and hard ice cream, and had the opportunity to taste the products.<br>
+        Participants were also provided guidance and encouragement regarding ice cream product marketing, including the potential to undertake their own ice cream projects as income-generating opportunities.<br>
+        Project briefings and information-sharing sessions were delivered by Project Manager, Mr. Rosmairy bin Mohd Noor, while the General Manager of PPK Cameron Highlands, Mr. Mohamad Khairul Izwan bin Mohd Rasid, also attended.<br>
+        PPK Cameron Highlands expresses gratitude for choosing our center as the visit location. We hope this program is beneficial and inspires future development of farmer entrepreneurship projects.
+    </div>
+
     <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
     <button class="btn nav-btn" onclick="showBlog(3)">Next</button>
 </div>
 
-<style>
-/* ===== Highlight & Visual ===== */
-.highlight {
-    font-weight: bold;
-    color: #2e7d32;
-}
-
-/* Tajuk gradient */
-.header-banner h1 {
-    font-size: 2rem;
-    background: linear-gradient(90deg, #2e7d32, #66bb6a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.header-banner h2 {
-    font-size: 1.2rem;
-    color: #1b3e1b;
-    margin-top:5px;
-}
-
-/* Hero image pop-up */
-.news-hero {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-.news-hero:hover { transform: scale(1.02); }
-
-/* Buttons interactive */
-.btn.lang-btn {
-    background: #2e7d32;
-    color: white;
-}
-.btn.lang-btn:hover { background: #66bb6a; }
-.btn.nav-btn {
-    background: #555;
-    color: white;
-}
-.btn.nav-btn:hover { background: #777; }
-
-/* Paragraph rapat */
-.blog-content p, .blog-content br {
-    margin: 0 0 10px 0;
-    line-height: 1.5;
-}
-
-/* Hashtag hover */
-.hashtag:hover {
-    color: #2e7d32;
-    cursor: pointer;
-}
-</style>
-
-
-<!-- ================= BLOG 2 ================= -->
-<div class="blog" id="blog2">
-  <div class="header-banner">
-    <h1>LAWATAN SAMBIL BELAJAR KE PUSAT PEMPROSESAN PERTUBUHAN PELADANG CAMERON HIGHLANDS</h1>
-    <div class="date">14 Januari 2026 | Brinchang, Tanah Rata</div>
-  </div>
-
-  <img src="pm.1.jpg" class="news-hero" alt="Lawatan Sambil Belajar PPK Cameron Highlands">
-  <div class="caption">Seramai 42 anggota Unit Peladang Kampung Daching Hilir menyertai lawatan sambil belajar ke PPK Cameron Highlands.</div>
-
-  <div class="blog-content" id="blog2-malay">
-    Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.  
-    Sepanjang lawatan, peserta diberi pendedahan melalui demonstrasi pembuatan popsicle dan hard ice cream serta berpeluang merasai produk yang dihasilkan.  
-    Peserta turut menerima penerangan dan galakan berkaitan pemasaran produk aiskrim, termasuk potensi untuk melaksanakan projek pembuatan aiskrim sendiri sebagai peluang menjana pendapatan.  
-    Taklimat projek serta sesi perkongsian maklumat disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor, manakala Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid turut hadir.  
-    PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih lokasi ini sebagai destinasi lawatan. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.
-  </div>
-
-  <div class="blog-content" id="blog2-english" style="display:none;">
-    A total of 42 members of the Kampung Daching Hilir Farmers’ Unit, PPK Sri Klana Lenggeng, Negeri Sembilan, participated in the Educational Visit Program to the PPK Cameron Highlands Processing Center.  
-    During the visit, participants were exposed to demonstrations on making popsicles and hard ice cream, and had the opportunity to taste the products.  
-    Participants were also provided guidance and encouragement regarding ice cream product marketing, including the potential to undertake their own ice cream projects as income-generating opportunities.  
-    Project briefings and information-sharing sessions were delivered by Project Manager, Mr. Rosmairy bin Mohd Noor, while the General Manager of PPK Cameron Highlands, Mr. Mohamad Khairul Izwan bin Mohd Rasid, also attended.  
-    PPK Cameron Highlands expresses gratitude for choosing our center as the visit location. We hope this program is beneficial and inspires future development of farmer entrepreneurship projects.
-  </div>
-
-  <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
-  <button class="btn nav-btn" onclick="showBlog(3)">Next</button>
-</div>
-
-<!-- ================= BLOG 3 ================= -->
+<!-- ================= BLOG 3 =================== -->
 <div class="blog" id="blog3">
-<div class="header-banner">
-<h1>LAWATAN PELADANG MUDA PPK TEMBELING</h1>
-<div class="date">28 Januari 2026 | Brinchang, Cameron Highlands</div>
-</div>
+    <div class="header-banner">
+            <h1>𝟮𝟴 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗥𝗔𝗕𝗨) | 𝗕𝗥𝗜𝗡𝗖𝗛𝗔𝗡𝗚,𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h1> 
+        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗞𝗨𝗠𝗣𝗨𝗟𝗔𝗡 𝗣𝗘𝗟𝗔𝗗𝗔𝗡𝗚 𝗠𝗨𝗗𝗔 𝗣𝗣𝗞 𝗧𝗘𝗠𝗕𝗘𝗟𝗜𝗡𝗚 𝗞𝗘 𝗣𝗣𝗞 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>
+        <hr>
+    </div>
+    <img src="o2.jpg" class="news-hero" alt="Peladang Muda PPK Tembeling">
+    <div class="caption">Kumpulan Peladang Muda bergambar bersama pihak pengurusan.</div>
 
-<img src="o2.jpg" class="news-hero" alt="Peladang Muda PPK Tembeling">
-<div class="caption">Kumpulan Peladang Muda bergambar bersama pihak pengurusan.</div>
+    <div class="blog-content" id="blog3-malay">
+        PPK Cameron Highlands berbesar hati menerima lawatan daripada <span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>.<br>
+        Peserta turut melawat Peladang Outlet Kafe, mencuba hidangan tempatan, dan membeli produk sebagai cenderahati.<br>
+        Lawatan ini menggalakkan semangat keusahawanan muda serta memberi inspirasi kepada generasi peladang muda.
+    </div>
 
-<div class="blog-content" id="blog3-malay">
-PPK Cameron Highlands berbesar hati menerima lawatan daripada <span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>.  
-Peserta turut melawat Peladang Outlet Kafe, mencuba hidangan tempatan, dan membeli produk sebagai cenderahati.  
-Lawatan ini menggalakkan semangat keusahawanan muda serta memberi inspirasi kepada generasi peladang muda.
-</div>
-<div class="blog-content" id="blog3-english" style="display:none;">
-PPK Cameron Highlands was honoured to welcome the <span class="highlight">Young Farmers Group of PPK Tembeling</span>.  
-Participants also visited the Peladang Outlet Cafe, sampled local dishes, and purchased products as souvenirs.  
-This visit encourages young entrepreneurship and inspires the next generation of farmers.
-</div>
+    <div class="blog-content" id="blog3-english" style="display:none;">
+        PPK Cameron Highlands was honoured to welcome the <span class="highlight">Young Farmers Group of PPK Tembeling</span>.<br>
+        Participants also visited the Peladang Outlet Cafe, sampled local dishes, and purchased products as souvenirs.<br>
+        This visit encourages young entrepreneurship and inspires the next generation of farmers.
+    </div>
 
-<button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
+    <button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
 </div>
 
 </div>
