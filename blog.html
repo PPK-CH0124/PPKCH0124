@@ -8,91 +8,56 @@
 /* ===== Global ===== */
 body {
     margin: 0;
-    font-family: Georgia, serif;
-    background: #f4f4f4;
-    color: #222;
-    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
-    padding: 30px 20px;
-}
-
-/* ===== Blog Style ===== */
-.blog {
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    padding: 40px 20px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* ===== Header ===== */
 .header-banner {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .header-banner h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #2e7d32;
-    position: relative;
-}
-.header-banner h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 50px;
-    height: 3px;
-    background: #2e7d32;
-    border-radius: 2px;
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    color: #222;
 }
 .date {
     font-size: 0.9rem;
-    color: #777;
-    border-left: 4px solid #2e7d32;
-    padding-left: 10px;
+    color: #555;
+    margin-bottom: 20px;
 }
 
 /* ===== Hero Image ===== */
-.news-gallery {
-    margin: 30px 0;
-}
 .news-hero {
     width: 100%;
-    max-height: 500px;
+    max-height: 400px;
     object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-.caption {
-    font-size: 0.85rem;
-    color: #555;
-    margin-top: 8px;
-    margin-bottom: 25px;
-    font-style: italic;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-/* ===== Gallery Row ===== */
-.news-row {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-.news-row img {
-    flex: 1;
-    min-width: 250px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+/* ===== Caption ===== */
+.caption {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 25px;
 }
 
 /* ===== Blog Content ===== */
 .blog-content {
-    margin-top: 25px;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
 }
 .highlight {
     font-weight: bold;
@@ -101,7 +66,6 @@ body {
 
 /* ===== Buttons ===== */
 .btn {
-    margin-top: 20px;
     margin-right: 10px;
     padding: 8px 16px;
     border: none;
@@ -112,18 +76,22 @@ body {
     font-size: 0.9rem;
 }
 .nav-btn {
-    background: #444;
+    background: #555;
 }
 
 /* ===== Fade-in animation ===== */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+.blog {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px){
-    .news-row img { height: 180px; }
+    .news-hero { max-height: 250px; }
     .header-banner h1 { font-size: 1.5rem; }
 }
 </style>
@@ -133,111 +101,78 @@ body {
 <div class="container">
 
 <!-- ================= BLOG 1 ================= -->
-<div class="blog" id="blog1">
-
+<div class="blog" id="blog1" style="display:block;">
 <div class="header-banner">
-<h1>LAWATAN KERJA RASMI KE PPK CAMERON HIGHLANDS</h1>
-<div class="date">15 JANUARI 2026 | CAMERON HIGHLANDS</div>
+<h1>Lawatan Kerja Rasmi ke PPK Cameron Highlands</h1>
+<div class="date">15 Januari 2026 | Cameron Highlands</div>
 </div>
 
-<div class="news-gallery">
+<img src="lpp.5.jpg" class="news-hero" alt="Lawatan Kerja Rasmi">
 <div class="caption">Lawatan rasmi wakil pertanian negeri ke PPK Cameron Highlands.</div>
 
-<div class="news-row">
-<img src="lpp.1.jpg" alt="Lawatan 1">
-<img src="lpp.2.jpg" alt="Lawatan 2">
-<img src="lpp.4.jpg" alt="Lawatan 3">
+<div class="blog-content" id="blog1-malay">
+PPK Cameron Highlands telah menerima lawatan kerja rasmi bagi meninjau perkembangan projek dan operasi semasa.  
+Para pegawai turut berkongsi pandangan dan cadangan penambahbaikan untuk memastikan projek terus maju dan mampan.  
+Lawatan ini memberi peluang kepada kakitangan PPK untuk menunjukkan pencapaian mereka dan memperkukuh jaringan dengan pihak negeri.
 </div>
+<div class="blog-content" id="blog1-english" style="display:none;">
+PPK Cameron Highlands received an official visit to review ongoing projects and operational developments.  
+Officers also shared insights and improvement suggestions to ensure projects remain progressive and sustainable.  
+The visit provided an opportunity for staff to highlight achievements and strengthen networks with state officials.
 </div>
 
 <button class="btn" onclick="showLang(1,'malay')">Malay</button>
 <button class="btn" onclick="showLang(1,'english')">English</button>
-
-<div class="blog-content" id="blog1-malay">
-PPK Cameron Highlands telah menerima lawatan kerja rasmi bagi meninjau perkembangan projek dan operasi semasa. Lawatan ini turut memberi peluang kepada pegawai untuk memberikan panduan serta cadangan penambahbaikan bagi memastikan projek terus maju dan mampan. 
-Selain itu, para pengunjung juga diberi penerangan mengenai strategi pertanian moden dan kaedah pengurusan ladang yang efisien untuk meningkatkan hasil dan kualiti tanaman.
-</div>
-
-<div class="blog-content" id="blog1-english" style="display:none;">
-PPK Cameron Highlands received an official visit to review ongoing projects and operational developments. The visit also provided an opportunity for officers to offer guidance and improvement suggestions to ensure projects remain progressive and sustainable. 
-Additionally, visitors were briefed on modern agricultural strategies and farm management techniques to improve crop yield and quality.
-</div>
-
 <button class="btn nav-btn" onclick="showBlog(2)">Next</button>
-
 </div>
 
 <!-- ================= BLOG 2 ================= -->
-<div class="blog" id="blog2" style="display:none;">
-
+<div class="blog" id="blog2">
 <div class="header-banner">
-<h1>PROGRAM JUALAN AGRO MADANI</h1>
-<div class="date">22 JANUARI 2026 | BRINCHANG</div>
+<h1>Program Jualan Agro Madani</h1>
+<div class="date">22 Januari 2026 | Brinchang</div>
 </div>
 
-<div class="news-gallery">
+<img src="pm.1.jpg" class="news-hero" alt="Program Jualan Agro Madani">
 <div class="caption">Orang ramai hadir memeriahkan Program Jualan Agro Madani.</div>
 
-<div class="news-row">
-<img src="pm.1.jpg" alt="Agro Madani 1">
-<img src="pm.2.jpg" alt="Agro Madani 2">
-<img src="pm.3.jpg" alt="Agro Madani 3">    
-</div>
-</div>
-
-<button class="btn" onclick="showLang(2,'malay')">Malay</button>
-<button class="btn" onclick="showLang(2,'english')">English</button>
-
 <div class="blog-content" id="blog2-malay">
-Program Jualan Agro Madani mendapat sambutan yang amat menggalakkan dengan pelbagai produk segar ditawarkan. Para pengunjung berpeluang mencuba produk secara langsung dan membeli hasil tani tempatan sebagai sokongan kepada usahawan. 
-Aktiviti ini juga menjadi platform untuk pertukaran pengalaman antara usahawan dan pembeli, sekaligus memperluas jaringan perniagaan mereka.
+Program Jualan Agro Madani mendapat sambutan menggalakkan dengan pelbagai produk segar ditawarkan.  
+Pengunjung dapat mencuba produk baru, berinteraksi dengan pengeluar tempatan, dan membeli hasil pertanian sebagai cenderahati.  
+Acara ini menjadi platform terbaik untuk mempromosikan produk tempatan kepada komuniti setempat dan pelancong.
 </div>
-
 <div class="blog-content" id="blog2-english" style="display:none;">
-The Agro Madani Sales Program received overwhelming support with various fresh agricultural products offered. Visitors had the opportunity to sample products and purchase local farm produce to support entrepreneurs. 
-The event also served as a platform for knowledge exchange between entrepreneurs and buyers, broadening business networks.
+The Agro Madani Sales Program received overwhelming support with various fresh products offered.  
+Visitors could sample new products, interact with local producers, and purchase agricultural items as souvenirs.  
+The event served as an excellent platform to promote local products to the community and tourists.
 </div>
 
 <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
 <button class="btn nav-btn" onclick="showBlog(3)">Next</button>
-
 </div>
 
 <!-- ================= BLOG 3 ================= -->
-<div class="blog" id="blog3" style="display:none;">
-
+<div class="blog" id="blog3">
 <div class="header-banner">
-<h1>LAWATAN KUMPULAN PELADANG MUDA PPK TEMBELING</h1>
-<div class="date">28 JANUARI 2026 | BRINCHANG, CAMERON HIGHLANDS</div>
+<h1>Lawatan Kumpulan Peladang Muda PPK Tembeling</h1>
+<div class="date">28 Januari 2026 | Brinchang, Cameron Highlands</div>
 </div>
 
-<div class="news-gallery">
-<div class="caption">Kumpulan Peladang Muda PPK Tembeling bergambar bersama pihak pengurusan.</div>
-
-<div class="news-row">
-<img src="o.jpg" alt="Peladang Muda 1">
-<img src="o2.jpg" alt="Peladang Muda 2">
-<img src="o3.jpg" alt="Peladang Muda 3">
-</div>
-</div>
-
-<button class="btn" onclick="showLang(3,'malay')">Malay</button>
-<button class="btn" onclick="showLang(3,'english')">English</button>
+<img src="o2.jpg" class="news-hero" alt="Peladang Muda PPK Tembeling">
+<div class="caption">Kumpulan Peladang Muda bergambar bersama pihak pengurusan.</div>
 
 <div class="blog-content" id="blog3-malay">
-PPK Cameron Highlands berbesar hati menerima lawatan daripada 
-<span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>. Para peserta turut mengunjungi Peladang Outlet Kafe dan membeli produk sebagai cenderahati. Lawatan ini menjadi pengalaman bermakna bagi para peserta dan memberi inspirasi kepada usahawan muda. 
-Mereka turut mendapat perkongsian tentang pengurusan ladang dan teknik pemasaran produk bagi memperkukuh kemahiran keusahawanan.
+PPK Cameron Highlands berbesar hati menerima lawatan daripada <span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>.  
+Peserta turut melawat Peladang Outlet Kafe, mencuba hidangan tempatan, dan membeli produk sebagai cenderahati.  
+Lawatan ini menggalakkan semangat keusahawanan muda serta memberi inspirasi kepada generasi peladang muda.
 </div>
-
 <div class="blog-content" id="blog3-english" style="display:none;">
-PPK Cameron Highlands was honoured to welcome the 
-<span class="highlight">Young Farmers Group of PPK Tembeling</span>. Participants visited Peladang Outlet Cafe and purchased products as souvenirs. This visit became a meaningful experience for participants and inspired young entrepreneurs. 
-They also received guidance on farm management and product marketing techniques to strengthen their entrepreneurial skills.
+PPK Cameron Highlands was honoured to welcome the <span class="highlight">Young Farmers Group of PPK Tembeling</span>.  
+Participants also visited the Peladang Outlet Cafe, sampled local dishes, and purchased products as souvenirs.  
+This visit encourages young entrepreneurship and inspires the next generation of farmers.
 </div>
 
 <button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
-
 </div>
 
 </div>
@@ -245,8 +180,12 @@ They also received guidance on farm management and product marketing techniques 
 <script>
 function showBlog(num){
     document.querySelectorAll('.blog').forEach(b => b.style.display='none');
-    document.getElementById('blog'+num).style.display='block';
+    const blog = document.getElementById('blog'+num);
+    blog.style.display = 'block';
+    blog.style.opacity = 0;
+    setTimeout(()=>blog.style.opacity = 1, 50);
 }
+
 function showLang(num,lang){
     document.getElementById('blog'+num+'-malay').style.display='none';
     document.getElementById('blog'+num+'-english').style.display='none';
