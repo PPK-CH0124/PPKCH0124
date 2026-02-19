@@ -3,71 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPK Cameron Highlands Blog</title>
+<title>PPK Cameron Highlands News</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
     margin:0;
-    padding:0;
-    background:#0f3d2e;
-    color:#fff;
+    font-family: Georgia, serif;
+    background:#f4f4f4;
+    color:#222;
 }
 
 .container{
-    width:90%;
     max-width:1000px;
     margin:auto;
-    padding:20px 0;
+    padding:30px 20px;
+}
+
+.blog{
+    margin-bottom:60px;
 }
 
 .header-banner{
-    background:#145a43;
-    padding:20px;
-    border-radius:10px;
     margin-bottom:20px;
 }
 
 .header-banner h1{
-    margin:0;
-    font-size:1.5rem;
+    font-size:2rem;
+    margin-bottom:10px;
 }
 
 .date{
-    margin-top:8px;
     font-size:0.9rem;
-    opacity:0.8;
+    color:#777;
+    border-left:4px solid #2e7d32;
+    padding-left:10px;
+}
+
+.news-gallery{
+    margin:30px 0;
+}
+
+.news-hero{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:6px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.caption{
+    font-size:0.85rem;
+    color:#555;
+    margin-top:8px;
+    margin-bottom:25px;
+    font-style:italic;
+}
+
+.news-row{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.news-row img{
+    flex:1;
+    min-width:250px;
+    height:220px;
+    object-fit:cover;
+    border-radius:6px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
 .blog-content{
-    background:#1c6b50;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
+    margin-top:25px;
+    line-height:1.7;
+    font-size:1.05rem;
 }
 
 .highlight{
     font-weight:bold;
-    color:#ffd966;
+    color:#2e7d32;
 }
 
 .btn{
-    padding:8px 15px;
-    margin:5px 5px 5px 0;
+    margin-top:20px;
+    margin-right:10px;
+    padding:8px 16px;
     border:none;
-    border-radius:6px;
     cursor:pointer;
-    background:#ffd966;
-    color:#000;
-    font-weight:bold;
+    background:#2e7d32;
+    color:white;
+    border-radius:4px;
+    font-size:0.9rem;
 }
 
-.next-blog{
-    background:#fff;
+.nav-btn{
+    background:#444;
 }
+
 </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -75,98 +111,125 @@ body{
 <!-- ================= BLOG 1 ================= -->
 <div class="blog" id="blog1">
 
-    <div class="header-banner">
-        <h1>LAWATAN KERJA RASMI KE PPK CAMERON HIGHLANDS</h1>
-        <div class="date">15 JANUARI 2026 | CAMERON HIGHLANDS</div>
-    </div>
+<div class="header-banner">
+<h1>LAWATAN KERJA RASMI KE PPK CAMERON HIGHLANDS</h1>
+<div class="date">15 JANUARI 2026 | CAMERON HIGHLANDS</div>
+</div>
 
-    <button class="btn" onclick="showLang(1,'malay')">Malay</button>
-    <button class="btn" onclick="showLang(1,'english')">English</button>
+<div class="news-gallery">
+<img src="blog1-hero.jpg" class="news-hero">
+<div class="caption">Lawatan rasmi wakil pertanian negeri ke PPK Cameron Highlands.</div>
 
-    <div class="blog-content malay" id="blog1-malay">
-        <p>PPK Cameron Highlands telah menerima lawatan kerja rasmi daripada wakil pertanian negeri.</p>
-        <p>Lawatan ini bertujuan meninjau perkembangan projek dan operasi semasa.</p>
-    </div>
+<div class="news-row">
+<img src="lpp.1.jpg">
+<img src="lpp.2.jpg">
+<img src="lpp.4.jpg">
+<img src="lpp.5.jpg">
+</div>
+</div>
 
-    <div class="blog-content english" id="blog1-english" style="display:none;">
-        <p>PPK Cameron Highlands received an official working visit from state agriculture representatives.</p>
-        <p>The visit aimed to review current project developments and operations.</p>
-    </div>
+<button class="btn" onclick="showLang(1,'malay')">Malay</button>
+<button class="btn" onclick="showLang(1,'english')">English</button>
 
-    <button class="btn next-blog" onclick="showBlog(2)">Next Blog</button>
+<div class="blog-content" id="blog1-malay">
+PPK Cameron Highlands telah menerima lawatan kerja rasmi bagi meninjau perkembangan projek dan operasi semasa.
+</div>
+
+<div class="blog-content" id="blog1-english" style="display:none;">
+PPK Cameron Highlands received an official visit to review ongoing projects and operational developments.
+</div>
+
+<button class="btn nav-btn" onclick="showBlog(2)">Next</button>
+
 </div>
 
 <!-- ================= BLOG 2 ================= -->
 <div class="blog" id="blog2" style="display:none;">
 
-    <div class="header-banner">
-        <h1>PROGRAM JUALAN AGRO MADANI</h1>
-        <div class="date">22 JANUARI 2026 | BRINCHANG</div>
-    </div>
+<div class="header-banner">
+<h1>PROGRAM JUALAN AGRO MADANI</h1>
+<div class="date">22 JANUARI 2026 | BRINCHANG</div>
+</div>
 
-    <button class="btn" onclick="showLang(2,'malay')">Malay</button>
-    <button class="btn" onclick="showLang(2,'english')">English</button>
+<div class="news-gallery">
+<img src="blog2-hero.jpg" class="news-hero">
+<div class="caption">Orang ramai hadir memeriahkan Program Jualan Agro Madani.</div>
 
-    <div class="blog-content malay" id="blog2-malay">
-        <p>Program Jualan Agro Madani telah mendapat sambutan yang amat menggalakkan.</p>
-        <p>Pelbagai produk segar dan berkualiti ditawarkan kepada pengunjung.</p>
-    </div>
+<div class="news-row">
+<img src="pm.1.jpg">
+<img src="pm.2.jpg">
+<img src="pm.3.jpg">
+<img src="pm.4.jpg">    
+</div>
+</div>
 
-    <div class="blog-content english" id="blog2-english" style="display:none;">
-        <p>The Agro Madani Sales Program received an overwhelming response.</p>
-        <p>Various fresh and quality products were offered to visitors.</p>
-    </div>
+<button class="btn" onclick="showLang(2,'malay')">Malay</button>
+<button class="btn" onclick="showLang(2,'english')">English</button>
 
-    <button class="btn next-blog" onclick="showBlog(1)">Previous Blog</button>
-    <button class="btn next-blog" onclick="showBlog(3)">Next Blog</button>
+<div class="blog-content" id="blog2-malay">
+Program Jualan Agro Madani mendapat sambutan yang amat menggalakkan dengan pelbagai produk segar ditawarkan.
+</div>
+
+<div class="blog-content" id="blog2-english" style="display:none;">
+The Agro Madani Sales Program received overwhelming support with various fresh agricultural products offered.
+</div>
+
+<button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
+<button class="btn nav-btn" onclick="showBlog(3)">Next</button>
+
 </div>
 
 <!-- ================= BLOG 3 ================= -->
 <div class="blog" id="blog3" style="display:none;">
 
-    <div class="header-banner">
-        <h1>LAWATAN KUMPULAN PELADANG MUDA PPK TEMBELING KE PPK CAMERON HIGHLANDS</h1>
-        <div class="date">28 JANUARI 2026 (RABU) | BRINCHANG, CAMERON HIGHLANDS</div>
-    </div>
+<div class="header-banner">
+<h1>LAWATAN KUMPULAN PELADANG MUDA PPK TEMBELING</h1>
+<div class="date">28 JANUARI 2026 | BRINCHANG, CAMERON HIGHLANDS</div>
+</div>
 
-    <button class="btn" onclick="showLang(3,'malay')">Malay</button>
-    <button class="btn" onclick="showLang(3,'english')">English</button>
+<div class="news-gallery">
+<img src="blog3-hero.jpg" class="news-hero">
+<div class="caption">Kumpulan Peladang Muda PPK Tembeling bergambar bersama pihak pengurusan.</div>
 
-    <div class="blog-content malay" id="blog3-malay">
-        <p>PPK Cameron Highlands berbesar hati menerima lawatan daripada 
-        <span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>.</p>
+<div class="news-row">
+<img src="o.jpg">
+<img src="o2.jpg">
+<img src="o3.jpg">
+    
+</div>
+</div>
 
-        <p>Peserta telah singgah ke Peladang Outlet Kafe dan menikmati pelbagai hidangan serta membeli barangan sebagai buah tangan.</p>
+<button class="btn" onclick="showLang(3,'malay')">Malay</button>
+<button class="btn" onclick="showLang(3,'english')">English</button>
 
-        <p>Terima kasih atas kunjungan anda. Kami sentiasa menanti kehadiran anda! ☕🍰🌿</p>
-    </div>
+<div class="blog-content" id="blog3-malay">
+PPK Cameron Highlands berbesar hati menerima lawatan daripada 
+<span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>. 
+Peserta turut mengunjungi Peladang Outlet Kafe dan membeli produk sebagai cenderahati.
+</div>
 
-    <div class="blog-content english" id="blog3-english" style="display:none;">
-        <p>PPK Cameron Highlands was honoured to receive a visit from the 
-        <span class="highlight">Young Farmers Group of PPK Tembeling</span>.</p>
+<div class="blog-content" id="blog3-english" style="display:none;">
+PPK Cameron Highlands was honoured to welcome the 
+<span class="highlight">Young Farmers Group of PPK Tembeling</span>. 
+Participants visited Peladang Outlet Cafe and purchased products as souvenirs.
+</div>
 
-        <p>Participants visited Peladang Outlet Cafe, enjoyed delicious meals and purchased products as souvenirs.</p>
+<button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
 
-        <p>Thank you for your visit. We look forward to welcoming you again! ☕🍰🌿</p>
-    </div>
-
-    <button class="btn next-blog" onclick="showBlog(2)">Previous Blog</button>
 </div>
 
 </div>
 
 <script>
-function showBlog(blogNumber){
-    document.querySelectorAll('.blog').forEach(blog=>{
-        blog.style.display='none';
-    });
-    document.getElementById('blog'+blogNumber).style.display='block';
+function showBlog(num){
+document.querySelectorAll('.blog').forEach(b=>b.style.display='none');
+document.getElementById('blog'+num).style.display='block';
 }
 
-function showLang(blogNumber,lang){
-    document.getElementById('blog'+blogNumber+'-malay').style.display='none';
-    document.getElementById('blog'+blogNumber+'-english').style.display='none';
-    document.getElementById('blog'+blogNumber+'-'+lang).style.display='block';
+function showLang(num,lang){
+document.getElementById('blog'+num+'-malay').style.display='none';
+document.getElementById('blog'+num+'-english').style.display='none';
+document.getElementById('blog'+num+'-'+lang).style.display='block';
 }
 </script>
 
