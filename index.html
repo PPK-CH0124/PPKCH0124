@@ -615,7 +615,17 @@ window.onclick = function(event) {
   display: block;
   margin: 20px auto;
 }
-</section>
+
+/* sembunyikan text di bawah gambar jika ada auto-caption */
+.management-chart + * {
+  display: none;
+}
+
+/* sembunyikan pseudo-element yang mungkin muncul */
+.management-chart::after,
+.management-chart::before {
+  content: none !important;
+}
 
 <style>
   /* General Section Styling */
@@ -739,6 +749,7 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
 
 
 
