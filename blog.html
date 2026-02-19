@@ -100,31 +100,111 @@ body {
 
 <div class="container">
 
-<!-- ================= BLOG 1 ================= -->
-<div class="blog" id="blog1" style="display:block;">
-<div class="header-banner">
-<h1>Lawatan Kerja Rasmi ke PPK Cameron Highlands</h1>
-<div class="date">15 Januari 2026 | Cameron Highlands</div>
+<!-- ================= BLOG 2 ================= -->
+<div class="blog" id="blog2">
+    <div class="header-banner">
+        <h1>𝟭𝟯 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗦𝗘𝗟𝗔𝗦𝗔) | 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h1>
+        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗞𝗘𝗥𝗝𝗔 𝗣𝗘𝗡𝗚𝗔𝗥𝗔𝗛 𝗟𝗣𝗣 𝗡𝗘𝗚𝗘𝗥𝗜 𝗣𝗔𝗛𝗔𝗡𝗚 𝗞𝗘 𝗣𝗣𝗞 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>
+        <hr>
+    </div>
+
+    <img src="lpp.6.jpg" class="news-hero" alt="Lawatan Kerja Pengarah LPP Pahang ke PPK Cameron Highlands">
+    <div class="caption">
+        🌱 Lawatan rasmi Pengarah LPP Negeri Pahang ke projek <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe 🍅
+    </div>
+
+    <div class="blog-content" id="blog2-malay">
+        PPK Cameron Highlands telah menerima <span class="highlight">lawatan kerja rasmi</span> daripada Pengarah LPP Negeri Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, ke beberapa projek milik PPK termasuk <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe.<br>
+        Lawatan ini bertujuan menilai pelaksanaan projek sedia ada dan berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek terus berdaya maju dan mampan.Turut hadir Timbalan Pengarah LPP, Ketua Unit Pembangunan Ekonomi PP, dan Pengurus Besar PPK Cameron Highlands.
+        PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang dan berharap lawatan ini menjadi pemangkin kepada PPK untuk terus lebih maju, berdaya saing, dan berdaya tahan pada masa akan datang.
+    </div>
+
+    <div class="blog-content" id="blog2-english" style="display:none;">
+        PPK Cameron Highlands received an <span class="highlight">official working visit</span> from the Director of LPP Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, to several PPK projects including <span class="highlight">Tomato Farming</span> and the Peladang Outlet Café.<br>
+        The visit aimed to review current project implementation and share suggestions to ensure projects remain sustainable and progressive.<br>
+        The visit was attended by the Deputy Director of LPP, Chief of Economic Development Unit, and General Manager of PPK Cameron Highlands.<br>
+        PPK Cameron Highlands expresses gratitude for the visit and hopes it will serve as a catalyst for future growth, competitiveness, and sustainability.
+    </div>
+
+    <div class="caption hashtags" style="font-size:0.8rem; color:#888; margin-top:10px;">
+        <span class="hashtag">#ppkcameronhighlands</span> 
+        <span class="hashtag">#LPPMalaysia</span> 
+        <span class="hashtag">#lpppahang</span> 
+        <span class="hashtag">#LPP4farmers</span> 
+        <span class="hashtag">#PerkasaPeladang</span> 
+        <span class="hashtag">#KeluargaPeladang</span> 
+        <span class="hashtag">#KPKMMalaysia</span> 
+        <span class="hashtag">#TeamKPKM</span> 
+        <span class="hashtag">#MalaysiaMadani</span> 
+        <span class="hashtag">#CukupDanTerjamin</span> 
+        <span class="hashtag">#AgroMADANI</span> 
+        <span class="hashtag">#keterjaminanmakananuntukmasadepan</span>
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn lang-btn" onclick="showLang(2,'malay')">Malay</button>
+    <button class="btn lang-btn" onclick="showLang(2,'english')">English</button>
+    <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
+    <button class="btn nav-btn" onclick="showBlog(3)">Next</button>
 </div>
 
-<img src="lpp.5.jpg" class="news-hero" alt="Lawatan Kerja Rasmi">
-<div class="caption">LAWATAN KERJA PENGARAH LPP NEGERI PAHANG KE PPK CAMERON HIGHLANDS.</div>
+<style>
+/* ===== Highlight & Visual ===== */
+.highlight {
+    font-weight: bold;
+    color: #2e7d32;
+}
 
-<div class="blog-content" id="blog1-malay">
-PPK Cameron Highlands telah menerima lawatan kerja rasmi bagi meninjau perkembangan projek dan operasi semasa.  
-Para pegawai turut berkongsi pandangan dan cadangan penambahbaikan untuk memastikan projek terus maju dan mampan.  
-Lawatan ini memberi peluang kepada kakitangan PPK untuk menunjukkan pencapaian mereka dan memperkukuh jaringan dengan pihak negeri.
-</div>
-<div class="blog-content" id="blog1-english" style="display:none;">
-PPK Cameron Highlands received an official visit to review ongoing projects and operational developments.  
-Officers also shared insights and improvement suggestions to ensure projects remain progressive and sustainable.  
-The visit provided an opportunity for staff to highlight achievements and strengthen networks with state officials.
-</div>
+/* Tajuk gradient */
+.header-banner h1 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.header-banner h2 {
+    font-size: 1.2rem;
+    color: #1b3e1b;
+    margin-top:5px;
+}
 
-<button class="btn" onclick="showLang(1,'malay')">Malay</button>
-<button class="btn" onclick="showLang(1,'english')">English</button>
-<button class="btn nav-btn" onclick="showBlog(2)">Next</button>
-</div>
+/* Hero image pop-up */
+.news-hero {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.news-hero:hover { transform: scale(1.02); }
+
+/* Buttons interactive */
+.btn.lang-btn {
+    background: #2e7d32;
+    color: white;
+}
+.btn.lang-btn:hover { background: #66bb6a; }
+.btn.nav-btn {
+    background: #555;
+    color: white;
+}
+.btn.nav-btn:hover { background: #777; }
+
+/* Paragraph rapat */
+.blog-content p, .blog-content br {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+/* Hashtag hover */
+.hashtag:hover {
+    color: #2e7d32;
+    cursor: pointer;
+}
+</style>
+
 
 <!-- ================= BLOG 2 ================= -->
 <div class="blog" id="blog2">
