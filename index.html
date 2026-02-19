@@ -602,60 +602,56 @@ window.onclick = function(event) {
          onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
   </div>
 
-  <!-- Management Section -->
-  <div style="margin-top: 50px;">
-    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PENGURUSAN PPK CAMERON HIGHLANDS</h3>
-    <img src="carta-pengurusan-baru.png" alt="AJP Chart" class="zoomable" 
-         onclick="toggleZoom(this)">" style="width:45%; max-width: 550px; height:auto; margin: 20px block; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-  </div>
-	  
-  </style>
-  /* General Section Styling */
-  #team-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  #team-section h3 {
-    font-size: 1.5rem;
-    color: #333;
-  }
+<!-- Management Section -->
+<div style="margin-top: 50px; text-align:center;">
+  <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">
+    PENGURUSAN PPK CAMERON HIGHLANDS
+  </h3>
+  <img src="carta-pengurusan-baru.png" 
+       alt="Carta Pengurusan" 
+       class="zoomable"
+       onclick="toggleZoom(this)" 
+       style="width:45%; max-width:550px; height:auto; margin: 20px auto; display:block; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+</div>
 
-  #team-section p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
+<!-- Zoom Script -->
+<script>
+  function toggleZoom(image) {
+    image.classList.toggle('zoomed');
   }
+</script>
 
-  /* Styling for Zoomable Images */
+<!-- Zoomable CSS (letakkan dalam <style> atau style.css) -->
+<style>
   .zoomable {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
   }
 
   .zoomable:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hover effect */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
   .zoomable.zoomed {
-    transform: scale(2); /* Zoom effect */
-    z-index: 1000; /* Bring to front */
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-    position: relative; /* Prevent layout shifts */
+    transform: scale(2); /* zoom 2x */
+    z-index: 1000;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+    position: relative;
   }
 
-  /* Responsive Layout */
   @media (max-width: 768px) {
     .zoomable {
-      width: 90%; /* Reduce size for smaller screens */
+      width: 90%;
     }
     .zoomable.zoomed {
-      transform: scale(1.5); /* Adjust zoom for smaller screens */
+      transform: scale(1.5);
     }
   }
 </style>
-
+	  
 <script>
   // Function to toggle zoom
   function toggleZoom(image) {
@@ -731,6 +727,7 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
 
 
 
