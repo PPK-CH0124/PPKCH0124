@@ -3,238 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPK Cameron Highlands News</title>
+<title>PPK Cameron Highlands</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* ===== Global ===== */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-}
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    border-radius: 12px;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4fbf6;
+    color:#333;
+    scroll-behavior:smooth;
 }
 
-/* ===== Header ===== */
-.header-banner {
-    margin-bottom: 20px;
-}
-.header-banner h1 {
-    font-size: 2rem;
-    background: linear-gradient(90deg, #2e7d32, #66bb6a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 0 5px 0;
-}
-.header-banner h2 {
-    font-size: 1.2rem;
-    color: #1b3e1b;
-    margin-top:5px;
-}
-.date {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 15px;
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    z-index:1000;
 }
 
-/* ===== Hero Image ===== */
-.news-hero {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-.news-hero:hover { transform: scale(1.02); }
-
-/* ===== Caption ===== */
-.caption {
-    font-size: 0.85rem;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-.highlight {
-    font-weight: bold;
-    color: #2e7d32;
+nav h2{
+    color:#2e7d32;
 }
 
-/* ===== Blog Content ===== */
-.blog-content {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 25px;
-}
-.blog-content br { margin-bottom: 5px; }
-
-/* ===== Buttons ===== */
-.btn {
-    margin-right: 10px;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-.btn.lang-btn {
-    background: #2e7d32;
-    color: white;
-}
-.btn.lang-btn:hover { background: #66bb6a; }
-.btn.nav-btn {
-    background: #555;
-    color: white;
-}
-.btn.nav-btn:hover { background: #777; }
-
-/* ===== Fade-in animation ===== */
-.blog {
-    display: none;
-    opacity: 0;
-    animation: fadeIn 0.8s forwards;
-}
-@keyframes fadeIn {
-    to { opacity: 1; }
+nav a{
+    text-decoration:none;
+    margin-left:20px;
+    color:#333;
+    font-weight:500;
 }
 
-/* ===== Hashtag hover ===== */
-.hashtag:hover {
-    color: #2e7d32;
-    cursor: pointer;
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('lpp.5.jpg') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px){
-    .news-hero { max-height: 250px; }
-    .header-banner h1 { font-size: 1.5rem; }
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    font-weight:600;
+    background:linear-gradient(135deg,#66bb6a,#43a047);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== SECTION ===== */
+.section{
+    padding:100px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* ===== STATS ===== */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat-card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+}
+
+.stat-card h2{
+    font-size:2rem;
+    color:#2e7d32;
+}
+
+/* ===== BLOG GRID ===== */
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.blog-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.blog-card:hover{
+    transform:translateY(-10px);
+}
+
+.blog-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.blog-card:hover img{
+    transform:scale(1.08);
+}
+
+.blog-content{
+    padding:25px;
+}
+
+.blog-content h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.read-btn{
+    margin-top:15px;
+    padding:10px 22px;
+    border:none;
+    border-radius:30px;
+    background:#cddc39;
+    color:#2e7d32;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:80px;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    padding:16px 20px;
+    border-radius:50%;
+    font-size:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+.hero h1{font-size:2rem;}
+nav{padding:15px 20px;}
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-
-<!-- ================= BLOG 1 =================== -->
-<div class="blog" id="blog1" style="display:block;">
-    <div class="header-banner">
-        <h1>𝟭𝟯 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗦𝗘𝗟𝗔𝗦𝗔) | 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h1>
-        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗞𝗘𝗥𝗝𝗔 𝗣𝗘𝗡𝗚𝗔𝗥𝗔𝗛 𝗟𝗣𝗣 𝗡𝗘𝗚𝗘𝗥𝗜 𝗣𝗔𝗛𝗔𝗡𝗚 𝗞𝗘 𝗣𝗣𝗞 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>
-        <hr>
+<nav>
+    <h2>🌿 PPK Cameron Highlands</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#news">Berita</a>
+        <a href="#">Hubungi</a>
     </div>
-    <img src="lpp.5.jpg" class="news-hero" alt="Lawatan Kerja Pengarah LPP Pahang ke PPK Cameron Highlands">
-    <div class="caption">🌱 Lawatan rasmi Pengarah LPP Negeri Pahang ke projek <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe 🍅</div>
+</nav>
 
-    <div class="blog-content" id="blog1-malay">
-        PPK Cameron Highlands telah menerima <span class="highlight">lawatan kerja rasmi</span> daripada Pengarah LPP Negeri Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, ke beberapa projek milik PPK termasuk <span class="highlight">Tanaman Tomato</span> dan Peladang Outlet Kafe.<br>
-        Lawatan ini bertujuan menilai pelaksanaan projek sedia ada dan berkongsi pandangan, cadangan serta penambahbaikan bagi memastikan projek terus berdaya maju dan mampan.<br>
-        Turut hadir Timbalan Pengarah LPP, Ketua Unit Pembangunan Ekonomi PP, dan Pengurus Besar PPK Cameron Highlands.<br>
-        PPK Cameron Highlands merakamkan jutaan terima kasih atas kesudian pihak LPP Negeri Pahang dan berharap lawatan ini menjadi pemangkin kepada PPK untuk terus lebih maju, berdaya saing, dan berdaya tahan pada masa akan datang.
+<div class="hero">
+    <div>
+        <h1>Memperkasa Peladang</h1>
+        <p>Membina Masa Depan Pertanian Yang Mampan</p>
+        <button onclick="document.getElementById('news').scrollIntoView()">Lihat Berita</button>
     </div>
-
-    <div class="blog-content" id="blog1-english" style="display:none;">
-        PPK Cameron Highlands received an <span class="highlight">official working visit</span> from the Director of LPP Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie, to several PPK projects including <span class="highlight">Tomato Farming</span> and the Peladang Outlet Café.<br>
-        The visit aimed to review current project implementation and share suggestions to ensure projects remain sustainable and progressive.<br>
-        The visit was attended by the Deputy Director of LPP, Chief of Economic Development Unit, and General Manager of PPK Cameron Highlands.<br>
-        PPK Cameron Highlands expresses gratitude for the visit and hopes it will serve as a catalyst for future growth, competitiveness, and sustainability.
-    </div>
-
-    <div class="caption hashtags" style="font-size:0.8rem; color:#888; margin-top:10px;">
-        <span class="hashtag">#ppkcameronhighlands</span> 
-        <span class="hashtag">#LPPMalaysia</span> 
-        <span class="hashtag">#lpppahang</span> 
-        <span class="hashtag">#LPP4farmers</span> 
-        <span class="hashtag">#PerkasaPeladang</span> 
-        <span class="hashtag">#KeluargaPeladang</span> 
-        <span class="hashtag">#KPKMMalaysia</span> 
-        <span class="hashtag">#TeamKPKM</span> 
-        <span class="hashtag">#MalaysiaMadani</span>
-    </div>
-
-    <button class="btn lang-btn" onclick="showLang(1,'malay')">Malay</button>
-    <button class="btn lang-btn" onclick="showLang(1,'english')">English</button>
-    <button class="btn nav-btn" onclick="showBlog(2)">Next</button>
 </div>
 
-<!-- ================= BLOG 2 =================== -->
-<div class="blog" id="blog2">
-    <div class="header-banner">
-        <h1>𝟭𝟰 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗥𝗔𝗕𝗨) | 𝗕𝗥𝗜𝗡𝗖𝗛𝗔𝗡𝗚, 𝗧𝗔𝗡𝗔𝗛 𝗥𝗔𝗧𝗔 </h1>
-        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗦𝗔𝗠𝗕𝗜𝗟 𝗕𝗘𝗟𝗔𝗝𝗔𝗥 𝗞𝗘 𝗣𝗨𝗦𝗔𝗧 𝗣𝗘𝗠𝗣𝗥𝗢𝗦𝗘𝗦𝗔𝗡 𝗣𝗘𝗥𝗧𝗨𝗕𝗨𝗛𝗔𝗡 𝗣𝗘𝗟𝗔𝗗𝗔𝗡𝗚 𝗞𝗔𝗪𝗔𝗦𝗔𝗡 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>   
-        </hr>
-        <div class="date">14 Januari 2026 | Brinchang, Tanah Rata</div>
+<div class="section">
+    <div class="stats">
+        <div class="stat-card">
+            <h2 id="num1">0</h2>
+            <p>Ahli Peladang</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="num2">0</h2>
+            <p>Projek Aktif</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="num3">0</h2>
+            <p>Outlet Operasi</p>
+        </div>
+        <div class="stat-card">
+            <h2>100%</h2>
+            <p>Komitmen</p>
+        </div>
     </div>
-    <img src="pm.1.jpg" class="news-hero" alt="Lawatan Sambil Belajar PPK Cameron Highlands">
-    <div class="caption">Seramai 42 anggota Unit Peladang Kampung Daching Hilir menyertai lawatan sambil belajar ke PPK Cameron Highlands.</div>
-
-    <div class="blog-content" id="blog2-malay">
-        Seramai 42 orang anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan telah menyertai Program Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands.<br>
-        Sepanjang lawatan, peserta diberi pendedahan melalui demonstrasi pembuatan popsicle dan hard ice cream serta berpeluang merasai produk yang dihasilkan.<br>
-        Peserta turut menerima penerangan dan galakan berkaitan pemasaran produk aiskrim, termasuk potensi untuk melaksanakan projek pembuatan aiskrim sendiri sebagai peluang menjana pendapatan.<br>
-        Taklimat projek serta sesi perkongsian maklumat disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor, manakala Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid turut hadir.<br>
-        PPK Cameron Highlands merakamkan ucapan terima kasih atas kesudian memilih lokasi ini sebagai destinasi lawatan. Semoga program ini memberi manfaat dan menjadi pencetus kepada pembangunan projek usahawan peladang pada masa akan datang.
-    </div>
-
-    <div class="blog-content" id="blog2-english" style="display:none;">
-        A total of 42 members of the Kampung Daching Hilir Farmers’ Unit, PPK Sri Klana Lenggeng, Negeri Sembilan, participated in the Educational Visit Program to the PPK Cameron Highlands Processing Center.<br>
-        During the visit, participants were exposed to demonstrations on making popsicles and hard ice cream, and had the opportunity to taste the products.<br>
-        Participants were also provided guidance and encouragement regarding ice cream product marketing, including the potential to undertake their own ice cream projects as income-generating opportunities.<br>
-        Project briefings and information-sharing sessions were delivered by Project Manager, Mr. Rosmairy bin Mohd Noor, while the General Manager of PPK Cameron Highlands, Mr. Mohamad Khairul Izwan bin Mohd Rasid, also attended.<br>
-        PPK Cameron Highlands expresses gratitude for choosing our center as the visit location. We hope this program is beneficial and inspires future development of farmer entrepreneurship projects.
-    </div>
-
-    <button class="btn nav-btn" onclick="showBlog(1)">Previous</button>
-    <button class="btn nav-btn" onclick="showBlog(3)">Next</button>
 </div>
 
-<!-- ================= BLOG 3 =================== -->
-<div class="blog" id="blog3">
-    <div class="header-banner">
-            <h1>𝟮𝟴 𝗝𝗔𝗡𝗨𝗔𝗥𝗜 𝟮𝟬𝟮𝟲 (𝗥𝗔𝗕𝗨) | 𝗕𝗥𝗜𝗡𝗖𝗛𝗔𝗡𝗚,𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h1> 
-        <h2>𝗟𝗔𝗪𝗔𝗧𝗔𝗡 𝗞𝗨𝗠𝗣𝗨𝗟𝗔𝗡 𝗣𝗘𝗟𝗔𝗗𝗔𝗡𝗚 𝗠𝗨𝗗𝗔 𝗣𝗣𝗞 𝗧𝗘𝗠𝗕𝗘𝗟𝗜𝗡𝗚 𝗞𝗘 𝗣𝗣𝗞 𝗖𝗔𝗠𝗘𝗥𝗢𝗡 𝗛𝗜𝗚𝗛𝗟𝗔𝗡𝗗𝗦</h2>
-        <hr>
-    </div>
-    <img src="o2.jpg" class="news-hero" alt="Peladang Muda PPK Tembeling">
-    <div class="caption">Kumpulan Peladang Muda bergambar bersama pihak pengurusan.</div>
+<div class="section" id="news">
+    <h2 style="text-align:center;color:#2e7d32;margin-bottom:50px;">Berita Terkini</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <img src="lpp.5.jpg">
+            <div class="blog-content">
+                <h3>Lawatan Pengarah LPP</h3>
+                <p>Lawatan rasmi ke projek tanaman tomato dan outlet kafe.</p>
+                <button class="read-btn">Baca Lagi</button>
+            </div>
+        </div>
 
-    <div class="blog-content" id="blog3-malay">
-        PPK Cameron Highlands berbesar hati menerima lawatan daripada <span class="highlight">Kumpulan Peladang Muda PPK Tembeling</span>.<br>
-        Peserta turut melawat Peladang Outlet Kafe, mencuba hidangan tempatan, dan membeli produk sebagai cenderahati.<br>
-        Lawatan ini menggalakkan semangat keusahawanan muda serta memberi inspirasi kepada generasi peladang muda.
-    </div>
+        <div class="blog-card">
+            <img src="pm.1.jpg">
+            <div class="blog-content">
+                <h3>Lawatan Sambil Belajar</h3>
+                <p>42 peserta menyertai program pemprosesan dan keusahawanan.</p>
+                <button class="read-btn">Baca Lagi</button>
+            </div>
+        </div>
 
-    <div class="blog-content" id="blog3-english" style="display:none;">
-        PPK Cameron Highlands was honoured to welcome the <span class="highlight">Young Farmers Group of PPK Tembeling</span>.<br>
-        Participants also visited the Peladang Outlet Cafe, sampled local dishes, and purchased products as souvenirs.<br>
-        This visit encourages young entrepreneurship and inspires the next generation of farmers.
+        <div class="blog-card">
+            <img src="o2.jpg">
+            <div class="blog-content">
+                <h3>Peladang Muda</h3>
+                <p>Inspirasi dan semangat generasi peladang baharu.</p>
+                <button class="read-btn">Baca Lagi</button>
+            </div>
+        </div>
     </div>
-
-    <button class="btn nav-btn" onclick="showBlog(2)">Previous</button>
 </div>
 
-</div>
+<footer>
+    © 2026 PPK Cameron Highlands | Semua Hak Cipta Terpelihara
+</footer>
+
+<a href="https://wa.me/60123456789" class="whatsapp">💬</a>
 
 <script>
-function showBlog(num){
-    document.querySelectorAll('.blog').forEach(b => b.style.display='none');
-    const blog = document.getElementById('blog'+num);
-    blog.style.display = 'block';
-    blog.style.opacity = 0;
-    setTimeout(()=>blog.style.opacity = 1, 50);
+function counter(id,target){
+let count=0;
+let interval=setInterval(()=>{
+count+=Math.ceil(target/50);
+if(count>=target){count=target;clearInterval(interval);}
+document.getElementById(id).innerText=count;
+},40);
 }
-
-function showLang(num,lang){
-    document.getElementById('blog'+num+'-malay').style.display='none';
-    document.getElementById('blog'+num+'-english').style.display='none';
-    document.getElementById('blog'+num+'-'+lang).style.display='block';
-}
+counter("num1",1200);
+counter("num2",35);
+counter("num3",5);
 </script>
 
 </body>
