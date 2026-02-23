@@ -37,7 +37,15 @@ nav button:hover{background:#66bb6a;}
 
 /* FEATURED */
 .featured{position:relative; border-radius:15px; overflow:hidden; min-height:450px; box-shadow:0 15px 35px rgba(0,0,0,0.15);}
-.featured img{width:100%; height:450px; object-fit:cover;}
+.featured img{
+  width:100%; 
+  height:100%;
+  object-fit:cover;
+  transition: transform 0.4s ease;
+}
+.featured img:hover {
+  transform:scale(1.1); /* Zoom effect */
+}
 .featured-content{position:absolute; bottom:0; left:0; right:0; padding:20px; background:linear-gradient(to top, rgba(46,125,50,0.85), transparent); color:white; font-weight:700; font-size:1.6rem;}
 .featured button{position:absolute; bottom:25px; right:25px; padding:10px 20px; border:none; border-radius:25px; background:#cddc39; color:#1b5e20; font-weight:600; cursor:pointer; transition:0.3s;}
 .featured button:hover{background:#aed581;}
