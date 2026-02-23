@@ -104,11 +104,12 @@ nav button:hover{background:#66bb6a;}
         <button onclick="openNews('28 Januari 2026 – Lawatan Peladang Muda','PPK Cameron Highlands berbesar hati menerima lawatan daripada Kumpulan Peladang Muda PPK Tembeling. Para peserta dibawa singgah ke Peladang Outlet Kafe PPK Cameron Highlands dan berkesempatan merasai pelbagai hidangan yang dijual. Pihak PPK merakamkan jutaan terima kasih.')">Lihat Berita</button>
       </div>
     </div>
+  </div>
 
   <!-- FEATURED NEWS -->
   <div class="featured">
-    <img src=g.3.jpg" alt=" ">
-    <div class="featured-content">👑 6 November 2025 – Majlis Mengadap Sultan</div>
+    <img src="g.4.jpg" alt="Majlis Mengadap Sultan">
+    <div class="featured-content">👑 6 November 2025 – Majlis Mengadap Sultan Pahang</div>
     <button onclick="openNews('6 November 2025 – Majlis Mengadap Sultan Pahang','Pengerusi LPP dan Ketua Pengarah LPP menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP, dan produk PPK Cameron Highlands yang mendapat pengiktirafan.')">Lihat Berita</button>
   </div>
 
@@ -154,48 +155,81 @@ nav button:hover{background:#66bb6a;}
 </div>
 
 <script>
-const newsData=[
+// News Data
+const newsData = [
   {title:'6 Nov 2025 – Majlis Mengadap Sultan Pahang', content:'Pengerusi LPP, YBhg. Dato’ Wira Haji Mahfuz bin Haji Omar bersama Ketua Pengarah LPP menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP, dan produk PPK Cameron Highlands yang mendapat pengiktirafan.'},
   {title:'13 Jan 2026 – Lawatan Kerja', content:'PPK Cameron Highlands menerima lawatan kerja daripada Pengarah LPP Negeri Pahang ke projek Tanaman Tomato dan Peladang Outlet Kafe. Lawatan bertujuan menilai pelaksanaan projek serta berkongsi cadangan.'},
   {title:'14 Jan 2026 – Lawatan Sambil Belajar', content:'Seramai 42 anggota Unit Peladang menyertai lawatan. Peserta diberi pendedahan demonstrasi popsicle & ice cream serta pemasaran produk.'},
   {title:'28 Jan 2026 – Lawatan Peladang Muda', content:'PPK Cameron Highlands menerima lawatan daripada Kumpulan Peladang Muda PPK Tembeling. Para peserta dibawa ke Peladang Outlet Kafe dan merasai hidangan.'}
 ];
 
-function openNews(title,content){
-  document.getElementById('modalTitle').innerText=title;
-  document.getElementById('modalContent').innerText=content;
+// Open News Function
+function openNews(title, content) {
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalContent').innerText = content;
   document.getElementById('newsModal').classList.add('active');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
-function closeModal(){document.getElementById('newsModal').classList.remove('active'); document.body.style.overflow='';}
 
-function openSearch(){document.getElementById('searchModal').classList.add('active'); document.getElementById('searchInput').focus();}
-function closeSearch(){document.getElementById('searchModal').classList.remove('active'); document.getElementById('searchResults').innerHTML='';}
+// Close News Modal
+function closeModal() {
+  document.getElementById('newsModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
 
-function openComment(){document.getElementById('commentModal').classList.add('active');}
-function closeComment(){document.getElementById('commentModal').classList.remove('active');}
+// Open Search Modal
+function openSearch() {
+  document.getElementById('searchModal').classList.add('active');
+  document.getElementById('searchInput').focus();
+}
 
-function searchNews(){
-  const query=document.getElementById('searchInput').value.toLowerCase();
-  const results=document.getElementById('searchResults');
-  results.innerHTML='';
-  newsData.forEach(n=>{
-    if(n.title.toLowerCase().includes(query) || n.content.toLowerCase().includes(query)){
-      const div=document.createElement('div');
-      div.style.padding='8px'; div.style.cursor='pointer'; div.style.borderBottom='1px solid #eee';
-      div.innerText=n.title;
-      div.onclick=()=>{openNews(n.title,n.content); closeSearch();}
+// Close Search Modal
+function closeSearch() {
+  document.getElementById('searchModal').classList.remove('active');
+  document.getElementById('searchResults').innerHTML = '';
+}
+
+// Open Comment Modal
+function openComment() {
+  document.getElementById('commentModal').classList.add('active');
+}
+
+// Close Comment Modal
+function closeComment() {
+  document.getElementById('commentModal').classList.remove('active');
+}
+
+// Search Function
+function searchNews() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const results = document.getElementById('searchResults');
+  results.innerHTML = '';
+  newsData.forEach(n => {
+    if (n.title.toLowerCase().includes(query) || n.content.toLowerCase().includes(query)) {
+      const div = document.createElement('div');
+      div.style.padding = '8px';
+      div.style.cursor = 'pointer';
+      div.style.borderBottom = '1px solid #eee';
+      div.innerText = n.title;
+      div.onclick = () => { openNews(n.title, n.content); closeSearch(); }
       results.appendChild(div);
     }
   });
 }
 
-function submitComment(){
-  const text=document.getElementById('commentText').value.trim();
-  if(text===''){alert('Sila taip komen.'); return;}
-  const list=document.getElementById('commentList');
-  const p=document.createElement('p'); p.innerText=text; p.style.background='#f0f8f5'; p.style.padding='8px'; p.style.borderRadius='8px'; p.style.marginBottom='8px';
-  list.appendChild(p); document.getElementById('commentText').value='';
+// Submit Comment Function
+function submitComment() {
+  const text = document.getElementById('commentText').value.trim();
+  if (text === '') { alert('Sila taip komen.'); return; }
+  const list = document.getElementById('commentList');
+  const p = document.createElement('p');
+  p.innerText = text;
+  p.style.background = '#f0f8f5';
+  p.style.padding = '8px';
+  p.style.borderRadius = '8px';
+  p.style.marginBottom = '8px';
+  list.appendChild(p);
+  document.getElementById('commentText').value = '';
 }
 </script>
 
