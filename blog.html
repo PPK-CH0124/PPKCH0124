@@ -1,290 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPK Cameron Highlands</title>
+<title>PPK Cameron Highlands - Berita</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif; background:#f4f9f6; color:#333;}
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4fbf6;
-    color:#333;
-    scroll-behavior:smooth;
-}
-
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    z-index:1000;
+  position:fixed; width:100%; top:0;
+  background:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08); z-index:1000;
 }
+nav h2{color:#2e7d32;font-weight:700;font-size:1.5rem;}
+nav .nav-actions{display:flex; gap:20px;}
+nav button{padding:8px 15px; border:none; border-radius:25px; background:#2e7d32; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
+nav button:hover{background:#66bb6a;}
 
-nav h2{
-    color:#2e7d32;
-}
+/* MAIN CONTAINER */
+.container{max-width:1200px; margin:100px auto 60px; padding:0 20px; display:grid; grid-template-columns:1fr 2fr 1fr; gap:30px;}
 
-nav a{
-    text-decoration:none;
-    margin-left:20px;
-    color:#333;
-    font-weight:500;
-}
+/* SIDE NEWS */
+.side-news{display:flex; flex-direction:column; gap:20px;}
+.side-card{background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s;}
+.side-card:hover{transform:translateY(-3px);}
+.side-card img{width:100%; height:160px; object-fit:cover;}
+.side-card div{padding:15px;}
+.side-card h4{font-size:1rem; color:#2e7d32; font-weight:600;}
+.side-card button{margin-top:10px; padding:8px 18px; border:none; border-radius:25px; background:#66bb6a; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
+.side-card button:hover{background:#2e7d32;}
 
-/* ===== HERO ===== */
-.hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-    url('lpp.5.jpg') center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
+/* FEATURED */
+.featured{position:relative; border-radius:15px; overflow:hidden; min-height:450px; box-shadow:0 15px 35px rgba(0,0,0,0.15);}
+.featured img{width:100%; height:450px; object-fit:cover;}
+.featured-content{position:absolute; bottom:0; left:0; right:0; padding:20px; background:linear-gradient(to top, rgba(46,125,50,0.85), transparent); color:white; font-weight:700; font-size:1.6rem;}
+.featured button{position:absolute; bottom:25px; right:25px; padding:10px 20px; border:none; border-radius:25px; background:#cddc39; color:#1b5e20; font-weight:600; cursor:pointer; transition:0.3s;}
+.featured button:hover{background:#aed581;}
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
+/* LATEST NEWS */
+.latest{background:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.latest h3{margin-bottom:15px; color:#2e7d32;}
+.latest-item{padding:10px 0; border-bottom:1px solid #eee; cursor:pointer;}
+.latest-item:last-child{border:none;}
+.latest-item:hover{color:#2e7d32;}
 
-.hero p{
-    font-size:1.2rem;
-    margin-bottom:30px;
-}
+/* MODAL */
+.modal{display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center; padding:20px;}
+.modal.active{display:flex;}
+.modal-content{background:#fff; width:100%; max-width:800px; max-height:90vh; overflow-y:auto; border-radius:15px; padding:30px; position:relative;}
+.modal-close{position:absolute; top:15px; right:20px; font-size:28px; font-weight:700; color:#444; cursor:pointer;}
+.modal-close:hover{color:#2e7d32;}
+.modal-content h2{margin-bottom:15px; color:#2e7d32;}
+.modal-content p{line-height:1.6; margin-bottom:10px;}
+.modal-content textarea{width:100%; min-height:100px; padding:10px; margin-top:10px; border-radius:10px; border:1px solid #ccc; resize:none;}
+.modal-content button{margin-top:10px; padding:8px 20px; border:none; border-radius:25px; background:#2e7d32; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
+.modal-content button:hover{background:#66bb6a;}
 
-.hero button{
-    padding:14px 32px;
-    border:none;
-    border-radius:50px;
-    font-weight:600;
-    background:linear-gradient(135deg,#66bb6a,#43a047);
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.hero button:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.3);
-}
-
-/* ===== SECTION ===== */
-.section{
-    padding:100px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-
-/* ===== STATS ===== */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:30px;
-    text-align:center;
-}
-
-.stat-card{
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    transition:0.4s;
-}
-
-.stat-card:hover{
-    transform:translateY(-10px);
-}
-
-.stat-card h2{
-    font-size:2rem;
-    color:#2e7d32;
-}
-
-/* ===== BLOG GRID ===== */
-.blog-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.blog-card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    transition:0.4s;
-}
-
-.blog-card:hover{
-    transform:translateY(-10px);
-}
-
-.blog-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.blog-card:hover img{
-    transform:scale(1.08);
-}
-
-.blog-content{
-    padding:25px;
-}
-
-.blog-content h3{
-    color:#2e7d32;
-    margin-bottom:10px;
-}
-
-.read-btn{
-    margin-top:15px;
-    padding:10px 22px;
-    border:none;
-    border-radius:30px;
-    background:#cddc39;
-    color:#2e7d32;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:80px;
-}
-
-/* ===== WHATSAPP ===== */
-.whatsapp{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    background:#25D366;
-    color:white;
-    padding:16px 20px;
-    border-radius:50%;
-    font-size:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    text-decoration:none;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-.hero h1{font-size:2rem;}
-nav{padding:15px 20px;}
-}
+/* RESPONSIVE */
+@media(max-width:1000px){.container{grid-template-columns:1fr;}.featured img{height:300px;}.featured-content{font-size:1.3rem;}}
+@media(max-width:600px){.latest{margin-top:30px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-    <h2>🌿 PPK Cameron Highlands</h2>
-    <div>
-        <a href="#">Home</a>
-        <a href="#news">Berita</a>
-        <a href="#">Hubungi</a>
-    </div>
+  <h2>🌿 PPK Cameron Highlands</h2>
+  <div class="nav-actions">
+    <button onclick="openSearch()">Search</button>
+    <button onclick="openComment()">Comment</button>
+  </div>
 </nav>
 
-<div class="hero">
-    <div>
-        <h1>Memperkasa Peladang</h1>
-        <p>Membina Masa Depan Pertanian Yang Mampan</p>
-        <button onclick="document.getElementById('news').scrollIntoView()">Lihat Berita</button>
+<div class="container">
+
+  <!-- LEFT SIDE NEWS -->
+  <div class="side-news">
+    <div class="side-card">
+      <img src="lawatan_kerja.jpg" alt="Lawatan Kerja">
+      <div>
+        <h4>13 Januari 2026 – Lawatan Kerja Pengarah LPP</h4>
+        <button onclick="openNews('13 Januari 2026 – Lawatan Kerja Pengarah LPP','PPK Cameron Highlands menerima lawatan kerja daripada Pengarah LPP Negeri Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie ke projek Tanaman Tomato dan Peladang Outlet Kafe. Lawatan bertujuan menilai pelaksanaan projek serta berkongsi cadangan penambahbaikan. PPK Cameron Highlands merakamkan terima kasih.')">Lihat Berita</button>
+      </div>
     </div>
+
+    <div class="side-card">
+      <img src="lpp.5.jpg" alt="Lawatan Sambil Belajar">
+      <div>
+        <h4>14 Januari 2026 – Lawatan Sambil Belajar</h4>
+        <button onclick="openNews('14 Januari 2026 – Lawatan Sambil Belajar','Seramai 42 anggota Unit Peladang Kampung Daching Hilir, PPK Sri Klana Lenggeng, Negeri Sembilan menyertai program lawatan ini. Peserta diberi pendedahan demonstrasi pembuatan popsicle dan hard ice cream serta penerangan pemasaran produk aiskrim. Taklimat disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor serta Pengurus Besar PPK Cameron Highlands, Encik Mohamad Khairul Izwan bin Mohd Rasid.')">Lihat Berita</button>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <img src="o2.jpg" alt="Lawatan Peladang Muda">
+      <div>
+        <h4>28 Januari 2026 – Lawatan Peladang Muda</h4>
+        <button onclick="openNews('28 Januari 2026 – Lawatan Peladang Muda','PPK Cameron Highlands berbesar hati menerima lawatan daripada Kumpulan Peladang Muda PPK Tembeling. Para peserta dibawa singgah ke Peladang Outlet Kafe PPK Cameron Highlands dan berkesempatan merasai pelbagai hidangan yang dijual. Pihak PPK merakamkan jutaan terima kasih.')">Lihat Berita</button>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <img src="g.4.jpg" alt="Majlis Mengadap Sultan">
+      <div>
+        <h4>6 November 2025 – Majlis Mengadap Sultan Pahang</h4>
+        <button onclick="openNews('6 November 2025 – Majlis Mengadap Sultan Pahang','Pengerusi LPP, YBhg. Dato’ Wira Haji Mahfuz bin Haji Omar bersama Ketua Pengarah LPP, YBrs. Encik Amir bin Matamin telah menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP dan produk PPK Cameron Highlands yang mendapat pengiktirafan Pahang Best.')">Lihat Berita</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED NEWS -->
+  <div class="featured">
+    <img src=g.4.jpg" alt="Featured News">
+    <div class="featured-content">👑 6 November 2025 – Majlis Mengadap Sultan</div>
+    <button onclick="openNews('6 November 2025 – Majlis Mengadap Sultan Pahang','Pengerusi LPP dan Ketua Pengarah LPP menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP, dan produk PPK Cameron Highlands yang mendapat pengiktirafan.')">Lihat Berita</button>
+  </div>
+
+  <!-- LATEST NEWS -->
+  <div class="latest">
+    <h3>📰 Berita Terkini</h3>
+    <div class="latest-item" onclick="openNews('6 Nov 2025 – Majlis Mengadap Sultan Pahang','Majlis menghadap Sultan Pahang dan perkembangan projek PPK Tioman dan IPP.')">6 Nov 2025 – Majlis Mengadap Sultan</div>
+    <div class="latest-item" onclick="openNews('13 Jan 2026 – Lawatan Kerja','Lawatan kerja Pengarah LPP ke projek Tanaman Tomato & Peladang Outlet Kafe.')">13 Jan 2026 – Lawatan Kerja</div>
+    <div class="latest-item" onclick="openNews('14 Jan 2026 – Lawatan Sambil Belajar','Peserta lawatan diberi pendedahan demonstrasi popsicle & ice cream serta pemasaran produk.')">14 Jan 2026 – Lawatan Sambil Belajar</div>
+    <div class="latest-item" onclick="openNews('28 Jan 2026 – Lawatan Peladang Muda','Kumpulan Peladang Muda lawatan ke Peladang Outlet Kafe dan merasai hidangan.')">28 Jan 2026 – Lawatan Peladang Muda</div>
+  </div>
+
 </div>
 
-<div class="section">
-    <div class="stats">
-        <div class="stat-card">
-            <h2 id="num1">0</h2>
-            <p>Ahli Peladang</p>
-        </div>
-        <div class="stat-card">
-            <h2 id="num2">0</h2>
-            <p>Projek Aktif</p>
-        </div>
-        <div class="stat-card">
-            <h2 id="num3">0</h2>
-            <p>Outlet Operasi</p>
-        </div>
-        <div class="stat-card">
-            <h2>100%</h2>
-            <p>Komitmen</p>
-        </div>
-    </div>
+<!-- MODAL NEWS -->
+<div id="newsModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">✖</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalContent"></p>
+  </div>
 </div>
 
-<div class="section" id="news">
-    <h2 style="text-align:center;color:#2e7d32;margin-bottom:50px;">Berita Terkini</h2>
-    <div class="blog-grid">
-        <div class="blog-card">
-            <img src="lpp.5.jpg">
-            <div class="blog-content">
-                <h3>Lawatan Pengarah LPP</h3>
-                <p>Lawatan rasmi ke projek tanaman tomato dan outlet kafe.</p>
-                <button class="read-btn">Baca Lagi</button>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <img src="pm.1.jpg">
-            <div class="blog-content">
-                <h3>Lawatan Sambil Belajar</h3>
-                <p>42 peserta menyertai program pemprosesan dan keusahawanan.</p>
-                <button class="read-btn">Baca Lagi</button>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <img src="o2.jpg">
-            <div class="blog-content">
-                <h3>Peladang Muda</h3>
-                <p>Inspirasi dan semangat generasi peladang baharu.</p>
-                <button class="read-btn">Baca Lagi</button>
-            </div>
-        </div>
-    </div>
+<!-- MODAL SEARCH -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeSearch()">✖</span>
+    <h2>Carian Berita</h2>
+    <input type="text" id="searchInput" placeholder="Taip kata kunci..." style="width:100%; padding:10px; margin-top:15px; border-radius:10px; border:1px solid #ccc;" onkeyup="searchNews()">
+    <div id="searchResults" style="margin-top:15px;"></div>
+  </div>
 </div>
 
-<footer>
-    © 2026 PPK Cameron Highlands | Semua Hak Cipta Terpelihara
-</footer>
-
-<a href="https://wa.me/60123456789" class="whatsapp">💬</a>
+<!-- MODAL COMMENT -->
+<div id="commentModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeComment()">✖</span>
+    <h2>Tambah Komen</h2>
+    <textarea id="commentText" placeholder="Taip komen anda..."></textarea>
+    <button onclick="submitComment()">Hantar Komen</button>
+    <div id="commentList" style="margin-top:15px;"></div>
+  </div>
+</div>
 
 <script>
-function counter(id,target){
-let count=0;
-let interval=setInterval(()=>{
-count+=Math.ceil(target/50);
-if(count>=target){count=target;clearInterval(interval);}
-document.getElementById(id).innerText=count;
-},40);
+const newsData=[
+  {title:'6 Nov 2025 – Majlis Mengadap Sultan Pahang', content:'Pengerusi LPP, YBhg. Dato’ Wira Haji Mahfuz bin Haji Omar bersama Ketua Pengarah LPP menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP, dan produk PPK Cameron Highlands yang mendapat pengiktirafan.'},
+  {title:'13 Jan 2026 – Lawatan Kerja', content:'PPK Cameron Highlands menerima lawatan kerja daripada Pengarah LPP Negeri Pahang ke projek Tanaman Tomato dan Peladang Outlet Kafe. Lawatan bertujuan menilai pelaksanaan projek serta berkongsi cadangan.'},
+  {title:'14 Jan 2026 – Lawatan Sambil Belajar', content:'Seramai 42 anggota Unit Peladang menyertai lawatan. Peserta diberi pendedahan demonstrasi popsicle & ice cream serta pemasaran produk.'},
+  {title:'28 Jan 2026 – Lawatan Peladang Muda', content:'PPK Cameron Highlands menerima lawatan daripada Kumpulan Peladang Muda PPK Tembeling. Para peserta dibawa ke Peladang Outlet Kafe dan merasai hidangan.'}
+];
+
+function openNews(title,content){
+  document.getElementById('modalTitle').innerText=title;
+  document.getElementById('modalContent').innerText=content;
+  document.getElementById('newsModal').classList.add('active');
+  document.body.style.overflow='hidden';
 }
-counter("num1",1200);
-counter("num2",35);
-counter("num3",5);
+function closeModal(){document.getElementById('newsModal').classList.remove('active'); document.body.style.overflow='';}
+
+function openSearch(){document.getElementById('searchModal').classList.add('active'); document.getElementById('searchInput').focus();}
+function closeSearch(){document.getElementById('searchModal').classList.remove('active'); document.getElementById('searchResults').innerHTML='';}
+
+function openComment(){document.getElementById('commentModal').classList.add('active');}
+function closeComment(){document.getElementById('commentModal').classList.remove('active');}
+
+function searchNews(){
+  const query=document.getElementById('searchInput').value.toLowerCase();
+  const results=document.getElementById('searchResults');
+  results.innerHTML='';
+  newsData.forEach(n=>{
+    if(n.title.toLowerCase().includes(query) || n.content.toLowerCase().includes(query)){
+      const div=document.createElement('div');
+      div.style.padding='8px'; div.style.cursor='pointer'; div.style.borderBottom='1px solid #eee';
+      div.innerText=n.title;
+      div.onclick=()=>{openNews(n.title,n.content); closeSearch();}
+      results.appendChild(div);
+    }
+  });
+}
+
+function submitComment(){
+  const text=document.getElementById('commentText').value.trim();
+  if(text===''){alert('Sila taip komen.'); return;}
+  const list=document.getElementById('commentList');
+  const p=document.createElement('p'); p.innerText=text; p.style.background='#f0f8f5'; p.style.padding='8px'; p.style.borderRadius='8px'; p.style.marginBottom='8px';
+  list.appendChild(p); document.getElementById('commentText').value='';
+}
 </script>
 
 </body>
