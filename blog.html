@@ -1,263 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPK Cameron Highlands - Berita</title>
-
+<title>Blog | PPK Cameron Highlands</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif; background:#f4f9f6; color:#333;}
-
-/* NAVBAR */
-nav{
-  position:fixed; width:100%; top:0;
-  background:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08); z-index:1000;
-}
-nav h2{color:#2e7d32;font-weight:700;font-size:1.5rem;}
-nav .nav-actions{display:flex; gap:20px;}
-nav button{padding:8px 15px; border:none; border-radius:25px; background:#2e7d32; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
-nav button:hover{background:#66bb6a;}
-
-/* MAIN CONTAINER */
-.container{
-  max-width:1200px; 
-  margin:100px auto 60px; 
-  padding:0 20px; 
-  display:grid; 
-  grid-template-columns:1fr; 
-  gap:30px;
-}
-
-/* Desktop: 3 columns with featured spanning full width */
-@media(min-width:1000px){
-  .container{
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-  .featured{
-    grid-column: 1 / -1; /* featured melintang penuh */
-  }
-}
-
-/* SIDE NEWS */
-.side-news{display:flex; flex-direction:column; gap:20px;}
-.side-card{background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s;}
-.side-card:hover{transform:translateY(-3px);}
-.side-card img{width:100%; height:160px; object-fit:cover;}
-.side-card div{padding:15px;}
-.side-card h4{font-size:1rem; color:#2e7d32; font-weight:600;}
-.side-card button{margin-top:10px; padding:8px 18px; border:none; border-radius:25px; background:#66bb6a; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
-.side-card button:hover{background:#2e7d32;}
-
-/* FEATURED */
-.featured{
-  position:relative; 
-  border-radius:15px; 
-  overflow:hidden; 
-  min-height:450px; 
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-.featured img{
-  width:100%; 
-  height:100%;
-  object-fit:cover;
-  transition: transform 0.4s ease;
-}
-.featured img:hover {
-  transform:scale(1.1);
-}
-.featured-content{
-  position:absolute; bottom:0; left:0; right:0; 
-  padding:20px; 
-  background:linear-gradient(to top, rgba(46,125,50,0.85), transparent); 
-  color:white; 
-  font-weight:700; 
-  font-size:1.6rem;
-}
-.featured button{
-  position:absolute; bottom:25px; right:25px; padding:10px 20px; border:none; border-radius:25px; background:#cddc39; color:#1b5e20; font-weight:600; cursor:pointer; transition:0.3s;
-}
-.featured button:hover{background:#aed581;}
-
-/* LATEST NEWS */
-.latest{background:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.08);}
-.latest h3{margin-bottom:15px; color:#2e7d32;}
-.latest-item{padding:10px 0; border-bottom:1px solid #eee; cursor:pointer;}
-.latest-item:last-child{border:none;}
-.latest-item:hover{color:#2e7d32;}
+body{font-family:'Poppins',sans-serif;background:#f2f7f4;color:#333;}
+header{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:white;padding:60px 20px;text-align:center;}
+header h1{font-size:2.2rem;font-weight:700;}
+.container{width:90%;max-width:1200px;margin:60px auto;}
+.featured{position:relative;border-radius:15px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.15);margin-bottom:60px;cursor:pointer;}
+.featured img{width:100%;height:450px;object-fit:cover;transition:transform 0.4s ease;}
+.featured:hover img{transform:scale(1.05);}
+.featured-content{position:absolute;bottom:0;left:0;right:0;padding:30px;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);color:white;}
+.featured-content h2{font-size:1.8rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:0.4s;display:flex;flex-direction:column;}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.15);}
+.card img{width:100%;height:220px;object-fit:cover;}
+.card-content{padding:25px;flex-grow:1;}
+.card-content h3{color:#1b5e20;margin-bottom:10px;}
+.card-content .date{font-size:13px;color:gray;margin-bottom:15px;}
+.card-content p{line-height:1.6;font-size:14px;margin-bottom:15px;}
+.card-content button{margin-top:auto;padding:10px 20px;border:none;border-radius:25px;background:#2e7d32;color:white;font-weight:600;cursor:pointer;transition:0.3s;}
+.card-content button:hover{background:#66bb6a;}
+footer{margin-top:80px;background:#1b5e20;color:white;text-align:center;padding:30px;}
 
 /* MODAL */
-.modal{display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center; padding:20px;}
+.modal{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
 .modal.active{display:flex;}
-.modal-content{background:#fff; width:100%; max-width:800px; max-height:90vh; overflow-y:auto; border-radius:15px; padding:30px; position:relative;}
-.modal-close{position:absolute; top:15px; right:20px; font-size:28px; font-weight:700; color:#444; cursor:pointer;}
+.modal-content{background:#fff;width:100%;max-width:900px;border-radius:15px;padding:30px;position:relative;animation:fadeIn 0.3s ease;}
+.modal-content img{width:100%;border-radius:15px;margin-bottom:20px;}
+.modal-close{position:absolute;top:15px;right:20px;font-size:28px;font-weight:700;color:#444;cursor:pointer;transition:0.3s;}
 .modal-close:hover{color:#2e7d32;}
-.modal-content h2{margin-bottom:15px; color:#2e7d32;}
-.modal-content p{line-height:1.6; margin-bottom:10px;}
-.modal-content textarea{width:100%; min-height:100px; padding:10px; margin-top:10px; border-radius:10px; border:1px solid #ccc; resize:none;}
-.modal-content button{margin-top:10px; padding:8px 20px; border:none; border-radius:25px; background:#2e7d32; color:white; font-weight:600; cursor:pointer; transition:0.3s;}
-.modal-content button:hover{background:#66bb6a;}
+.modal-content h2{margin-bottom:15px;color:#1b5e20;}
+.modal-content p{line-height:1.6;margin-bottom:10px;}
 
-/* RESPONSIVE */
-@media(max-width:600px){
-  .latest{margin-top:30px;}
-  .featured-content{font-size:1.3rem;}
-}
+/* ANIMATION */
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:768px){.featured img{height:300px;}}
 </style>
 </head>
-
 <body>
 
-<nav>
-  <h2>🌿 PPK Cameron Highlands</h2>
-  <div class="nav-actions">
-    <button onclick="openSearch()">Search</button>
-    <button onclick="openComment()">Comment</button>
-  </div>
-</nav>
+<header>
+    <h1>Blog PPK Cameron Highlands</h1>
+</header>
 
 <div class="container">
 
-  <!-- LEFT SIDE NEWS -->
-  <div class="side-news">
-    <div class="side-card">
-      <img src="lpp.5.jpg" alt="Lawatan Kerja">
-      <div>
-        <h4>13 Januari 2026 – Lawatan Kerja Pengarah LPP</h4>
-        <button onclick="openNews('13 Januari 2026 – Lawatan Kerja Pengarah LPP','PPK Cameron Highlands menerima lawatan kerja daripada Pengarah LPP Negeri Pahang ke projek Tanaman Tomato dan Peladang Outlet Kafe.')">Lihat Berita</button>
-      </div>
+<!-- FEATURED - MAJLIS SULTAN -->
+<div class="featured" onclick="openModal('majlisultan')">
+    <img src="g.4.jpg" alt="Majlis Mengadap Sultan Pahang">
+    <div class="featured-content">
+        <h2>Majlis Mengadap Kebawah Duli Paduka Baginda Sultan Pahang</h2>
+        <p>6 November 2025 | Ampang, Selangor</p>
+    </div>
+</div>
+
+<!-- GRID POSTS -->
+<div class="grid">
+
+    <!-- LAWATAN KERJA -->
+    <div class="card">
+        <img src="lpp.5.jpg" alt="Lawatan Kerja Pengarah LPP">
+        <div class="card-content">
+            <div class="date">13 Januari 2026 | Cameron Highlands</div>
+            <h3>Lawatan Kerja Pengarah LPP Negeri Pahang ke PPK Cameron Highlands</h3>
+            <p>PPK Cameron Highlands menerima lawatan kerja daripada Pengarah LPP Negeri Pahang ke projek Tanaman Tomato & Peladang Outlet Kafe. Lawatan ini menilai pelaksanaan projek semasa dan memberi cadangan penambahbaikan untuk memastikan projek berdaya maju.</p>
+            <button onclick="openModal('lawatankerja')">Baca Lagi</button>
+        </div>
     </div>
 
-    <div class="side-card">
-      <img src="pm.1.jpg" alt="Lawatan Sambil Belajar">
-      <div>
-        <h4>14 Januari 2026 – Lawatan Sambil Belajar</h4>
-        <button onclick="openNews('14 Januari 2026 – Lawatan Sambil Belajar','Peserta diberi pendedahan demonstrasi popsicle & ice cream serta pemasaran produk.')">Lihat Berita</button>
-      </div>
+    <!-- LAWATAN SAMBIL BELAJAR -->
+    <div class="card">
+        <img src="pm.1.jpg" alt="Lawatan Sambil Belajar">
+        <div class="card-content">
+            <div class="date">14 Januari 2026 | Brinchang, Tanah Rata</div>
+            <h3>Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands</h3>
+            <p>42 anggota Unit Peladang Kampung Daching Hilir menyertai lawatan sambil belajar ke Pusat Pemprosesan PPK Cameron Highlands. Mereka diberi pendedahan demonstrasi popsicle & ice cream serta peluang mempelajari pemasaran produk.</p>
+            <button onclick="openModal('lawatansambilbelajar')">Baca Lagi</button>
+        </div>
     </div>
 
-    <div class="side-card">
-      <img src="o2.jpg" alt="Lawatan Peladang Muda">
-      <div>
-        <h4>28 Januari 2026 – Lawatan Peladang Muda</h4>
-        <button onclick="openNews('28 Januari 2026 – Lawatan Peladang Muda','Kumpulan Peladang Muda lawatan ke Peladang Outlet Kafe.')">Lihat Berita</button>
-      </div>
+    <!-- PELADANG MUDA -->
+    <div class="card">
+        <img src="o2.jpg" alt="Lawatan Peladang Muda">
+        <div class="card-content">
+            <div class="date">28 Januari 2026 | Brinchang, Cameron Highlands</div>
+            <h3>Lawatan Kumpulan Peladang Muda PPK Tembeling ke PPK Cameron Highlands</h3>
+            <p>Para peserta singgah di Peladang Outlet Kafe PPK Cameron Highlands dan menikmati hidangan serta membeli barangan jualan untuk dibawa pulang.</p>
+            <button onclick="openModal('peladangmuda')">Baca Lagi</button>
+        </div>
     </div>
-  </div>
-
-  <!-- FEATURED NEWS -->
-  <div class="featured">
-    <img src="g.4.jpg" alt="Majlis Mengadap Sultan">
-    <div class="featured-content">👑 6 November 2025 – Majlis Mengadap Sultan Pahang</div>
-    <button onclick="openNews('6 November 2025 – Majlis Mengadap Sultan Pahang','Majlis menghadap Sultan Pahang dan projek PPK Tioman serta IPP.')">Lihat Berita</button>
-  </div>
-
-  <!-- LATEST NEWS -->
-  <div class="latest">
-    <h3>📰 Berita Terkini</h3>
-    <div class="latest-item" onclick="openNews('6 Nov 2025 – Majlis Mengadap Sultan Pahang','Majlis menghadap Sultan Pahang dan perkembangan projek PPK Tioman dan IPP.')">6 Nov 2025 – Majlis Mengadap Sultan</div>
-    <div class="latest-item" onclick="openNews('13 Jan 2026 – Lawatan Kerja','Lawatan kerja ke projek Tanaman Tomato & Peladang Outlet Kafe.')">13 Jan 2026 – Lawatan Kerja</div>
-    <div class="latest-item" onclick="openNews('14 Jan 2026 – Lawatan Sambil Belajar','Peserta diberi pendedahan demonstrasi popsicle & ice cream.')">14 Jan 2026 – Lawatan Sambil Belajar</div>
-    <div class="latest-item" onclick="openNews('28 Jan 2026 – Lawatan Peladang Muda','Kumpulan Peladang Muda lawatan ke Peladang Outlet Kafe.')">28 Jan 2026 – Lawatan Peladang Muda</div>
-  </div>
 
 </div>
 
-<!-- MODAL NEWS -->
-<div id="newsModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">✖</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalContent"></p>
-  </div>
 </div>
 
-<!-- MODAL SEARCH -->
-<div id="searchModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeSearch()">✖</span>
-    <h2>Carian Berita</h2>
-    <input type="text" id="searchInput" placeholder="Taip kata kunci..." onkeyup="searchNews()">
-    <div id="searchResults" style="margin-top:15px;"></div>
-  </div>
+<!-- MODAL STRUCTURE -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">✖</span>
+        <img id="modalImage" src="" alt="">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
 </div>
 
-<!-- MODAL COMMENT -->
-<div id="commentModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeComment()">✖</span>
-    <h2>Tambah Komen</h2>
-    <textarea id="commentText" placeholder="Taip komen anda..."></textarea>
-    <button onclick="submitComment()">Hantar Komen</button>
-    <div id="commentList" style="margin-top:15px;"></div>
-  </div>
-</div>
+<footer>
+    © 2026 Pertubuhan Peladang Kawasan Cameron Highlands | Hak Cipta Terpelihara
+</footer>
 
 <script>
-// News Data
-const newsData = [
-  {title:'6 Nov 2025 – Majlis Mengadap Sultan Pahang', content:'Pengerusi LPP menghadap Sultan Pahang. Majlis membincangkan pembangunan PPK Tioman, projek IPP, dan produk PPK Cameron Highlands.'},
-  {title:'13 Jan 2026 – Lawatan Kerja', content:'Lawatan kerja ke projek Tanaman Tomato & Peladang Outlet Kafe.'},
-  {title:'14 Jan 2026 – Lawatan Sambil Belajar', content:'Peserta diberi pendedahan demonstrasi popsicle & ice cream serta pemasaran produk.'},
-  {title:'28 Jan 2026 – Lawatan Peladang Muda', content:'Kumpulan Peladang Muda lawatan ke Peladang Outlet Kafe.'}
-];
-
-// Open News
-function openNews(title, content) {
-  document.getElementById('modalTitle').innerText = title;
-  document.getElementById('modalContent').innerText = content;
-  document.getElementById('newsModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() {
-  document.getElementById('newsModal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Search
-function openSearch() {
-  document.getElementById('searchModal').classList.add('active');
-  document.getElementById('searchInput').focus();
-}
-function closeSearch() {
-  document.getElementById('searchModal').classList.remove('active');
-  document.getElementById('searchResults').innerHTML = '';
-}
-function searchNews() {
-  const query = document.getElementById('searchInput').value.toLowerCase();
-  const results = document.getElementById('searchResults');
-  results.innerHTML = '';
-  newsData.forEach(n => {
-    if (n.title.toLowerCase().includes(query) || n.content.toLowerCase().includes(query)) {
-      const div = document.createElement('div');
-      div.style.padding = '8px';
-      div.style.cursor = 'pointer';
-      div.style.borderBottom = '1px solid #eee';
-      div.innerText = n.title;
-      div.onclick = () => { openNews(n.title, n.content); closeSearch(); }
-      results.appendChild(div);
+// DATA ARTICLES
+const articles = {
+    majlisultan:{
+        title:"Majlis Mengadap Kebawah Duli Paduka Baginda Sultan Pahang",
+        date:"6 November 2025 | Ampang, Selangor",
+        img:"g.4.jpg",
+        text:`Pengerusi LPP, YBhg. Dato’ Wira Haji Mahfuz bin Haji Omar, bersama Ketua Pengarah LPP, YBrs. Encik Amir bin Matamin, telah berangkat menghadap Kebawah Duli Paduka Baginda Sultan Pahang, Al-Sultan Abdullah Ri’ayatuddin Al-Mustafa Billah Shah Ibni Almarhum Sultan Haji Ahmad Shah Al-Musta’in Billah.
+Pertemuan ini membincangkan pembangunan dan daya saing PPK Tioman serta projek Institut Pengurusan Peladang (IPP) Tioman. Baginda turut menzahirkan keprihatinan dalam pelaksanaan projek pertanian di Pulau Tioman. Turut dipersembahkan produk PPK Cameron Highlands yang mendapat pengiktirafan Pahang Best. Turut hadir Timbalan Ketua Pengarah (Operasi) LPP, Timbalan Ketua Pengarah (Pembangunan) LPP, Pengarah Bahagian Pembangunan Modal Insan LPP dan Timbalan Pengarah LPP Negeri Pahang.`
+    },
+    lawatankerja:{
+        title:"Lawatan Kerja Pengarah LPP Negeri Pahang ke PPK Cameron Highlands",
+        date:"13 Januari 2026 | Cameron Highlands",
+        img:"lpp.5.jpg",
+        text:`PPK Cameron Highlands menerima lawatan kerja daripada Pengarah Lembaga Pertubuhan Peladang Negeri Pahang, YBrs. Encik Muhammad Azzrinie bin Shafie ke projek Tanaman Tomato & Peladang Outlet Kafe. Lawatan ini menilai pelaksanaan projek semasa dan memberi cadangan penambahbaikan untuk memastikan projek berdaya maju. Turut hadir Timbalan Pengarah LPP Negeri Pahang, Ketua Unit Pembangunan Ekonomi PP dan Pengurus Besar PPK Cameron Highlands.`
+    },
+    lawatansambilbelajar:{
+        title:"Lawatan Sambil Belajar ke Pusat Pemprosesan PPK Cameron Highlands",
+        date:"14 Januari 2026 | Brinchang, Tanah Rata",
+        img:"pm.1.jpg",
+        text:`42 anggota Unit Peladang Kampung Daching Hilir menyertai lawatan sambil belajar ke Pusat Pemprosesan PPK Cameron Highlands. Mereka diberi pendedahan demonstrasi popsicle & ice cream serta peluang mempelajari pemasaran produk. Taklimat projek serta sesi perkongsian maklumat disampaikan oleh Pengurus Projek, Encik Rosmairy bin Mohd Noor. Turut hadir Pengurus Besar PPK Cameron Highlands.`
+    },
+    peladangmuda:{
+        title:"Lawatan Kumpulan Peladang Muda PPK Tembeling ke PPK Cameron Highlands",
+        date:"28 Januari 2026 | Brinchang, Cameron Highlands",
+        img:"o2.jpg",
+        text:`PPK Cameron Highlands berbesar hati menerima lawatan Kumpulan Peladang Muda PPK Tembeling. Para peserta singgah di Peladang Outlet Kafe PPK Cameron Highlands dan menikmati hidangan serta membeli barangan jualan. Pihak PPK mengucapkan jutaan terima kasih atas kesudian mereka singgah dan memeriahkan kafe.`
     }
-  });
-}
+};
 
-// Comment
-function openComment() { document.getElementById('commentModal').classList.add('active'); }
-function closeComment() { document.getElementById('commentModal').classList.remove('active'); }
-function submitComment() {
-  const text = document.getElementById('commentText').value.trim();
-  if(text===''){alert('Sila taip komen.'); return;}
-  const list = document.getElementById('commentList');
-  const p = document.createElement('p');
-  p.innerText=text;
-  p.style.background='#f0f8f5';
-  p.style.padding='8px';
-  p.style.borderRadius='8px';
-  p.style.marginBottom='8px';
-  list.appendChild(p);
-  document.getElementById('commentText').value='';
+// MODAL FUNCTIONS
+function openModal(id){
+    const article = articles[id];
+    document.getElementById('modalImage').src = article.img;
+    document.getElementById('modalTitle').innerText = article.title;
+    document.getElementById('modalText').innerText = article.text;
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
 }
 </script>
 
