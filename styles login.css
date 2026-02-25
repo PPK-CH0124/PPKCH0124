@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background: url('tp.jpg') no-repeat center center fixed;
-    background-size: cover; /* 'cover' ensures the image covers the entire background */
+    background-size: cover;
 }
 
 .login-container {
@@ -14,37 +14,53 @@ body {
 }
 
 .login-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 0 10px #190a13;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-top: 5px solid #ff6f61; /* coral top border */
 }
 
 .login-box .logo {
-    width: 100px;
+    width: 120px;
     margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px #ff6f61);
+    transition: transform 0.3s ease;
+}
+
+.login-box .logo:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .login-box h1 {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #000000;
+    font-size: 26px;
+    color: #1abc9c; /* turquoise text */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .login-box label {
     display: block;
     text-align: left;
     margin: 10px 0 5px;
-    color: #000000;
+    color: #333333;
+    font-weight: bold;
 }
 
 .login-box input[type="text"], .login-box input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #1abc9c; /* turquoise border */
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box input[type="text"]:focus, .login-box input[type="password"]:focus {
+    border-color: #ff6f61; /* coral on focus */
+    box-shadow: 0 0 10px rgba(255,111,97,0.5);
+    outline: none;
 }
 
 .radio-buttons {
@@ -59,32 +75,38 @@ body {
 
 .radio-buttons label {
     margin-right: 20px;
-    color: #333;
+    color: #1abc9c; /* turquoise */
+    font-weight: bold;
 }
 
 .login-box button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    background: #333;
+    background: #ff6f61; /* coral button */
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .login-box button:hover {
-    background: #555;
+    background: #e85b50; /* darker coral on hover */
+    transform: scale(1.05);
 }
 
 .login-box p {
     margin-top: 20px;
-    color: #333;
+    color: #333333;
 }
 
 .login-box p a {
-    color: #007BFF;
+    color: #1abc9c; /* turquoise link */
+    font-weight: bold;
     text-decoration: none;
 }
 
 .login-box p a:hover {
     text-decoration: underline;
+    color: #ff6f61; /* coral on hover */
 }
