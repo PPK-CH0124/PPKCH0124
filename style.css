@@ -1,216 +1,196 @@
-/* Reset and Box-Sizing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-/* Typography */
-body, html {
-  height: 100%;
-  font-family: "Raleway", sans-serif;
-  line-height: 1.8;
-  background: #f0f2f5;
-}
-
-/* Navbar */
+/* Navbar utama dengan warna turquoise */
 .navbar {
-  width: 100%;
+  background-color: #1abc9c;
   position: fixed;
   top: 0;
-  background: linear-gradient(90deg, #4A807A, #478778);
-  color: white;
-  padding: 12px 20px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 1000;
-  backdrop-filter: blur(6px);
+  padding: 12px 30px;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-family: 'Raleway', sans-serif;
+  border-bottom: 4px solid #ff6f61; /* Garis bawah coral */
+  transition: background-color 0.4s ease;
 }
 
+/* Hover buat navbar lebih gelap sedikit untuk interaksi */
+.navbar:hover {
+  background-color: #16a085;
+}
+
+/* Logo dengan bayang dan efek bounce bila hover */
 .navbar-logo img {
-  height: 50px;
+  height: 55px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.15));
   transition: transform 0.3s ease;
+  animation: bounce 3s infinite;
 }
 
 .navbar-logo img:hover {
-  transform: rotate(-5deg) scale(1.1);
+  transform: scale(1.15) rotate(5deg);
+  animation-play-state: paused;
 }
 
-.navbar-links a {
-  text-decoration: none;
-  color: white;
-  padding: 12px 16px;
-  font-weight: 600;
-  border-radius: 6px;
+/* Animasi bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-.navbar-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
-}
-
-/* Hero / Header Section */
-.header {
+/* Menu utama */
+.navbar-menu {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: left;
-  background-image: url("ppkch.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  padding: 60px;
-  color: white;
+  gap: 30px;
+  margin-left: 40px;
+}
+
+/* Item menu */
+.navbar-menu > li {
   position: relative;
 }
 
-.header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-}
-
-.header h1 {
-  background: rgba(76, 175, 80, 0.85);
-  padding: 20px 30px;
-  font-size: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-  position: relative;
-  z-index: 1;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Buttons */
-.button, .buy-button {
-  background: linear-gradient(45deg, #25D366, #128C7E);
-  color: white;
-  padding: 14px 24px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.button:hover, .buy-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* Cards with Glassmorphism */
-.product-card, .team-card, .info-box, .image-box {
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover, .team-card:hover, .info-box:hover, .image-box:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-/* Product Section */
-.product-section {
-  padding: 80px 20px;
-  text-align: center;
-  background: #e8f5e9;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #4A807A;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 50px;
-}
-
-/* Team Section */
-.team-section {
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #f7f7f7, #e0f2f1);
-}
-
-.team-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #4A807A;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Mind Map */
-.mind-map .node {
-  background: linear-gradient(135deg, #4A807A, #478778);
-  font-size: 1rem;
-  padding: 20px 30px;
-  border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.mind-map .node:hover {
-  transform: scale(1.2) rotate(-2deg);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
-
-/* Modal */
-.modal-box {
-  background: rgba(0,0,0,0.95);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-.modal-box button {
-  background: linear-gradient(45deg, #25D366, #128C7E);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 12px;
-  font-weight: bold;
-}
-
-.modal-box button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-/* Smooth Transitions */
-* {
-  transition: all 0.3s ease-in-out;
-}
-
-/* WhatsApp Contact Button */
-.whatsapp-contact-button {
-  display: inline-block;
-  background: linear-gradient(45deg, #25D366, #128C7E);
-  color: white;
-  padding: 14px 24px;
-  border-radius: 12px;
+/* Link menu & button dropdown */
+.navbar-menu a, .dropbtn {
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  user-select: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 0 #ff6f61;
 }
 
-.whatsapp-contact-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+/* Hover dengan coral warna dan sedikit scale */
+.navbar-menu a:hover, .dropdown:hover > .dropbtn {
+  color: #ff6f61;
+  background-color: #ffffff;
+  box-shadow: inset 0 -4px 0 0 #ff6f61;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-/* Footer-style elements or small boxes can also get subtle animations */
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #16a085;
+  min-width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  padding: 8px 0;
+  backdrop-filter: saturate(180%) blur(12px);
+  z-index: 1500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show dropdown with animation */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+  padding: 14px 26px;
+  color: #f9f9f9;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+  margin: 0 10px;
+  display: block;
+}
+
+/* Hover dropdown links */
+.dropdown-content li a:hover {
+  background-color: #ff6f61;
+  color: #ffffff;
+  box-shadow: 0 0 10px #ff6f61;
+}
+
+/* Nested dropdown */
+.dropdown-content .dropdown {
+  position: relative;
+}
+
+.dropdown-content .dropdown-content {
+  top: 0;
+  left: 100%;
+  background: #149077;
+  border-radius: 15px;
+  padding: 8px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show nested dropdown */
+.dropdown-content .dropdown:hover > .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Arrow kecil */
+.dropbtn::after {
+  content: " ▼";
+  font-size: 0.65rem;
+  color: #ff6f61;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown:hover > .dropbtn::after {
+  transform: rotate(-180deg);
+}
+
+/* Scroll bar for dropdown if too long */
+.dropdown-content {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Scrollbar style */
+.dropdown-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background-color: #ff6f61;
+  border-radius: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .navbar-menu {
+    gap: 18px;
+  }
+  .navbar-menu a, .dropbtn {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
