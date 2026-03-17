@@ -3,219 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Rasmi Pertubuhan Peladang Kawasan Cameron Highlands</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<title>Portal Rasmi Pertubuhan Peladang Cameron Highlands</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+<meta name="google-site-verification" content="sapZF0KFn1Cyy9dwTjbKk-qG70T_d5jKc7WPhpIKne4" />
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-height:100vh;
-background:url("ppkch.jpg") center/cover no-repeat;
-overflow:hidden;
-position:relative;
-color:white;
-}
-
-/* overlay gelap */
-body::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-top:0;
-left:0;
-}
-
-/* header */
-.header{
-text-align:center;
-padding-top:60px;
-position:relative;
-z-index:2;
-}
-
-.header img{
-width:90px;
-margin-bottom:15px;
-}
-
-.header h3{
-color:#ffd54f;
-letter-spacing:2px;
-margin-bottom:10px;
-}
-
-.header h1{
-font-size:50px;
-font-weight:600;
-text-shadow:0 4px 10px rgba(0,0,0,0.6);
-}
-
-/* grid menu */
-.menu{
-position:relative;
-z-index:2;
-margin-top:70px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-width:80%;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* card */
-.card{
-background:#ffffff;
-color:#333;
-padding:35px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:0.3s;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(0,0,0,0.4);
-}
-
-.card h2{
-font-size:22px;
-margin-bottom:10px;
-color:#2e7d32;
-}
-
-.card p{
-font-size:14px;
-}
-
-/* footer */
-.footer{
-position:absolute;
-bottom:15px;
-left:50%;
-transform:translateX(-50%);
-font-size:13px;
-opacity:0.9;
-z-index:2;
-}
-
-/* snow */
-.snow{
-position:absolute;
-top:-10px;
-background:white;
-border-radius:50%;
-opacity:0.8;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-to{
-transform:translateY(100vh);
-}
-}
-
+    body {font-family: Arial, sans-serif;margin:0;padding:0;background-color:#1A1A1A;color:white;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;height:auto;}
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background-color:#4A807A;color:white;}
+    .navbar-logo img{height:50px;}
+    .navbar-links a{margin:0 10px;font-size:16px;color:white;font-weight:bold;}
+    .dropdown{position:relative;display:inline-block;}
+    .dropbtn{cursor:pointer;}
+    .dropdown-content{display:none;position:absolute;background-color:#2C5D50;min-width:160px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1;}
+    .dropdown-content a{color:white;padding:12px 16px;text-decoration:none;display:block;}
+    .dropdown:hover .dropdown-content{display:block;}
+    header{position:relative;height:100vh;background-image:url('ppkch.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:white;}
+    header .header-content{text-align:center;background:rgba(0,0,0,0.6);padding:30px;border-radius:8px;}
+    header .button{background-color:white;color:#4A807A;padding:10px 20px;margin:10px;font-size:16px;border-radius:5px;font-weight:bold;text-transform:uppercase;cursor:pointer;}
+    #about{padding:50px 20px;background-color:#2C5D50;text-align:center;}
+    .icon-row{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+    .info-box{text-align:center;}
+    .info-box i{font-size:40px;color:#FFD700;margin-bottom:10px;}
+    .card{background-color:white;border-radius:15px;padding:20px 30px;box-shadow:0px 6px 10px rgba(0,0,0,0.1);max-width:300px;text-align:center;}
+    #infoModal{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#2C5D50;color:#EAF7F1;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.4);z-index:1000;text-align:center;width:350px;}
+    #infoModal h3{color:#FFD700;}
+    #infoModal button{background-color:#FFD700;color:#2C5D50;padding:10px 12px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;}
+    .zoomable{transition:transform 0.3s ease, box-shadow 0.3s ease;cursor:pointer;border-radius:10px;display:block;margin:0 auto;}
+    .zoomable.zoomed{transform:scale(2);z-index:1000;box-shadow:0 6px 25px rgba(0,0,0,0.5);position:relative;}
+    @media (max-width:768px){.zoomable{width:90%;}.zoomable.zoomed{transform:scale(1.5);}}
+    .modal{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);justify-content:center;align-items:center;opacity:0;transition:opacity 0.3s ease-in-out;}
+    .modal-content{background-color:#2C5D50;padding:25px;border-radius:10px;width:400px;text-align:left;color:white;box-shadow:0 4px 10px rgba(0,0,0,0.3);position:relative;transform:scale(0.8);transition:transform 0.3s ease-in-out;}
+    .close{cursor:pointer;color:red;font-size:20px;position:absolute;top:10px;right:15px;}
+    .snowflake{position:fixed;top:-10px;z-index:9999;color:white;font-size:1em;user-select:none;pointer-events:none;animation:snowFall 10s linear infinite;}
+    @keyframes snowFall{0%{transform:translateY(0);}100%{transform:translateY(100vh);} }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<!-- Snow effect -->
+<script>
+    function createSnowflake(){
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left=Math.random()*window.innerWidth+'px';
+        snowflake.style.fontSize=(Math.random()*10+10)+'px';
+        snowflake.textContent='❄';
+        document.body.appendChild(snowflake);
+        setTimeout(()=>{snowflake.remove()},10000);
+    }
+    setInterval(createSnowflake,200);
+</script>
 
-<img src="logo.png">
-
-<h3>Selamat Datang ke Portal Rasmi</h3>
-
-<h1>PERTUBUHAN PELADANG</h1>
-<h1>CAMERON HIGHLANDS</h1>
-
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-logo" style="background-color:white;"><a href="#home"><img src="logo.png" alt="Logo"></a></div>
+    <div class="navbar-links">
+        <a href="#about">ABOUT</a>
+        <a href="#team-section">KAKITANGAN</a>
+        <div class="dropdown">
+            <a class="dropbtn">GALERI</a>
+            <div class="dropdown-content">
+                <a href="budi_madani.html">BUDI MADANI</a>
+                <a href="maulid_rasul.html">MAULIDUR RASUL 2024</a>
+                <a href="maha.html">MAHA 2024</a>
+                <a href="maeps_serdang.html">MAEPS SERDANG 2026</a>
+                <a href="juadah_ramadhan.html">GOTONG-ROYONG BERBUKA</a>
+            </div>
+        </div>
+        <a href="blog.html">BLOG</a>
+        <div class="dropdown">
+            <a class="dropbtn">PRODUK</a>
+            <div class="dropdown-content">
+                <a href="product_ppkch.html">PRODUK PPKCH</a>
+                <a href="TCV.HTML">TEH CAMERON VALLEY</a>
+                <a href="pp.html">PRODUK PELADANG</a>
+                <a href="boh.html">BOH</a>
+                <a href="cc.html">CHOCOLATES</a>
+            </div>
+        </div>
+        <a href="homestay.html">HOMESTAY</a>
+        <a href="#contact">CONTACT</a>
+    </div>
 </div>
 
-<!-- MENU -->
-<div class="menu">
+<!-- Header Section -->
+<header id="home">
+    <div class="header-content">
+        <h1>PERTUBUHAN PELADANG KAWASAN CAMERON HIGHLANDS</h1>
+        <a href="https://pklik.lpp.gov.my/v1/public/home" class="button">P-KLIK</a>
+    </div>
+</header>
 
-<div class="card">
-<h2>ABOUT</h2>
-<p>Maklumat Pertubuhan Peladang</p>
+<!-- About Section -->
+<section id="about">
+    <div style="text-align:center;">
+        <h2 style="font-size:2.5rem;margin-bottom:20px;color:#EAF7F1;">ABOUT OUR ORGANIZATION</h2>
+        <p style="font-weight:bold;">VISI: MENJADIKAN SEBUAH PERTUBUHAN YANG KUAT DAN BERDAYA SAING MELALUI PENGLIBATAN DIDALAM AKTIVITI PENGELUARAN MAKANAN</p>
+        <p style="font-weight:bold;">MISI: MENYEDIAKAN PERKHIDMATAN YANG CEKAP DAN BERKESAN KEPADA AHLI-AHLI ENTERPRISE PELADANG</p>
+    </div>
+    <div class="icon-row" style="margin-top:30px;">
+        <div class="info-box" style="max-width:200px;background-color:#3A7566;padding:20px;border-radius:10px;">
+            <i class="fa fa-id-card"></i>
+            <p>Nombor Pendaftaran</p>
+            <p>PPK 0124</p>
+        </div>
+        <div class="info-box" style="max-width:200px;background-color:#3A7566;padding:20px;border-radius:10px;">
+            <i class="fa fa-shield"></i>
+            <p>Kawasan Pengendalian</p>
+            <p>71,225 HA</p>
+        </div>
+        <div class="info-box" style="max-width:200px;background-color:#3A7566;padding:20px;border-radius:10px;">
+            <i class="fa fa-users"></i>
+            <p>Bil. Ahli PPK</p>
+            <p>581 orang</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projek Section -->
+<div style="margin-top:30px;">
+    <h3 style="text-align:center;color:#EAF7F1;">PROJEK PPKCH</h3>
+    <div class="button-container" style="text-align:center; margin:20px;">
+        <button class="button" style="background-color:#7EB6FF;" onclick="showModal('strawberi')">Projek Tanaman Strawberi</button>
+        <button class="button" style="background-color:#A18BFC;" onclick="showModal('tomato')">Projek Tanaman Tomato</button>
+        <button class="button" style="background-color:#F2D96F;" onclick="showModal('kilang')">Kilang Pemprosesan</button>
+        <button class="button" style="background-color:#A3DA8D;" onclick="showModal('cafe')">Pusat Jualan</button>
+    </div>
 </div>
 
-<div class="card">
-<h2>KAKITANGAN</h2>
-<p>Senarai kakitangan</p>
-</div>
-
-<div class="card">
-<h2>GALERI</h2>
-<p>Gambar aktiviti</p>
-</div>
-
-<div class="card">
-<h2>BLOG</h2>
-<p>Berita dan aktiviti</p>
-</div>
-
-<div class="card">
-<h2>PRODUK</h2>
-<p>Produk peladang</p>
-</div>
-
-<div class="card">
-<h2>P-KLIK</h2>
-<p>Sistem peladang</p>
-</div>
-
-<div class="card">
-<h2>CONTACT</h2>
-<p>Hubungi kami</p>
-</div>
-
-</div>
-
-<div class="footer">
-Hakcipta Terpelihara © Pertubuhan Peladang Cameron Highlands
+<!-- Projek Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+    </div>
 </div>
 
 <script>
-
-/* snow effect */
-
-function createSnow(){
-
-const snow=document.createElement("div");
-
-snow.classList.add("snow");
-
-snow.style.left=Math.random()*window.innerWidth+"px";
-
-snow.style.width=snow.style.height=Math.random()*6+4+"px";
-
-snow.style.animationDuration=Math.random()*5+5+"s";
-
-document.body.appendChild(snow);
-
-setTimeout(()=>{
-snow.remove();
-},10000);
-
+function showModal(type){
+    let title="",text="";
+    if(type==='strawberi'){title="Projek Tanaman Strawberi"; text="📍 Lokasi: Sg. Mensun, Brinchang<br>📅 Projek Dimulakan: September 2013<br>📏 Keluasan Projek: 4 Ekar (60,000 Pokok)<br>🌱 Cara Tanaman: Fertigasi";}
+    else if(type==='tomato'){title="Projek Tanaman Tomato"; text="📍 Lokasi: RPS Terisu, Bt. 49, Kuala Terla<br>📅 Projek Dimulakan: 2002<br>📏 Keluasan Projek: 2 Ekar (20,000 Pokok)<br>🌱 Cara Tanaman: Fertigasi";}
+    else if(type==='kilang'){title="Kilang Pemprosesan"; text="📍 Lokasi: Brinchang<br>📦 Produk:<br>- Aiskrim Cup<br>- Kordial Strawberi<br>- Topping Strawberi<br>- Jem Strawberi<br>- Popsicles";}
+    else if(type==='cafe'){title="Café"; text="📍 Lokasi: Brinchang<br>☕ Produk tersedia";}
+    document.getElementById("modal-title").innerText=title;
+    document.getElementById("modal-text").innerHTML=text;
+    let modal=document.getElementById("modal");
+    modal.style.display="flex";
+    setTimeout(()=>{modal.style.opacity="1";document.querySelector(".modal-content").style.transform="scale(1)";},50);
 }
-
-setInterval(createSnow,150);
-
+function closeModal(){
+    let modal=document.getElementById("modal");
+    modal.style.opacity="0";
+    document.querySelector(".modal-content").style.transform="scale(0.8)";
+    setTimeout(()=>{modal.style.display="none";},300);
+}
+window.onclick=function(event){if(event.target===document.getElementById("modal")) closeModal();}
+function toggleZoom(image){image.classList.toggle('zoomed');}
 </script>
+
+<!-- Perkhidmatan Image -->
+<div style="margin-top:30px;text-align:center;">
+    <h3 style="color:#EAF7F1;">PERKHIDMATAN PPK</h3>
+    <img src="perkhidmatan.png" class="zoomable" onclick="toggleZoom(this)" style="width:70%; margin:20px auto;">
+</div>
+
+<!-- Team & AJP Section -->
+<section id="team-section" style="padding:50px 20px; text-align:center; background-color:#2C5D50;">
+    <h3 style="color:#EAF7F1;">AHLI JEMAAH PENGARAH (AJP) PPK CAMERON HIGHLANDS</h3>
+    <img src="carta ajp.png" class="zoomable" onclick="toggleZoom(this)" style="width:70%; margin:20px auto;">
+    <h3 style="color:#EAF7F1;margin-top:50px;">PENGURUSAN PPK CAMERON HIGHLANDS</h3>
+    <img src="carta-pengurusan-baru.png" class="zoomable" onclick="toggleZoom(this)" style="width:80%; margin:20px auto;">
+</section>
+
+<!-- Map Image -->
+<div>
+    <img src="maps.png" class="responsive-image" style="width:100%; margin-top:40px" alt="Map of location">
+</div>
+
+<!-- Contact Section -->
+<section id="contact" style="padding:50px 20px;text-align:center;background-color:#2C5D50;">
+    <h2>CONTACT US</h2>
+    <a href="mailto:ppkch0124@gmail.com?subject=Inquiry" class="button" style="background-color:white;color:#4A807A;">Email Us</a>
+    <p style="margin-top:20px;">Hubungi Kami di: <strong>ppkch0124@gmail.com</strong> | <strong>No.Tel : 05-4913187</strong> | <strong>No.Fax : 05-4911236</strong></p>
+    <div style="margin-bottom:20px;">
+        <a href="https://www.facebook.com/p/Pertubuhan-Peladang-Kawasan-Cameron-Highlands-100091787980714/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@ppkch.0124" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://x.com/ppk_chighlands" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://maps.app.goo.gl/yTJjL1dvavwSduSM6" target="_blank"><i class="fa fa-map-marked-alt"></i></a>
+    </div>
+    <a href="#home" class="button" style="background-color:white;color:#4A807A;"><i class="fa fa-arrow-up"></i> Back to Top</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; Portal Rasmi Pertubuhan Peladang Kawasan Cameron Highlands</p>
+</footer>
 
 </body>
 </html>
