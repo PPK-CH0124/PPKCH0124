@@ -3,215 +3,198 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pertubuhan Peladang Cameron Highlands - Sistem Portal</title> 
+<title>Pertubuhan Peladang Cameron Highlands - Sistem Portal</title>
+
 <style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body, html {
-    height: 100%;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
-  }
-  
-  /* Background with overlay */
-  body {
-    background: url('https://i.imgur.com/ZdpQ7Nu.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(255, 255, 255, 0.75);
-    z-index: 0;
-  }
-  
-  /* Container for all content */
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px 80px;
-    text-align: center;
-  }
-  
-  /* Government Crest */
-  .crest {
-    width: 110px;
-    margin: 0 auto 10px;
-  }
-  
-  /* Header Text */
-  h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #222;
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-    margin-bottom: 10px;
-  }
-  p.subtitle {
-    color: #C6A700;
-    font-weight: 600;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    text-transform: capitalize;
-  }
-  
-  /* Social icons row */
-  .social-icons {
-    margin-bottom: 50px;
-  }
-  .social-icons a {
-    display: inline-block;
-    margin: 0 8px;
-    color: #555;
-    font-size: 1.4rem;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-  .social-icons a:hover {
-    color: #C6A700;
-  }
-  
-  /* Grid container for system cards */
-  .system-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-  }
-  
-  /* Each card */
-  .card {
-    background: white;
-    border-radius: 14px;
-    padding: 30px 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    user-select: none;
-  }
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-  }
-  
-  /* Logo inside card */
-  .card img {
-    max-height: 50px;
-    margin-bottom: 18px;
-    object-fit: contain;
-  }
-  
-  /* Card texts */
-  .card .system-label {
-    font-size: 0.9rem;
-    color: #444;
-    margin-bottom: 4px;
-  }
-  .card .system-name {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #2a571f;
-  }
-  
-  /* Special color variations for some cards */
-  .card.geotanaman .system-name { color: #86b642; }
-  .card.geotanih .system-name { color: #7f5a29; }
-  .card.mypesticide .system-name { color: #bf3d3d; }
-  .card.sismarp .system-name { color: #7c8a77; }
-  .card.elesen-lrmp .system-name { color: #d97900; }
-  .card.racun-berdaftar .system-name { color: #1f9eca; }
-  .card.myphyto .system-name { color: #2a571f; }
-  
-  /* Footer */
-  footer {
-    margin-top: 70px;
-    font-size: 0.85rem;
-    color: #888;
-    user-select: none;
-  }
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+body {
+  background: url('https://i.imgur.com/ZdpQ7Nu.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+  text-align: center;
+}
+
+.crest {
+  width: 110px;
+  margin: 0 auto 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #C6A700;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+/* Social */
+.social-icons {
+  margin-bottom: 40px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.social-icons a:hover {
+  color: #C6A700;
+}
+
+/* Grid */
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  max-height: 50px;
+  margin-bottom: 15px;
+}
+
+.system-label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.system-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2a571f;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #888;
+}
 </style>
 
-<!-- Load font awesome icons for social media -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 </head>
+
 <body>
-  <div class="container">
-    <!-- Crest -->
-    <img  
-      class="crest"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Coat_of_arms_of_Malaysia.svg/1200px-Coat_of_arms_of_Malaysia.svg.png"
-      alt="Pertubuhan Peladang Kawasan Cameron Highlands " 
-    />
-    
-    <p class="subtitle">Selamat Datang ke Pautan Pantas Portal Rasmi</p>
-    <h1>Pertubuhan Peladang Cameron Highlands</h1> 
-    
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> 
-    </div>
-    
-    <!-- System Cards Grid -->
-    <div class="system-grid">
-      
-      <div class="card">
-        <img src="logo.png" alt="Portal Rasmi" /> 
-        <div class="system-label">Portal Rasmi</div>
-        <div class="system-name">Pertubuhan Peladang Cameron Highlands</div> 
-      </div>
-      
-      <div class="card myphyto">
-        <div class="system-label">About & Kakitangan</div> 
-        <div class="system-name">MyHRIS</div> 
-      </div>
-      
-      <div class="card galeri "> 
-        <img src=".png" alt="GeoTanaman Logo" /> 
-        <div class="system-label">Galeri</div> 
-        <div class="system-name">Gallerys</div> 
-      </div>
-      
-      <div class="card product"> 
-        <div class="system-label">Product</div> 
-        <div class="system-name">Tetap</div> 
-      </div>
-      
-      <div class="card homestay"> 
-        <div class="system-label">Homestay</div> 
-        <div class="system-name">PPKCH</div> 
-      </div>
-      
-      <div class=">card booking"> 
-        <div style="color:#1f9eca; font-weight:600; margin-bottom:10px;">Tarikh kemasukan,maps,kemudahan & lain-lain</div> 
-      </div> 
-      
-      <div class="card projek"> 
-        <div class="system-label">Sistem</div> 
-        <div class="system-name">Maklumat Projek & Pengurusan</div> 
-      </div>
-      
-      <div class="card contact"> 
-        <div class="system-label">Hubungi</div> 
-        <div class="system-name">Maklumat PPKCH</div> 
-      </div>
-      
-    </div>
-    
-    <footer>
-      Hakcipta Terpelihara PPKCH© 2026 | Dasar Privasi | My Government | BM | EN 
-    </footer>
-  </div>
+
+<div class="container">
+
+<img class="crest"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Coat_of_arms_of_Malaysia.svg/1200px-Coat_of_arms_of_Malaysia.svg.png"
+alt="Logo Malaysia">
+
+<p class="subtitle">Selamat Datang ke Portal Rasmi</p>
+<h1>Pertubuhan Peladang Cameron Highlands</h1>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+
+<div class="system-grid">
+
+<div class="card" onclick="go('portal.html')">
+  <img src="logo.png" alt="">
+  <div class="system-label">Portal Rasmi</div>
+  <div class="system-name">PPKCH</div>
+</div>
+
+<div class="card" onclick="go('hris.html')">
+  <div class="system-label">Kakitangan</div>
+  <div class="system-name">MyHRIS</div>
+</div>
+
+<div class="card" onclick="go('gallery.html')">
+  <div class="system-label">Galeri</div>
+  <div class="system-name">Gallery</div>
+</div>
+
+<div class="card" onclick="go('product.html')">
+  <div class="system-label">Produk</div>
+  <div class="system-name">PPKCH</div>
+</div>
+
+<div class="card" onclick="go('homestay.html')">
+  <div class="system-label">Homestay</div>
+  <div class="system-name">PPKCH</div>
+</div>
+
+<div class="card" onclick="go('booking.html')">
+  <div class="system-label">Booking</div>
+  <div class="system-name">Tempahan & Maklumat</div>
+</div>
+
+<div class="card" onclick="go('projek.html')">
+  <div class="system-label">Sistem</div>
+  <div class="system-name">Maklumat Projek</div>
+</div>
+
+<div class="card" onclick="go('contact.html')">
+  <div class="system-label">Hubungi</div>
+  <div class="system-name">PPKCH</div>
+</div>
+
+</div>
+
+<footer>
+Hakcipta Terpelihara PPKCH © 2026
+</footer>
+
+</div>
+
+<script>
+function go(page){
+  window.location.href = page;
+}
+</script>
+
 </body>
 </html>
