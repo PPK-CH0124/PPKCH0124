@@ -1,200 +1,235 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pertubuhan Peladang Cameron Highlands - Sistem Portal</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Rasmi Pertubuhan Peladang Kawasan Cameron Highlands</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
+    /* Reset & Base */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {font-family: 'Arial', sans-serif; background:#0D1B2A; color:#EAF7F1; line-height:1.6;}
+    a {text-decoration:none; color:inherit;}
+    img {max-width:100%; display:block;}
+    h1,h2,h3,h4,h5 {margin-bottom:15px; color:#FFD700;}
 
-body, html {
-  height: 100%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-}
+    /* Navbar */
+    .navbar {display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:rgba(74,128,122,0.95); position:fixed; width:100%; top:0; z-index:100;}
+    .navbar-logo img {height:50px;}
+    .navbar-links {display:flex; gap:15px;}
+    .navbar-links a {font-weight:bold; padding:8px 12px; border-radius:5px; transition:0.3s; color:white;}
+    .navbar-links a:hover {background:linear-gradient(45deg,#FFD700,#EAF7F1); color:#0D1B2A;}
 
-body {
-  background: url('https://i.imgur.com/ZdpQ7Nu.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
+    /* Dropdown */
+    .dropdown {position:relative;}
+    .dropbtn {cursor:pointer; padding:8px 12px; display:inline-block;}
+    .dropdown-content {display:none; position:absolute; background:#2C5D50; min-width:180px; border-radius:6px; top:100%; left:0; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+    .dropdown-content a {display:block; padding:12px; color:white;}
+    .dropdown:hover .dropdown-content {display:block;}
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.75);
-  z-index: 0;
-}
+    /* Header */
+    header {height:100vh; background:url('ppkch.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;}
+    header::after {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+    .header-content {position:relative; text-align:center; z-index:2; max-width:800px; padding:20px; animation:fadeInDown 1s ease;}
+    .header-content h1 {font-size:2.5rem; margin-bottom:20px; text-shadow:0 2px 8px rgba(0,0,0,0.7);}
+    .button {display:inline-block; padding:12px 25px; font-weight:bold; border:none; border-radius:6px; background:linear-gradient(45deg,#FFD700,#EAF7F1); color:#0D1B2A; cursor:pointer; transition:0.3s;}
+    .button:hover {transform:scale(1.05); box-shadow:0 8px 20px rgba(255,215,0,0.6);}
 
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 20px 80px;
-  text-align: center;
-}
+    @keyframes fadeInDown {0%{opacity:0; transform:translateY(-50px);}100%{opacity:1; transform:translateY(0);}}
 
-.crest {
-  width: 110px;
-  margin: 0 auto 10px;
-}
+    /* About Section */
+    #about {padding:80px 20px; background:#2C5D50; text-align:center;}
+    .about-text p {margin-bottom:15px; font-weight:bold;}
+    .icon-row {display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:40px;}
+    .info-box {background:linear-gradient(135deg,#FFD700,#EAF7F1); color:#0D1B2A; padding:25px 20px; border-radius:12px; min-width:200px; transition:0.3s; cursor:pointer;}
+    .info-box:hover {transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+    .info-box i {font-size:45px; margin-bottom:10px; display:block;}
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+    /* Projek Buttons */
+    .button-container {display:flex; justify-content:center; flex-wrap:wrap; gap:15px; margin-top:20px;}
+    .button-container button {background:linear-gradient(135deg,#7EB6FF,#A3DA8D); color:#0D1B2A; border:none; border-radius:8px; padding:12px 20px; font-weight:bold; cursor:pointer; transition:0.3s;}
+    .button-container button:hover {transform:scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.4);}
 
-.subtitle {
-  color: #C6A700;
-  font-weight: 600;
-  margin-bottom: 25px;
-  letter-spacing: 2px;
-}
+    /* Modal */
+    .modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000; transition:0.3s;}
+    .modal-content {background:#2C5D50; padding:25px; border-radius:12px; width:90%; max-width:450px; position:relative; color:white; transform:scale(0.8); transition:0.3s;}
+    .modal-content h3 {margin-bottom:15px; color:#FFD700;}
+    .close {position:absolute; top:12px; right:15px; font-size:22px; cursor:pointer; color:red;}
 
-/* Social */
-.social-icons {
-  margin-bottom: 40px;
-}
+    /* Zoomable Images */
+    .zoomable {transition:transform 0.3s ease, box-shadow 0.3s ease; border-radius:12px; cursor:pointer; margin:20px auto; display:block;}
+    .zoomable.zoomed {transform:scale(2); box-shadow:0 10px 35px rgba(0,0,0,0.5); z-index:1000; position:relative;}
+    @media (max-width:768px) { .zoomable.zoomed {transform:scale(1.5);} }
 
-.social-icons a {
-  margin: 0 10px;
-  font-size: 1.4rem;
-  color: #555;
-}
+    /* Team Section */
+    #team-section {padding:80px 20px; background:#2C5D50; text-align:center;}
+    #team-section img {border-radius:12px; margin:20px auto;}
 
-.social-icons a:hover {
-  color: #C6A700;
-}
+    /* Contact Section */
+    #contact {padding:80px 20px; text-align:center; background:#2C5D50;}
+    #contact .socials a {margin:0 10px; font-size:24px; transition:0.3s; color:#FFD700;}
+    #contact .socials a:hover {transform:scale(1.2); color:#EAF7F1;}
+    #contact .button {margin-top:15px;}
 
-/* Grid */
-.system-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
+    /* Footer */
+    footer {padding:15px; text-align:center; background:#0A131F; color:#FFD700;}
 
-/* Card */
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card img {
-  max-height: 50px;
-  margin-bottom: 15px;
-}
-
-.system-label {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.system-name {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #2a571f;
-}
-
-/* Footer */
-footer {
-  margin-top: 60px;
-  font-size: 0.85rem;
-  color: #888;
-}
+    /* Snowflakes */
+    .snowflake {position:fixed; top:-10px; z-index:9999; color:white; font-size:1em; user-select:none; pointer-events:none; animation:snowFall linear infinite;}
+    @keyframes snowFall {0%{transform:translateY(0);}100%{transform:translateY(100vh);}}
 </style>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
 </head>
-
 <body>
 
-<div class="container">
+<!-- Snow effect -->
+<script>
+function createSnowflake(){
+    const snowflake=document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left=Math.random()*window.innerWidth+'px';
+    snowflake.style.fontSize=(Math.random()*10+10)+'px';
+    snowflake.style.animationDuration=(Math.random()*5+5)+'s';
+    snowflake.textContent='❄';
+    document.body.appendChild(snowflake);
+    setTimeout(()=>{snowflake.remove()},10000);
+}
+setInterval(createSnowflake,200);
+</script>
 
-<img class="crest"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Coat_of_arms_of_Malaysia.svg/1200px-Coat_of_arms_of_Malaysia.svg.png"
-alt="Logo Malaysia">
-
-<p class="subtitle">Selamat Datang ke Portal Rasmi</p>
-<h1>Pertubuhan Peladang Cameron Highlands</h1>
-
-<div class="social-icons">
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-tiktok"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-logo"><a href="#home"><img src="logo.png" alt="Logo"></a></div>
+    <div class="navbar-links">
+        <a href="#about">ABOUT</a>
+        <a href="#team-section">KAKITANGAN</a>
+        <div class="dropdown">
+            <span class="dropbtn">GALERI</span>
+            <div class="dropdown-content">
+                <a href="budi_madani.html">BUDI MADANI</a>
+                <a href="maulid_rasul.html">MAULIDUR RASUL 2024</a>
+                <a href="maha.html">MAHA 2024</a>
+                <a href="maeps_serdang.html">MAEPS SERDANG 2026</a>
+                <a href="juadah_ramadhan.html">GOTONG-ROYONG BERBUKA</a>
+            </div>
+        </div>
+        <a href="blog.html">BLOG</a>
+        <div class="dropdown">
+            <span class="dropbtn">PRODUK</span>
+            <div class="dropdown-content">
+                <a href="product_ppkch.html">PRODUK PPKCH</a>
+                <a href="TCV.HTML">TEH CAMERON VALLEY</a>
+                <a href="pp.html">PRODUK PELADANG</a>
+                <a href="boh.html">BOH</a>
+                <a href="cc.html">CHOCOLATES</a>
+            </div>
+        </div>
+        <a href="homestay.html">HOMESTAY</a>
+        <a href="#contact">CONTACT</a>
+    </div>
 </div>
 
-<div class="system-grid">
+<!-- Header -->
+<header id="home">
+    <div class="header-content">
+        <h1>PERTUBUHAN PELADANG KAWASAN CAMERON HIGHLANDS</h1>
+        <a href="https://pklik.lpp.gov.my/v1/public/home" class="button">P-KLIK</a>
+    </div>
+</header>
 
-<div class="card" onclick="go('portal.html')">
-  <img src="logo.png" alt="">
-  <div class="system-label">Portal Rasmi</div>
-  <div class="system-name">PPKCH</div>
+<!-- About Section -->
+<section id="about">
+    <div class="about-text">
+        <h2>ABOUT OUR ORGANIZATION</h2>
+        <p>VISI MENJADIKAN SEBUAH PERTUBUHAN YANG KUAT DAN BERDAYA SAING MELALUI PENGLIBATAN DIDALAM AKTIVITI PENGELUARAN MAKANAN</p>
+        <p>MISI MENYEDIAKAN PERKHIDMATAN YANG CEKAP DAN BERKESAN KEPADA AHLI-AHLI ENTERPRISE PELADANG</p>
+    </div>
+    <div class="icon-row">
+        <div class="info-box"><i class="fa fa-id-card"></i><p>Nombor Pendaftaran</p><p>PPK 0124</p></div>
+        <div class="info-box"><i class="fa fa-shield"></i><p>Kawasan Pengendalian</p><p>71,225 HA</p></div>
+        <div class="info-box"><i class="fa fa-users"></i><p>Bil. Ahli PPK</p><p>581 orang</p></div>
+    </div>
+</section>
+
+<!-- Projek Section -->
+<div style="margin-top:50px; text-align:center;">
+    <h3>PROJEK PPKCH</h3>
+    <div class="button-container">
+        <button onclick="showModal('strawberi')" style="background:linear-gradient(45deg,#7EB6FF,#FFD700);">Projek Tanaman Strawberi</button>
+        <button onclick="showModal('tomato')" style="background:linear-gradient(45deg,#A18BFC,#FFD700);">Projek Tanaman Tomato</button>
+        <button onclick="showModal('kilang')" style="background:linear-gradient(45deg,#F2D96F,#FFD700);">Kilang Pemprosesan</button>
+        <button onclick="showModal('cafe')" style="background:linear-gradient(45deg,#A3DA8D,#FFD700);">Pusat Jualan</button>
+    </div>
 </div>
 
-<div class="card" onclick="go('hris.html')">
-  <div class="system-label">Kakitangan</div>
-  <div class="system-name">MyHRIS</div>
-</div>
-
-<div class="card" onclick="go('.html')">
-  <div class="system-label">Galeri</div>
-  <div class="system-name">Gallery</div>
-</div>
-
-<div class="card" onclick="go('product_ppkch.html')">
-  <div class="system-label">Produk</div>
-  <div class="system-name">PPKCH</div>
-</div>
-
-<div class="card" onclick="go('homestay.html')">
-  <div class="system-label">Homestay</div>
-  <div class="system-name">PPKCH</div>
-</div>
-
-<div class="card" onclick="go('booking.html')">
-  <div class="system-label">Booking</div>
-  <div class="system-name">Tempahan & Maklumat</div>
-</div>
-
-<div class="card" onclick="go('projek.html')">
-  <div class="system-label">Sistem</div>
-  <div class="system-name">Maklumat Projek</div>
-</div>
-
-<div class="card" onclick="go('contact.html')">
-  <div class="system-label">Hubungi</div>
-  <div class="system-name">PPKCH</div>
-</div>
-
-</div>
-
-<footer>
-Hakcipta Terpelihara PPKCH © 2026
-</footer>
-
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+    </div>
 </div>
 
 <script>
-function go(page){
-  window.location.href = page;
+function showModal(type){
+    let title="", text="";
+    if(type==='strawberi'){title="Projek Tanaman Strawberi"; text="📍 Lokasi: Sg. Mensun, Brinchang<br>📅 Projek Dimulakan: September 2013<br>📏 Keluasan Projek: 4 Ekar (60,000 Pokok)<br>🌱 Cara Tanaman: Fertigasi";}
+    else if(type==='tomato'){title="Projek Tanaman Tomato"; text="📍 Lokasi: RPS Terisu, Bt. 49, Kuala Terla<br>📅 Projek Dimulakan: 2002<br>📏 Keluasan Projek: 2 Ekar (20,000 Pokok)<br>🌱 Cara Tanaman: Fertigasi";}
+    else if(type==='kilang'){title="Kilang Pemprosesan"; text="📍 Lokasi: Brinchang<br>📦 Produk:<br>- Aiskrim Cup<br>- Kordial Strawberi<br>- Topping Strawberi<br>- Jem Strawberi<br>- Popsicles";}
+    else if(type==='cafe'){title="Café"; text="📍 Lokasi: Brinchang<br>☕ Produk tersedia";}
+    document.getElementById("modal-title").innerText=title;
+    document.getElementById("modal-text").innerHTML=text;
+    const modal=document.getElementById("modal");
+    modal.style.display="flex";
+    setTimeout(()=>{modal.style.opacity="1"; document.querySelector(".modal-content").style.transform="scale(1)";},50);
 }
+function closeModal(){
+    const modal=document.getElementById("modal");
+    modal.style.opacity="0";
+    document.querySelector(".modal-content").style.transform="scale(0.8)";
+    setTimeout(()=>{modal.style.display="none";},300);
+}
+window.onclick=function(event){if(event.target===document.getElementById("modal")) closeModal();}
+function toggleZoom(img){img.classList.toggle('zoomed');}
 </script>
+
+<!-- Perkhidmatan -->
+<div style="text-align:center; margin-top:50px;">
+    <h3>PERKHIDMATAN PPK</h3>
+    <img src="perkhidmatan.png" class="zoomable" onclick="toggleZoom(this)" style="width:70%;">
+</div>
+
+<!-- Team -->
+<section id="team-section">
+    <h3>AHLI JEMAAH PENGARAH (AJP) PPK CAMERON HIGHLANDS</h3>
+    <img src="carta baru.ajp.png" class="zoomable" onclick="toggleZoom(this)" style="width:70%;">
+    <h3>PENGURUSAN PPK CAMERON HIGHLANDS</h3>
+    <img src="carta-pengurusan-baru.png" class="zoomable" onclick="toggleZoom(this)" style="width:80%;">
+</section>
+
+<!-- Map -->
+<div>
+    <img src="maps.png" style="width:100%; margin-top:40px;" alt="Map">
+</div>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>CONTACT US</h2>
+    <a href="mailto:ppkch0124@gmail.com" class="button">Email Us</a>
+    <p>Hubungi Kami di: <strong>ppkch0124@gmail.com</strong> | <strong>No.Tel : 05-4913187</strong> | <strong>No.Fax : 05-4911236</strong></p>
+    <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-map-marked-alt"></i></a>
+    </div>
+    <a href="#home" class="button"><i class="fa fa-arrow-up"></i> Back to Top</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; Portal Rasmi Pertubuhan Peladang Kawasan Cameron Highlands</p>
+</footer>
 
 </body>
 </html>
