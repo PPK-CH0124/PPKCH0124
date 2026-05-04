@@ -6,68 +6,59 @@
 <title>Produk PPKCH</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f4f4f4;
-}
+body { margin:0; font-family:Arial; background:#f4f4f4; }
 
-.product-section {
-  padding: 40px;
-  text-align: center;
-}
+.product-section { padding:40px; text-align:center; }
 
 .product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
 }
 
 .product-card {
-  background: white;
-  width: 260px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background:white;
+  width:260px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .product-card img {
-  width: 100%;
-  border-radius: 15px 15px 0 0;
+  width:100%;
+  border-radius:15px 15px 0 0;
 }
 
 .product-details {
-  padding: 15px;
-  text-align: left;
+  padding:15px;
+  text-align:left;
 }
 
 .product-footer {
-  padding: 10px;
-  text-align: center;
+  padding:10px;
+  text-align:center;
 }
 
 button {
-  background: #2c5d50;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 90%;
-  border-radius: 5px;
-  cursor: pointer;
+  background:#2c5d50;
+  color:white;
+  border:none;
+  padding:10px;
+  width:90%;
+  border-radius:5px;
+  cursor:pointer;
 }
 
-button:hover {
-  background: #1f423a;
-}
+button:hover { background:#1f423a; }
 
 .view-cart {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+  margin-top:20px;
+  display:inline-block;
+  padding:10px 20px;
+  background:black;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
 }
 </style>
 </head>
@@ -79,7 +70,6 @@ button:hover {
 
 <div class="product-container">
 
-<!-- PRODUCT 1 -->
 <div class="product-card">
 <img src="aiskrim cup.png">
 <div class="product-details">
@@ -87,71 +77,21 @@ button:hover {
 <p>RM 5.00</p>
 </div>
 <div class="product-footer">
-<button onclick="addToCart('AISKRIM CUP', 5.00)">Add to Cart</button>
+<button onclick="addToCart('AISKRIM CUP', 5)">Add to Cart</button>
 </div>
 </div>
 
-<!-- PRODUCT 2 -->
 <div class="product-card">
 <img src="kordial_besar.png">
 <div class="product-details">
-<h4>KORDIAL STRAWBERI (BESAR)</h4>
+<h4>KORDIAL BESAR</h4>
 <p>RM 19.90</p>
 </div>
 <div class="product-footer">
-<button onclick="addToCart('KORDIAL STRAWBERI (BESAR)', 19.90)">Add to Cart</button>
+<button onclick="addToCart('KORDIAL BESAR', 19.90)">Add to Cart</button>
 </div>
 </div>
 
-<!-- PRODUCT 3 -->
-<div class="product-card">
-<img src="kordial_kecik.png">
-<div class="product-details">
-<h4>KORDIAL STRAWBERI (KECIL)</h4>
-<p>RM 10.90</p>
-</div>
-<div class="product-footer">
-<button onclick="addToCart('KORDIAL STRAWBERI (KECIL)', 10.90)">Add to Cart</button>
-</div>
-</div>
-
-<!-- PRODUCT 4 -->
-<div class="product-card">
-<img src="topping.png">
-<div class="product-details">
-<h4>TOPPING STRAWBERI</h4>
-<p>RM 10.90</p>
-</div>
-<div class="product-footer">
-<button onclick="addToCart('TOPPING STRAWBERI', 10.90)">Add to Cart</button>
-</div>
-</div>
-
-<!-- PRODUCT 5 -->
-<div class="product-card">
-<img src="jem_besar.png">
-<div class="product-details">
-<h4>JEM STRAWBERI (BESAR)</h4>
-<p>RM 9.50</p>
-</div>
-<div class="product-footer">
-<button onclick="addToCart('JEM STRAWBERI (BESAR)', 9.50)">Add to Cart</button>
-</div>
-</div>
-
-<!-- PRODUCT 6 -->
-<div class="product-card">
-<img src="jem_kecik.png">
-<div class="product-details">
-<h4>JEM STRAWBERI (KECIL)</h4>
-<p>RM 4.50</p>
-</div>
-<div class="product-footer">
-<button onclick="addToCart('JEM STRAWBERI (KECIL)', 4.50)">Add to Cart</button>
-</div>
-</div>
-
-<!-- PRODUCT 7 -->
 <div class="product-card">
 <img src="popsicle.jpg">
 <div class="product-details">
@@ -159,7 +99,7 @@ button:hover {
 <p>RM 5.00</p>
 </div>
 <div class="product-footer">
-<button onclick="addToCart('POPSICLES', 5.00)">Add to Cart</button>
+<button onclick="addToCart('POPSICLES', 5)">Add to Cart</button>
 </div>
 </div>
 
@@ -173,16 +113,15 @@ button:hover {
 function addToCart(name, price) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  let existing = cart.find(item => item.name === name);
+  let item = cart.find(p => p.name === name);
 
-  if (existing) {
-    existing.qty += 1;
+  if (item) {
+    item.qty++;
   } else {
-    cart.push({ name: name, price: price, qty: 1 });
+    cart.push({ name, price, qty: 1 });
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-
   alert(name + " added to cart!");
 }
 </script>
